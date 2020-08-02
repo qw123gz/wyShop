@@ -3,7 +3,15 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "无忧茶坊"
+			}
+		},
+		{
+			"path": "pages/index/code",
+			"style": {
+				"navigationBarTitleText": "积分收款码",
+				"navigationBarBackgroundColor":"#E4C37D",
+				"navigationBarTextStyle":"white"
 			}
 		},
 		{
