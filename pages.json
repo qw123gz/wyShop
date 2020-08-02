@@ -1,0 +1,176 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/login/register",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/login/reset",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/teaHouse/teaHouse",
+			"style": {
+				"navigationBarTitleText": "茶坊"
+			}
+		},
+		{
+		    "path" : "pages/teaHouse/tea.house.one",
+		    "style" : {
+				"navigationBarTitleText": "无忧茶坊"
+			}
+		},{
+		    "path" : "pages/teaHouse/tea.house.two",
+		    "style" : {
+				"navigationBarTitleText": "媒体报道"
+			}
+		},{
+		    "path" : "pages/teaHouse/tea.house.three",
+		    "style" : {
+				"navigationBarTitleText": "分店地图",
+				"app-plus": {
+						"titleNView": {
+							"buttons": [ 
+								{
+									"text": "搜索", 
+									"fontSize":"14",
+									"float": "right",
+									"color":"#0F624D"
+								}
+							],
+							"searchInput":{
+									"align": "left",
+									"placeholder": "请输入门店名称搜索",
+									"borderRadius":"35upx",
+									"width":"500upx",
+									"backgroundColor": "#fff"
+								}
+						}
+					
+				}
+			}
+		},
+		{
+		    "path" : "pages/teaHouse/tea.house.four",
+		    "style" : {
+				"navigationBarTitleText": "开店政策",
+				"app-plus": {
+				    "titleNView": {
+				        "buttons": [
+				            {
+				               "type":"share",
+				               "text": "\ue632",
+				               "fontSize": "24px",
+				               "fontSrc":"/static/newIcon/iconfont.ttf",
+				               "float":"right",
+				               "right":"28px",
+							   "width":"30px"
+							   
+				            }
+				        ]
+				    }
+				}
+			}
+		},
+		{
+			"path": "pages/shogakuin/shogakuin",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor":"#0F624D",
+				"navigationStyle":"custom"
+			}
+		},
+		{
+		    "path" : "pages/shogakuin/shogakuin.details",
+		    "style" : {
+				"navigationBarTitleText": "查看文章",
+				"app-plus": {
+				    "titleNView": {
+				        "buttons": [
+				            {
+				               "type":"share",
+				               "text": "\ue632",
+				               "fontSize": "24px",
+				               "fontSrc":"/static/newIcon/iconfont.ttf",
+				               "float":"right",
+				               "right":"28px",
+							   "width":"30px"
+							   
+				            }
+				        ]
+				    }
+				}
+			}
+		},
+		{
+			"path": "components/index/indexList",
+			"style": {}
+		},
+		{
+			"path": "components/index/login",
+			"style": {}
+		},
+		{
+			"path": "components/user/reflect.say",
+			"style": {}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+	    "color": "#999999",
+	    "selectedColor": "#0F624D",
+	    "borderStyle": "black",
+	    "backgroundColor": "#FFFFFF",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/tabBar/tab1.png",
+	        "selectedIconPath": "static/tabBar/tab1active.png",
+	        "text": "首页"
+	    }, 
+		{
+		    "pagePath": "pages/teaHouse/teaHouse",
+		   "iconPath": "static/tabBar/tab2.png",
+		   "selectedIconPath": "static/tabBar/tab2active.png",
+		    "text": "茶坊"
+		},
+		{
+	        "pagePath": "pages/shogakuin/shogakuin",
+	       "iconPath": "static/tabBar/tab3.png",
+	       "selectedIconPath": "static/tabBar/tab3active.png",
+	        "text": "商学院"
+	    },
+		{
+		    "pagePath": "pages/user/user",
+		   "iconPath": "static/tabBar/tab4.png",
+		   "selectedIconPath": "static/tabBar/tab4active.png",
+		    "text": "我的"
+		}]
+	}
+}
