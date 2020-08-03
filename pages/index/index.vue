@@ -1,7 +1,7 @@
 <template>
 	<view class="index">
 		<view class="shop">
-			<view class="shop-name">
+			<view class="shop-name" @click="toEdit">
 				<view class="shop-title">
 					武汉路地点
 				</view>
@@ -135,6 +135,12 @@
 
 		},
 		methods: {
+			//跳转店铺信息
+			toEdit(){
+				uni.navigateTo({
+					url:'./edit.index'
+				})
+			},
              //跳转二维码页面
 			 toCode(){
 				 uni.navigateTo({

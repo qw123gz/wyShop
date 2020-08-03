@@ -7,6 +7,27 @@
 			}
 		},
 		{
+			"path": "pages/index/edit.index",
+			"style": {
+				"navigationBarTitleText": "店铺信息",
+				"app-plus": {
+				    "titleNView": {
+				        "buttons": [
+				            {
+				               "type":"",
+				               "text": "店铺信息",
+				               "fontSize": "16px",
+				               "color":"#0F624D",
+				               "float":"right",
+				               "right":"50px"
+							   
+				            }
+				        ]
+				    }
+				}
+			}
+		},
+		{
 			"path": "pages/index/code",
 			"style": {
 				"navigationBarTitleText": "积分收款码",
