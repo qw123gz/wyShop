@@ -1,7 +1,7 @@
 <template>
 	<view class="login">
 		<view class="login-name">
-			会员登录
+			店主登录
 		</view>
 		<view class="login-main">
 			<view class="login-input">
@@ -33,8 +33,8 @@
 		data() {
 			return {
 				uesrInfo: {
-					account: '',
-					password: ''
+					account: '15071307905',
+					password: '111111'
 				}
 			}
 		},
@@ -95,10 +95,8 @@
 					   if(res.status == 0){
 						   uni.setStorageSync('token',res.token)
 						   uni.setStorageSync('isLogin',true)
-						   uni.setStorageSync('uid',res.uid)
-						   uni.setStorageSync('logscore',res.logscore)
-						   uni.setStorageSync('encry_uid',res.encry_uid)
-						   uni.setStorageSync('invitation_code',res.invitation_code)
+						   uni.setStorageSync('storeid',res.storeid)
+						   uni.setStorageSync('encry_storeid',res.encry_storeid)
 						   this.$emit('login')
 						   uni.showToast({
 						   	title:'登录成功',

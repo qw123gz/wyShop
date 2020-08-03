@@ -3,14 +3,14 @@
 		<view class="shop">
 			<view class="shop-name" @click="toEdit">
 				<view class="shop-title">
-					武汉路地点
+					{{information.sname}}
 				</view>
 				<view class="shop-card">
-					(No.432642)
+					({{information.scode}})
 				</view>
 			</view>
 			<view class="shop-icon" @click="toCode">
-				<image src="/static/index/shopicon.png" mode=""></image>
+				<image :src="information.slogo" mode=""></image>
 			</view>
 		</view>
 		<view class="sales">
@@ -23,7 +23,7 @@
 						销售额(元)
 					</view>
 					<view class="yest-total-count">
-						12000
+						{{info.todaysincome || 0}}
 					</view>
 				</view>
 				<view class="yest-total two">
@@ -31,7 +31,7 @@
 						套餐
 					</view>
 					<view class="yest-total-count">
-						4
+						{{info.todayspageket || 0}}
 					</view>
 				</view>
 				<view class="yest-total">
@@ -39,7 +39,7 @@
 						积分
 					</view>
 					<view class="yest-total-count">
-						12000
+						{{info.todayscore || 0}}
 					</view>
 				</view>
 			</view>
@@ -52,7 +52,7 @@
 						销售额(元)
 					</view>
 					<view class="yest-total-count">
-						12000
+						{{info.yesterdayincome || 0}}
 					</view>
 				</view>
 				<view class="yest-total two">
@@ -60,7 +60,7 @@
 						套餐
 					</view>
 					<view class="yest-total-count">
-						4
+						{{info.yesterdaypageket || 0}}
 					</view>
 				</view>
 				<view class="yest-total">
@@ -68,7 +68,7 @@
 						积分
 					</view>
 					<view class="yest-total-count">
-						12000
+						{{info.yesterdayscore || 0}}
 					</view>
 				</view>
 			</view>
@@ -100,19 +100,19 @@
 				最新消息
 			</view>
 			<view class="notice-list">
-				<view class="list" v-for="(item,index) in 5" :key="index">
+				<view class="list" v-for="(item,index) in noticeList" :key="index">
 					<view class="list-img">
 						<image src="/static/index/login.png" mode=""></image>
 					</view>
 					<view class="list-main">
 						<view class="list-main-name">
-							200积分回收
+							{{item.mtitle}}
 						</view>
 						<view class="list-main-title">
-							2茶友xxx支付200元积分，本店的茶水费奖励将在12小时后发放。
+							{{item.mmessage}}
 						</view>
 						<view class="list-main-date">
-							05-20 12:02:12
+							{{item.mtitle}}
 						</view>
 					</view>
 				</view>
@@ -128,13 +128,72 @@
 		},
 		data() {
 			return {
-				noticeList:[]
+				noticeList:[],//消息列表
+				info:'',//积分信息
+				information:'',//门店信息
+				page:1,
+				pagesize:10,
+				isMore:false
 			}
 		},
 		onLoad() {
-
+			this.storeid = uni.getStorageSync('storeid')
+            this.getInter()//获取积分现金
+			this.getInformation()//获取门店信息
+			this.getNotice()//获取门店消息
+		},
+		onReachBottom() {
+			
 		},
 		methods: {
+			//获取门店最新消息通知
+			getNotice(){
+				let data = {
+					cmd:'getstorebestnewmess',
+					clientid:this.$clientid.index,
+					sign:this.$clientid.sign,
+					storeid:this.storeid
+				}
+				this.$post('',data).
+				  then((res)=>{
+					  console.log(res)
+					  if(res.status == 0){
+						  this.noticeList = res.response
+					  }
+				  })
+			},
+			//获取门店信息
+			getInformation(){
+				let data = {
+					cmd:'getstoreinfobystoreid',
+					clientid:this.$clientid.index,
+					sign:this.$clientid.sign,
+					storeid:this.storeid
+				}
+				this.$post('',data).
+				  then((res)=>{
+					  console.log(res)
+					  if(res.status == 0){
+						  this.information = res.detail
+					  }
+				  })
+			},
+			//获取门店的积分
+			getInter(){
+				let data = {
+					cmd:'getstorecashandscore',
+					clientid:this.$clientid.index,
+					sign:this.$clientid.sign,
+					storeid:this.storeid
+				}
+				this.$post('',data).
+				  then((res)=>{
+					  console.log(res)
+					  if(res.status == 0){
+						  this.info = res.detail
+					  }
+				  })
+			},
 			//跳转店铺信息
 			toEdit(){
 				uni.navigateTo({
@@ -143,8 +202,14 @@
 			},
              //跳转二维码页面
 			 toCode(){
+				 let info = {
+					 storeid:this.information.storeid,
+					 scode:this.information.scode,
+					 sname:this.information.sname,
+					 slogo:this.information.slogo
+				 }
 				 uni.navigateTo({
-				 	url:'./code'
+				 	url:'./code?info=' + JSON.stringify(info)
 				 })
 			 }
 		}

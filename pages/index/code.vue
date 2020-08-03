@@ -3,19 +3,19 @@
 		<view class="name">
 			<view class="main">
 				<view class="name-img">
-					<image src="/static/index/nameimg.png" mode=""></image>
+					<image :src="info.slogo" mode=""></image>
 				</view>
 				<view class="name-main">
 					<view class="name-title">
-						武汉绿地店绿地店
+						{{info.sname}}
 					</view>
 					<view class="name-card">
-						(NO.45786)
+						({{info.scode}})
 					</view>
 				</view>
 			</view>
 			<view class="code">
-				<image src="/static/index/scode.png" mode=""></image>
+				<image :src="infoCode" mode=""></image>
 			</view>
 			<view class="msg">
 				店铺收取积分时出示此二维码
@@ -31,14 +31,33 @@
 		},
 		data() {
 			return {
-				title: 'Hello'
+				storeid:'',
+				info:{},
+				infoCode:""
 			}
 		},
-		onLoad() {
-
+		onLoad(options) {
+			this.info = JSON.parse(options.info)
+			console.log(this.info)
+			this.storeid = this.info.storeid
+            this.getCode()
 		},
 		methods: {
-
+            getCode(){
+				let data = {
+					cmd:'getstoreqrcode',
+					clientid:this.$clientid.index,
+					sign:this.$clientid.sign,
+					storeid:this.storeid
+				}
+				this.$post('',data).
+				  then((res)=>{
+					  console.log(res)
+					  if(res.status == 0){
+						  this.infoCode = res.describe
+					  }
+				  })
+			}
 		}
 	}
 </script>

@@ -8,7 +8,7 @@ let clientid = {
 
 //域名配置
 // let domain = 'http://wyapi.zybaiyou.com/wyapiu/'
-let domain = 'https://api.51chafang.vip/wyapiu/'
+let domain = 'https://api.51chafang.vip/wyapis/'
 // if(process.env.NODE_ENV == 'development'){
 // 	domain = 'http://ttc.test/'
 // }
