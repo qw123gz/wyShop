@@ -1,31 +1,28 @@
 <template>
 	<view class="index">
-		<view class="main" style="background: url(/static/user/txbj.png);">
+		<view class="main" style="background: url(/static/user/txbj1.png);">
 			<view class="main-content">
 				<view class="main-name">
 					提现说明
 				</view>
-				<view class="main-type">
-					<text>账户总收益</text>
-				</view>
 				<view class="main-title">
-				    目前账户中所有的账户金额，等于已提现金额+可提现金额+提现审核中的金额
+					操作简单  到账快捷
 				</view>
 			</view>
-			<view class="main-content">
-				<view class="main-type">
-					<text>可提现金额</text>
+			<view class="say">
+				<view class="say-name">
+					可用余额
 				</view>
-				<view class="main-title">
-				    指账户中可以进行提现的所有金额
+				<view class="say-title">
+                     指账户中可以进行提现的所有金额 
 				</view>
 			</view>
-			<view class="main-content">
-				<view class="main-type">
-					<text>已提现金额</text>
+			<view class="say">
+				<view class="say-name">
+					总收益
 				</view>
-				<view class="main-title">
-				    已经提现成功并放款部分的金额
+				<view class="say-title">
+			          等于已提现金额+可提现金额+提现审核中的金额  
 				</view>
 			</view>
 			<view class="rule">
@@ -35,16 +32,17 @@
 				</view>
 				<view class="rule-type">
 					<view class="son"></view>
-					<view class="rule-type-title">单次提现金额最低1元，最高不超过10000元</view>
+					<view class="rule-type-title">当日提现金额最低1000元，最高不超过100000元 </view>
 				</view>
 				<view class="rule-type">
 					<view class="son"></view>
 					<view class="rule-type-title">账户中有待审核的提现申请时，不能发起提现申请</view>
 				</view>
 			</view>
-			<view class="know" @click="handleKnow">
-				我知道了
-			</view>
+			
+		</view>
+		<view class="know" @click="handleKnow">
+			<image src="/static/user/close.png" mode=""></image>
 		</view>
 		<view class="mask"  :catchtouchmove="true"></view>
 	</view>
@@ -80,9 +78,9 @@
 	  left: 0;
 	  bottom: 0;
 	  right: 0;
-	  background: #777777;
+	  background: #666666;
 	  z-index: 9000;
-	  opacity: 0.5;
+	  opacity: 0.6;
 	  overflow: hidden;
 	}
 	.index{
@@ -93,58 +91,75 @@
 			position: fixed;
 			z-index: 999999;
 			margin: 0 10%;
-			top:25%;
+			top:20%;
 			height:auto;
 			background:rgba(255,255,255,1);
 			border-radius:20upx;
 			background-size: 100% 100% !important;
 			padding: 0 50upx;
 			box-sizing: border-box;
+			
 			.main-content{
-				margin-top: 30upx;
+				width: 100%;
+				padding-top: 80upx;
+				margin-bottom: 140upx;
 				.main-name{
 					width: 100%;
-					height: 100upx;
-					line-height: 100upx;
-					font-size:46upx;
+					text-align: right;
+					font-size:44upx;
 					font-family:PingFang SC;
 					font-weight:bold;
-					color:rgba(15,98,77,1);
-				}
-				.main-type{
-					width: 100%;
-					height: auto;
-					text{
-						height:48upx;
-						padding: 0 10upx;
-						line-height: 48upx;
-						background:rgba(188,158,104,1);
-						border-radius:10upx;
-						font-size:28upx;
-						font-family:PingFang SC;
-						font-weight:500;
-						color:rgba(255,255,255,1);
-				
-					}
+					color:rgba(255,255,255,1);
+					height: 60upx;
+					line-height:60upx;
+					text-shadow:0px 3px 7px rgba(0,118,88,0.2);
 				}
 				.main-title{
+					width: 100%;
+					text-align: right;
 					font-size:28upx;
 					font-family:PingFang SC;
 					font-weight:500;
-					color:rgba(51,51,51,1);
+					color:rgba(255,255,255,1);
+					line-height:48upx;
+				}
+			}
+			.say{
+				width: 100%;
+				display: flex;
+				.say-name{
+					width: 130upx;
+					height:46upx;
+					line-height: 46upx;
+					text-align: center;
+					background:rgba(228,195,125,1);
+					border-radius:4upx;
+					font-size:28upx;
+					font-family:PingFang SC;
+					font-weight:500;
+					color:rgba(255,255,255,1);
+				}
+				.say-title{
+					flex: 1;
+					font-size:28upx;
+					font-family:PingFang SC;
+					font-weight:500;
+					color:rgba(49,48,48,1);
+					line-height:48upx;
+					margin-left: 30upx;
 				}
 			}
 			.rule{
 				width: 100%;
 				margin-top:50upx;
-				
+				padding-bottom: 50upx;
 				.rule-type{
 					display: flex;
-					margin-top: 25upx;
+					margin-top: 15upx;
 					.son{
 						width:10upx;
 						height:10upx;
-						background:rgba(15,98,77,1);
+						background:#06C795;
 						border-radius:50%;
 						position: relative;
 						top:10upx;
@@ -161,15 +176,21 @@
 				}
 
 			}
-			.know{
+			
+		}
+		.know{
+			position: fixed;
+			z-index: 999999;
+			bottom: 240upx;
+			left: 46%;
+			width: 56upx;
+			height: 56upx;
+			margin: 50upx auto;
+			image{
 				width: 100%;
-				text-align: center;
-				margin: 40upx 0;
-				font-size:30upx;
-				font-family:PingFang SC;
-				font-weight:500;
-				color:rgba(15,98,77,1);
+				height: 100%;
 			}
+			
 		}
 	}
 </style>
