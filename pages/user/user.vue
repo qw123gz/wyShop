@@ -48,7 +48,7 @@
 		</view>
 		<!-- tab -->
 		<view class="tab">
-			<view class="tab-item">
+			<view class="tab-item" @click="toCash">
 				<view class="item-icon">
 					<image src="/static/user/utab1.png" mode=""></image>
 				</view>
@@ -56,7 +56,7 @@
 					现金流水
 				</view>
 			</view>
-			<view class="tab-item">
+			<view class="tab-item" @click="toSetMeal">
 				<view class="item-icon">
 					<image src="/static/user/utab2.png" mode=""></image>
 				</view>
@@ -96,7 +96,7 @@
 				<image src="/static/user/yjt.png" mode=""></image>
 			</view>
 		</view>
-		<view class="ul-type"  @click="toMyTeam">
+		<view class="ul-type"  @click="callPhone">
 			<view class="type-icon">
 				<image src="/static/user/dh.png" mode=""></image>
 			</view>
@@ -147,6 +147,24 @@
 
 		},
 		methods: {
+			//点击现金流水
+			toCash(){
+				uni.navigateTo({
+					url:'./cash/cash'
+				})
+			},
+			//点击套餐
+			toSetMeal(){
+				uni.navigateTo({
+					url:'./set.meal/set.meal'
+				})
+			},
+			//拨打手机号
+			callPhone(){
+				uni.makePhoneCall({
+					phoneNumber:'15071307905'
+				})
+			},
 			//点击关于app
 			toMyApp(){
 				console.log(1)
@@ -166,7 +184,9 @@
 			},
             //点击去提现
 			toReflect(){
-				
+				uni.navigateTo({
+					url:'./reflect/reflect.index'
+				})
 			},
 		}
 	}

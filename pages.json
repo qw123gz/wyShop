@@ -68,7 +68,13 @@
 				"navigationBarBackgroundColor":"#FFFFFF"
 			}
 		},
-
+        {
+			"path": "pages/user/cash/cash",
+			"style": {
+				"navigationBarTitleText": "现金流水记录",
+				"navigationBarBackgroundColor":"#FFFFFF"
+			}
+		},
 		{
 			"path": "pages/user/my.app/my.app",
 			"style": {
@@ -81,6 +87,85 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationBarBackgroundColor":"#FFFFFF"
+			}
+		},
+		{
+			"path": "pages/user/reflect/reflect.index",
+			"style": {
+				"navigationBarTitleText": "提现",
+				"app-plus": {
+				    "titleNView": {
+				        "buttons": [
+				            {
+				               "type":"",
+				               "text": "提现记录",
+				               "fontSize": "16px",
+				               "color":"#0F624D",
+				               "float":"right",
+				               "right":"28upx"
+							   
+				            }
+				        ]
+				    }
+				}
+				
+			}
+		},
+		{
+			"path": "pages/user/reflect/reflect.recording",
+			"style": {
+				"navigationBarTitleText": "提现记录"
+			}
+		},
+		{
+			"path": "pages/user/reflect/bank.one",
+			"style": {
+				"navigationBarTitleText": "银行卡"
+			}
+		},
+		{
+			"path": "pages/user/reflect/bank.two",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/user/reflect/bank.three",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/user/reflect/bank.four",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/user/set.meal/set.meal",
+			"style": {
+				"navigationBarTitleText": "套餐销售记录"
+			}
+		},
+		{
+			"path": "pages/user/reflect/bank.five",
+			"style": {
+				"navigationBarTitleText": "提现详情",
+				"app-plus": {
+				    "titleNView": {
+				        "buttons": [
+				            {
+				               "type":"reacording",
+				               "text": "提现记录",
+				               "fontSize": "16px",
+				               "color":"#06C795",
+				               "float":"right",
+				               "right":"28px",
+							   "width":"100px"
+				            }
+				        ]
+				    }
+				}
 			}
 		},
 		{
