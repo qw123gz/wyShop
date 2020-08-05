@@ -17,6 +17,10 @@
 		onLoad(options) {
 			console.log(options)
 			this.t = options.t
+			let title = this.t == 'yhxy' ? '用户协议' : '隐私政策'
+			uni.setNavigationBarTitle({
+			  title:title
+			})
 			this.getContent()
 			// console.log(this.url)
 		},

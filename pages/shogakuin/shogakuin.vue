@@ -2,8 +2,9 @@
 	<view class="index">
 		<view class="top-ban">
 			<view class="ban-bg">
-				商学院
+				店主学院
 			</view>
+
 			<view class="banner">
 				<swiper class="swiper" indicator-dots=true autoplay=true interval=3000>
 					<swiper-item v-for="(item,index) in bannerList" :key="index">
@@ -11,16 +12,29 @@
 					</swiper-item>
 				</swiper>
 			</view>
+			<!-- 导航栏，跳转不同页面路由 -->
+			<view class="nav-menu">
+				<view v-for="(item,index) in navList" :key="index">
+					<view @click="toItem(JSON.stringify(item))" class="menu-item">
+						<view class="item-img">
+							<image :src="item.icon" mode=""></image>
+						</view>
+						<view class="item-name">
+							{{item.mtitle}}
+						</view>
+					</view>
+				</view>
+			</view>
 		</view>
 
-		<view class="title">茶友学院</view>
+		<view class="title">最新发布</view>
 		<view class="main-box">
 			<view v-for="(item,index) in dataList" :key="index">
 				<view  @click="toItemDetail(JSON.stringify(item))"   class="items">
 					
 					<view class="texts">
 						<view class="text-title">
-							{{item.describe}}
+							{{item.title}}
 						</view>
 						<view class="action">
 							<view class="text-type">
@@ -75,12 +89,30 @@
 				isMore:false,
 				code:'mcollege11',
 				wk:'',
-				bannerList:[]
+				bannerList:[],
+				navList: [],
+				navData: [{
+						name: "无忧茶坊",
+						url: "tea.house.one",
+						img: '/static/teaHouse/wy.png'
+					},
+					{
+						name: "媒体报道",
+						url: "tea.house.two",
+						img: '/static/teaHouse/mt.png'
+					},
+					{
+						name: "分店地图",
+						url: "tea.house.three",
+						img: '/static/teaHouse/dt.png'
+					}
+				],
 			}
 		},
 		onLoad() {
 			this.getNews()
 			this.getBanner()
+			this.getNewData()
 		},
 		onReachBottom() {
 			console.log(this.isMore)
@@ -89,6 +121,24 @@
 			}
 		},
 		methods:{
+			//获取分类导航栏
+			getNewData() {
+				let data = {
+					cmd: 'getmenu',
+					clientid: this.$clientid.index,
+					sign: this.$clientid.sign,
+					mcode: 'scollege1'
+				}
+				this.$post('', data)
+					.then((res) => {
+						if (res.status == 0) {
+							this.navList = res.response
+						} else {
+							this.navList = this.navData
+							
+						}
+					})
+			},
 			//获取banner
 			getBanner() {
 				let data = {
@@ -117,13 +167,12 @@
 			//获取无忧咨询
 			getNews(){
 				let data = {
-					cmd: 'getinfobycustomcode',
+					cmd: 'getinfobestnew',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					pagesize:this.pagesize,
 					page:this.page,
-					wk:this.wk,
-					code:this.code
+					wk:this.wk
 				}
 				this.$getNewsList(data).
 				then((res) => {
@@ -156,28 +205,52 @@
 		width: 100%;
 		.top-ban{
 			width: 100%;
-			height: 414upx;
 			background: #fff;
 			position: relative;
 			.ban-bg{
 				width: 100%;
-				height: 304upx;
-				background: #0F624D;
+				height: 60upx;
+				text-align: center;
+				line-height: 60upx;
 				font-size:34upx;
 				font-family:PingFang SC;
 				font-weight:bold;
-				color:rgba(255,255,255,1);
-				padding:60upx 0 0 30upx;
-				box-sizing: border-box;
+				color:rgba(49,48,48,1);
+			}
+			.nav-menu {
+				margin: 0 32upx;
+				padding: 40upx 20upx;
+				display: flex;
+				justify-content: space-between;
+			
+				.menu-item {
+					padding: 5px;
+					.item-img {
+						width: 130upx;
+						height: 130upx;
+						margin: 0 auto;
+			
+						image {
+							width: 100%;
+							height: 100%;
+						}
+					}
+			
+					.item-name {
+						width: 130upx;
+						text-align: center;
+						margin-top: 20upx;
+						font-size: 24upx;
+						font-family: PingFang SC;
+						font-weight: 500;
+						color: rgba(102, 102, 102, 1);
+					}
+				}
 			}
 			.banner{
 				width: 94%;
 				height:280upx;
-				margin: auto;
-				
-				position: absolute;
-				top:144upx;
-				left: 3%;
+				margin:50upx auto;
 				.sip{
 					border-radius:20upx;
 					width: 100%;
@@ -198,7 +271,7 @@
 		color: #333333FF;
 		font-size: 34upx;
 		font-weight: bold;
-		margin-top: 50upx;
+		// margin-top: 50upx;
 	}
 
 	.main-box {

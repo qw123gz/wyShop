@@ -64,7 +64,7 @@
 					套餐销售
 				</view>
 			</view>
-			<view class="tab-item">
+			<view class="tab-item" @click="toIntegtral">
 				<view class="item-icon">
 					<image src="/static/user/utab3.png" mode=""></image>
 				</view>
@@ -72,7 +72,7 @@
 					积分回收
 				</view>
 			</view>
-			<view class="tab-item">
+			<view class="tab-item" @click="toCode">
 				<view class="item-icon">
 					<image src="/static/user/utab4.png" mode=""></image>
 				</view>
@@ -145,8 +145,20 @@
 		},
 		onLoad() {
 
-		},
+		}, 
 		methods: {
+			//点击积分收款
+			toCode(){
+				uni.navigateTo({
+					url:'../index/code'
+				})
+			},
+			//点击积分回收
+			toIntegtral(){
+				uni.navigateTo({
+					url:'./integral/integral'
+				})
+			},
 			//点击现金流水
 			toCash(){
 				uni.navigateTo({

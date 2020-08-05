@@ -188,11 +188,7 @@
 							this.navList = res.response
 						} else {
 							this.navList = this.navData
-							uni.showToast({
-								title: '网络链接失败...',
-								icon: 'none',
-								duration: 1000
-							})
+							
 						}
 					})
 			}

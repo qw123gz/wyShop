@@ -1,25 +1,31 @@
 <template>
 	<view class="index">
-		<view class="" v-if="dataList.length>0">
+		<view class=""  v-if="dataList.length>0">
 			<view class="item" v-for="(item,index) in 5" :key="index">
 				<view class="item-top">
 					<view class="item-top-img">
-						<image src="/static/user/utab4.png" mode=""></image>
+						<image src="/static/user/rw.png" mode=""></image>
 					</view>
 					<view class="item-top-main">
 						<view class="main-name">
 							<view class="name">
-								无忧茶圣套餐 × <text>1</text>
+								张三 18987985627
 							</view>
-							<!-- <view class="label">
-								已送出
-							</view> -->
-							<view class="label2" @click="send">
-								送出
+							<view class="count">
+								200
 							</view>
 						</view>
 						<view class="main-price">
-							¥ 3000
+							<view class="name">
+								07-02 09:26:48
+							</view>
+							<!-- <view class="label">
+								已退还
+							</view> -->
+							<view class="label2" @click="send">
+								退积分
+							</view>
+							
 						</view>
 					</view>
 				</view>
@@ -43,7 +49,7 @@
 				提示
 			</view>
 			<view class="dilog-title">
-				是否确认已送出套餐？
+				是否确认退还积分给张三？
 			</view>
 			<view class="dilog-btn">
 				<view class="btn-no" @click="cancel">
@@ -56,7 +62,7 @@
 		</view>
 		<!-- 遮罩层 -->
 		<view class="mask" v-if="dilog"  :catchtouchmove="true"></view>
-		<NoRecord v-if="dataList.length == 0" description="暂无套餐销售记录"></NoRecord>
+		<NoRecord v-if="dataList.length == 0" description="暂无积分回收记录"></NoRecord>
 		<noMore v-if="!isMore && dataList.length > 0"></noMore>
 	</view>
 </template>
@@ -152,37 +158,60 @@
 				border-bottom: 1px solid #E4E4E4;
 
 				.item-top-img {
-					flex-basis: 120upx;
-					height: 120upx;
-					border-radius: 10upx;
-
+					flex-basis: 34upx;
+					height: 34upx;
 					image {
-						width: 120upx;
-						height: 120upx;
+						width: 34upx;
+						height: 34upx;
 					}
 				}
 
 				.item-top-main {
-					flex-basis: 550upx;
+					flex: 1;
 					height: 120upx;
 					position: relative;
 					margin-left: 20upx;
 
 					.main-name {
-						width: 550upx;
+						width: 100%;
 						display: flex;
 
 						.name {
-							flex-basis: 430upx;
-							font-size: 32upx;
+							flex: 1;
+							font-size: 30upx;
 							font-family: PingFang SC;
-							font-weight: bold;
+							font-weight: 500;
 							color: rgba(49, 48, 48, 1);
 							overflow: hidden;
 							text-overflow: ellipsis;
 							white-space: nowrap;
 						}
+                        .count{
+							flex-basis: 150upx;
+							text-align: right;
+							font-size:36upx;
+							font-family:DIN 1451 Mittelschrift;
+							font-weight:400;
+							color:rgba(49,48,48,1);
+						} 
+						
+					}
 
+					.main-price {
+						width: 100%;
+						margin-top: 20upx;
+						display: flex;
+						.name {
+							flex: 1;
+							font-size:24upx;
+							font-family:PingFang SC;
+							font-weight:500;
+							color:rgba(145,146,151,1);
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+						
 						.label {
 							flex-basis: 120upx;
 							font-size: 30upx;
@@ -190,7 +219,7 @@
 							font-weight: 500;
 							color: rgba(49, 48, 48, 1);
 						}
-
+						
 						.label2 {
 							flex-basis: 120upx;
 							height: 54upx;
@@ -203,15 +232,6 @@
 							font-weight: 500;
 							color: rgba(255, 255, 255, 1);
 						}
-					}
-
-					.main-price {
-						position: absolute;
-						bottom: 0;
-						font-size: 36upx;
-						font-family: DIN 1451 Mittelschrift;
-						font-weight: 400;
-						color: rgba(6, 199, 149, 1);
 					}
 				}
 			}
