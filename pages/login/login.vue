@@ -17,8 +17,8 @@
 				登录
 			</view>
 			<view class="login-reset">
-				<text @click="toReset" class="password">忘记密码?</text>
-				<text @click="toRegister" class="register">去注册</text>
+				<!-- <text @click="toReset" class="password">忘记密码?</text> -->
+				<text @click="toReset" class="register">忘记密码?</text>
 			</view>
 		</view>
 	</view>
@@ -171,7 +171,7 @@
 				height: 88upx;
 				text-align: center;
 				line-height: 88upx;
-				background: rgba(15, 98, 77, 1);
+				background: rgba(6,199,149,1);;
 				border-radius: 44upx;
 				font-size: 30upx;
 				font-family: PingFang SC;
@@ -181,7 +181,9 @@
 			}
 
 			.btn-no {
-				opacity: 0.5;
+				// opacity: 0.5;
+				color:rgba(206,206,206,1);
+				background:rgba(255,255,255,1)
 			}
 
 			.login-reset {
@@ -204,7 +206,7 @@
 					font-size: 26upx;
 					font-family: PingFang SC;
 					font-weight: 500;
-					color: rgba(51, 51, 51, 1);
+					color:rgba(6,199,149,1)
 				}
 			}
 		}

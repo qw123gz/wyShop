@@ -1,16 +1,16 @@
 <template>
 	<view class="index">
 		<!-- 头部店名 -->
-		<view class="shop">
+		<view class="shop" @click="edit">
 			<view class="shop-logo">
 				<image src="/static/index/cf.png" mode=""></image>
 			</view>
 			<view class="shop-main">
 				<view class="shop-name">
-					武汉陆地点
+					{{information.sname}}
 				</view>
 				<view class="shop-card">
-					(NO.45786)
+					({{information.scode}})
 				</view>
 			</view>
 			<view class="shop-right">
@@ -25,7 +25,7 @@
 						总收益(元)
 					</view>
 					<view class="money-price">
-						1365.90
+						{{integral.total_revenue}}
 					</view>
 				</view>
 				<view class="money-total" @click="changeReflect">
@@ -36,7 +36,7 @@
 						</text>
 					</view>
 					<view class="money-price">
-						1365.90
+						{{integral.withdrawable}}
 					</view>
 				</view>
 			</view>
@@ -129,6 +129,30 @@
 		</view> 
 		<!-- 体现说明 -->
 		<reflect v-if="isShowReflect" @changeReflect="changeReflect"></reflect>
+		<!-- 弹窗提示是否退出积分 -->
+		<view class="dilog" v-if="dilog">
+			<view class="dilog-name">
+				是否拨打客服电话
+			</view>
+			<view class="dilog-title">
+				{{phone}}
+			</view>
+			<view class="dilog-btn">
+				<view class="btn-box">
+					<view class="btn-no" >
+						<image src="/static/user/call.png" mode=""></image>
+					</view>
+					<view class="btn-yes" @click="sendPhone">
+						立即拨打
+					</view>
+				</view>
+			</view>
+			<view class="close" @click="callPhone">
+				<image src="/static/user/close.png" mode=""></image>
+			</view>
+		</view>
+		<!-- 遮罩层 -->
+		<view class="mask" v-if="dilog"  :catchtouchmove="true"></view>
 	</view>
 </template>
 
@@ -140,17 +164,77 @@
 		},
 		data() {
 			return {
-				isShowReflect:false
+				isShowReflect:false,
+				storeid:'',
+				integral:{},
+				dilog:false,//联系客服
+				phone:'',//客服电话
+				information:'',//门店信息
 			}
 		},
 		onLoad() {
-
+             this.storeid = uni.getStorageSync('storeid')
+			 this.getInterga()
+			 this.getPhone()
+			 this.getInformation()//获取门店信息
 		}, 
 		methods: {
+			//获取门店信息
+			getInformation(){
+				let data = {
+					cmd:'getstoreinfobystoreid',
+					clientid:this.$clientid.index,
+					sign:this.$clientid.sign,
+					storeid:this.storeid
+				}
+				this.$post('',data).
+				  then((res)=>{
+					  console.log(res)
+					  if(res.status == 0){
+						  this.information = res.detail
+					  }
+				  })
+			},
+			//点击头部信息
+			edit(){
+				uni.navigateTo({
+					url:'./edit/edit.information'
+				})		
+			},
+			//退出登录
+			logout(){
+				uni.navigateTo({
+					url:'../login/login'
+				})
+			},
+			//获取积分收益
+			getInterga(){
+				let data = {
+					cmd: 'getstoreaccountcash',
+					clientid: this.$clientid.index,
+					sign: this.$clientid.sign,
+					storeid:this.storeid
+				}
+				this.$post('', data).
+				then((res) => {
+					// console.log(res)
+					if (res.status == 0) {
+						this.integral = res.detail
+					} else {
+				        
+					}
+				})
+			},
 			//点击积分收款
 			toCode(){
+				let info = {
+					storeid:this.information.storeid,
+					scode:this.information.scode,
+					sname:this.information.sname,
+					slogo:this.information.slogo
+				}
 				uni.navigateTo({
-					url:'../index/code'
+					url:'../index/code?info=' + JSON.stringify(info)
 				})
 			},
 			//点击积分回收
@@ -171,10 +255,31 @@
 					url:'./set.meal/set.meal'
 				})
 			},
+            //获取客服联系电话
+			getPhone(){
+				let data = {
+					cmd: 'gethotline',
+					clientid: this.$clientid.index,
+					sign: this.$clientid.sign
+				}
+				this.$post('', data).
+				then((res) => {
+					// console.log(res)
+					if (res.status == 0) {
+						this.phone = res.detail.txt
+					} else {
+				        
+					}
+				})
+			},
 			//拨打手机号
 			callPhone(){
+				this.dilog = !this.dilog
+				
+			},
+			sendPhone(){
 				uni.makePhoneCall({
-					phoneNumber:'15071307905'
+					phoneNumber:this.phone
 				})
 			},
 			//点击关于app
@@ -421,7 +526,112 @@
 		
 	}
 
-
+		/* 弹出层 */
+		.mask{
+		  width: 100%;
+		  height: 100vh;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  bottom: 0;
+		  right: 0;
+		  background: #666666;
+		  z-index: 10;
+		  opacity: 0.6;
+		  overflow: hidden;
+		}
+		.dilog{
+			width:62%;
+			height:304upx;
+			background:rgba(255,255,255,1);
+			border-radius:20upx;
+			position: fixed;
+			z-index: 100;
+			top:450upx;
+			left: 19%;
+			.dilog-name{
+				width: 100%;
+				text-align: center;
+				padding: 30upx 0;
+				font-size:32upx;
+				font-family:PingFang SC;
+				font-weight:bold;
+				color:rgba(49,48,48,1);
+			}
+			.dilog-title{
+				width: 100%;
+				text-align: center;
+				// padding: 30upx 0;
+				font-size:40upx;
+				font-family:PingFang SC;
+				font-weight:bold;
+				color:rgba(228,195,125,1);
+			}
+			.dilog-btn{
+				width: 100%;
+				padding: 0 30upx;
+				box-sizing: border-box;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 40upx;
+				.btn-box{
+					width:300upx;
+					height:74upx;
+					padding-left: 50upx;
+					display: flex;
+					box-sizing: border-box;
+					background:rgba(6,199,149,1);
+					border-radius:39upx;
+					.btn-no{
+						flex-basis: 50upx;
+						height: 74upx;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						image{
+							width: 32upx;
+							height: 32upx;
+						}
+					}
+					.btn-yes{
+						flex: 1;
+						height: 74upx;
+						line-height: 74upx;
+						text-align: left;
+						font-size:32upx;
+						font-family:PingFang SC;
+						font-weight:bold;
+						color:rgba(255,255,255,1);
+					}
+				}
+				.btn-yes{
+					width:235upx;
+					text-align: center;
+					height:74upx;
+					border-radius:37upx;
+					line-height: 74upx;
+					background:rgba(6,199,149,1);
+					font-size:32upx;
+					font-family:PingFang SC;
+					font-weight:500;
+					color:rgba(255,255,255,1);
+				}
+			}
+			.close{
+				position: absolute;
+				z-index: 999;
+				width: 56upx;
+				height: 56upx;
+				top:370upx;
+				left:200upx;
+				image{
+					width: 56upx;
+					height: 56upx;
+				}
+				
+			}
+		}
 
 	}
 

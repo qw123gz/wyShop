@@ -1,20 +1,20 @@
 <template>
 	<view class="index">
 		<view class="main" v-if="dataList.length>0">
-			<view class="item" v-for="(item,index) in 5" :key="index">
+			<view class="item" v-for="(item,index) in dataList" :key="index">
 				<view class="item-label">
 					<view class="label-name">
-						套餐分成
+						{{item.label}}
 					</view>
-					<view class="label-count">
-						+200
+					<view class="label-count" v-if="item.income_and_expenditure == 0">
+						+{{item.fee}}
 					</view>
-					<!-- <view class="label-count active">
-						+200
-					</view> -->
+					<view class="label-count active"  v-if="item.income_and_expenditure == 1">
+						-{{item.fee}}
+					</view>
 				</view>
 				<view class="item-date">
-					07-02 09:26:48
+					{{item.createtime}}
 				</view>
 			</view>
 		</view>
@@ -37,7 +37,7 @@
 				pagesize: 10,
 				page: 1,
 				isMore: false,
-				uid: ''
+				storeid: '',
 			}
 		},
 		onReachBottom() {
@@ -47,18 +47,18 @@
 			}
 		},
 		onLoad() {
-			this.uid = uni.getStorageSync('uid')
+			this.storeid = uni.getStorageSync('storeid')
 			this.getShopList()
 		},
 		methods: {
 			getShopList() {
 				let data = {
-					cmd: 'getuserwithdraw',
+					cmd: 'getstorecashs',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					page: this.page,
 					pagesize: this.pagesize,
-					uid: this.uid
+					storeid: this.storeid
 				}
 				this.$post('', data).then((res) => {
 						console.log(res)

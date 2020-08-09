@@ -17,7 +17,7 @@
 				<image src="/static/user/yjt.png" mode=""></image>
 			</view>
 		</view>
-		<view class="type" @click="toInfition('yhxy')">
+		<view class="type" @click="toInfition('yhxy_s')">
 			<view class="type-name">
 				用户协议
 			</view>
@@ -25,7 +25,7 @@
 				<image src="/static/user/yjt.png" mode=""></image>
 			</view>
 		</view>
-		<view   class="type" @click="toInfition('yszc')">
+		<view   class="type" @click="toInfition('yszc_s')">
 			<view class="type-name">
 				隐私政策
 			</view>
@@ -55,7 +55,7 @@
 				<view class="btn-no" @click="closeDilog">
 					暂不更新
 				</view>
-				<view class="btn-yes">
+				<view class="btn-yes" @click="downloadNew">
 					立即更新
 				</view>
 			</view>
@@ -73,16 +73,35 @@
 			return {
 				version : '1.0.0',
 				integral:{},
-				dilog:false
+				dilog:false,
+				upversion:100,//当前版本号
+				newUpversion:'',//最新版本号
+				isUpversiion:false
 			}
 		},
 		onLoad() {
 			this.getVersion()
 		},
-		methods:{
+		methods:{ 
+			//downloadNew点击下载新版本
+			downloadNew(){
+				window.location.href = 'https://51chafang.vip/?page_id=103'
+			},
+			//点击检查更新
+			upVersion(){
+				if(this.isUpversiion){
+					this.dilog = true
+				}else{
+					uni.showToast({
+						title:'已经是最新版本',
+						icon:'none',
+						duration:1500
+					})
+				}
+			},
 			//点击暂不更新
 			closeDilog(){
-				this.diolg = !this.dilog
+				this.dilog = !this.dilog
 			},
 			//跳转协议页面
 			toInfition(e){
@@ -105,6 +124,8 @@
 					// console.log(res)
 					if (res.status == 0) {
 						this.integral = res.detail
+						this.newUpversion = Number(res.detail.upversion)
+						this.isUpversiion = this.upversion < this.newUpversion ? true :false
 					} else {
 				        
 					}

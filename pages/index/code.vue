@@ -25,6 +25,7 @@
 </template>
 
 <script>
+	import QR from '@/servers/base/wxqrcode.js'
 	export default {
 		components:{
 			
@@ -41,6 +42,7 @@
 			console.log(this.info)
 			this.storeid = this.info.storeid
             this.getCode()
+			this.drawImg()
 		},
 		methods: {
             getCode(){
@@ -54,10 +56,22 @@
 				  then((res)=>{
 					  console.log(res)
 					  if(res.status == 0){
-						  this.infoCode = res.describe
+						  // this.infoCode = res.describe
 					  }
 				  })
-			}
+			},
+			//绘制二维码
+			  drawImg: function () {
+				console.log(this.info.storeid)
+				let encry_storeid = uni.getStorageSync('encry_storeid')
+			    var imgData = QR.createQrCodeImg(encry_storeid, {
+			      typeNumber: 4,
+			      errorCorrectLevel: 'M',
+			      size: 500
+			    })
+			    console.log(this.infoCode)
+				this.infoCode = imgData
+			  },
 		}
 	}
 </script>

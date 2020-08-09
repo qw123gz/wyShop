@@ -9,17 +9,17 @@
 					<view class="item-top-main">
 						<view class="main-name">
 							<view class="name">
-								无忧茶圣套餐 × <text>1</text>
+								{{item.package_name}} × <text>{{item.ordernum}}</text>
 							</view>
-							<!-- <view class="label">
+							<view class="label" v-if="item.is_send == 1">
 								已送出
-							</view> -->
-							<view class="label2" @click="send">
+							</view>
+							<view class="label2" @click="send"  v-if="item.is_send == 0">
 								送出
 							</view>
 						</view>
 						<view class="main-price">
-							¥ 3000
+							¥ {{item.fee}}
 						</view>
 					</view>
 				</view>
@@ -28,10 +28,10 @@
 						<image src="/static/user/rw.png" mode=""></image>
 					</view>
 					<view class="item-bot-name">
-						张三 18987985627
+						{{item.username}} {{item.uphone}} 
 					</view>
 					<view class="item-bot-date">
-						07-02 09:26:48
+						{{item.createtime1}}
 					</view>
 				</view>
 				<view class="br20"></view>
@@ -75,12 +75,12 @@
 				pagesize: 10,
 				page: 1,
 				isMore: false,
-				uid: '',
+				storeid: '',
 				dilog:false
 			}
 		},
 		onLoad() {
-			this.uid = uni.getStorageSync('uid')
+			this.storeid = uni.getStorageSync('storeid')
 			this.getShopList()
 		},
 		onReachBottom() {
@@ -104,12 +104,12 @@
 			},
 			getShopList() {
 				let data = {
-					cmd: 'getuserwithdraw',
+					cmd: 'getstoresales',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					page: this.page,
 					pagesize: this.pagesize,
-					uid: this.uid
+					storeid: this.storeid
 				}
 				this.$post('', data).then((res) => {
 						console.log(res)

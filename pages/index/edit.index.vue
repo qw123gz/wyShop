@@ -6,7 +6,7 @@
 					联系人
 				</view>
 				<view class="item-title">
-					张三
+					{{info.scontacts}}
 				</view>
 			</view>
 			<view class="item">
@@ -14,7 +14,7 @@
 					电话
 				</view>
 				<view class="item-title">
-					027-89898989
+					{{info.sphone}}
 				</view>
 			</view>
 			<view class="item">
@@ -22,7 +22,7 @@
 					地址
 				</view>
 				<view class="item-title">
-					武汉市洪山区和平大道111号
+					{{info.saddress}}
 				</view>
 			</view>
 			<view class="item-date">
@@ -63,7 +63,7 @@
 					店主
 				</view>
 				<view class="item-title">
-					张三
+					{{info.scontacts}}
 				</view>
 			</view>
 			<view class="item">
@@ -71,7 +71,7 @@
 					账号
 				</view>
 				<view class="item-title">
-					18989898798
+					{{info.scode}}
 				</view>
 			</view>
 			<view class="item">
@@ -79,7 +79,7 @@
 					店铺名称
 				</view>
 				<view class="item-title">
-					无忧茶坊绿地店
+					{{info.sname}}
 				</view>
 			</view>
 			<view class="item">
@@ -87,7 +87,7 @@
 					店铺编号
 				</view>
 				<view class="item-title">
-					No.432642
+					{{info.scode}}
 				</view>
 			</view>
 			<view class="item">
@@ -109,11 +109,19 @@
 		},
 		data() {
 			return {
-				title: 'Hello'
+				info:''
 			}
 		},
-		onLoad() {
-
+		onNavigationBarButtonTap(e) {
+			console.log(e)
+			uni.navigateTo({
+				url:'../user/edit/edit.information'
+			})
+		},
+		onLoad(options) {
+			console.log(options)
+             let info = JSON.parse(options.info)
+			 this.info = info 
 		},
 		methods: {
 

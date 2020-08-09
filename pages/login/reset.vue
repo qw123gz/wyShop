@@ -210,7 +210,7 @@
 					return
 				}else{
 					this.disabled = true
-					this.phoneTitle = this.countdown +'s'
+					this.phoneTitle = '已发送(' + this.countdown +')s'
 					this.countdown --
 				}
 				setTimeout(()=>{
@@ -268,12 +268,12 @@
 					font-size:34upx;
 					font-family:PingFang SC;
 					font-weight:500;
-					color:rgba(15,98,77,1);
+					color:rgba(6,199,149,1);
 					.code-no{
 						font-size:34upx;
 						font-family:PingFang SC;
 						font-weight:500;
-						color:rgba(206,206,206,1);
+						color:rgba(49,48,48,1);
 					}
 				}
 			}
@@ -299,7 +299,7 @@
 				height: 88upx;
 				text-align: center;
 				line-height: 88upx;
-				background: rgba(15, 98, 77, 1);
+				background: rgba(6,199,149,1);;
 				border-radius: 44upx;
 				font-size: 30upx;
 				font-family: PingFang SC;
@@ -309,7 +309,9 @@
 			}
 
 			.btn-no {
-				opacity: 0.5;
+				// opacity: 0.5;
+				color:rgba(206,206,206,1);
+				background:rgba(246,246,246,1);
 			}
 
 		}
