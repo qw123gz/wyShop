@@ -73,7 +73,29 @@
 					})
 					return false
 				}
-				this.next()
+				this.getBankName(this.bankInfo.bankCode)
+			},
+			//获取银行卡所属信息
+			getBankName(cardno){
+				let data = {
+					cmd:'getstorebankinfo',
+					clientid:this.$clientid.index,
+					sign:this.$clientid.sign,
+					cardno:cardno
+				}
+				this.$post('',data)
+				   .then((res)=>{
+					   if(res.status == 0){
+						   this.bankInfo.bankName = res.detail.ofbank
+						   this.next()
+					   }else{
+						   uni.showToast({
+						   	  title:res.msg,
+						   	  icon:'none',
+						   	  duration:1000
+						   })
+					   }
+				   })
 			},
 			//提交信息
 			next(){

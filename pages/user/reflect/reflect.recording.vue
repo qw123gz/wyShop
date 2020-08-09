@@ -40,11 +40,11 @@
 				pagesize: 10,
 				page: 1,
 				isMore: false,
-				uid: ''
+				storeid: ''
 			}
 		},
 		onLoad() {
-              this.uid = uni.getStorageSync('uid')
+              this.storeid = uni.getStorageSync('storeid')
 			  this.getShopList()
 		},
 		onReachBottom() {
@@ -56,12 +56,12 @@
 		methods: {
 			getShopList() {
 				let data = {
-					cmd: 'getuserwithdraw',
+					cmd: 'getstorewithdraw',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					page: this.page,
 					pagesize: this.pagesize,
-					uid:this.uid
+					storeid:this.storeid
 				}
 				this.$post('',data).then((res) => {
 						console.log(res)

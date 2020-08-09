@@ -9,7 +9,7 @@
 					({{information.scode}})
 				</view>
 			</view>
-			<view class="shop-icon" @click="toCode">
+			<view class="shop-icon" >
 				<image :src="information.slogo" mode=""></image>
 			</view>
 		</view>
@@ -73,7 +73,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="code">
+		<view class="code" @click="toCode">
 			<view class="code-title">
 				<view class="code-title-name">
 					积分收款码
@@ -197,7 +197,7 @@
 			//跳转店铺信息
 			toEdit(){
 				uni.navigateTo({
-					url:'./edit.index'
+					url:'./edit.index?info=' + JSON.stringify(this.information)
 				})
 			},
              //跳转二维码页面

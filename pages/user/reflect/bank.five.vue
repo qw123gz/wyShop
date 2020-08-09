@@ -20,7 +20,8 @@
 			<view class="bank-main">
 				<view class="back-name">
 					<view class="back-name-title">
-						工商银行(尾号1234)
+						<!-- 工商银行(尾号1234) -->
+						{{bank.issuing_bank}}(尾号{{bank.cardno.substr(-4)}})
 					</view>
 					<view class="back-name-img">
 						<image src="/static/index/cf.png" mode=""></image>
@@ -37,7 +38,7 @@
 			<view class="bank-main">
 				<view class="back-name">
 					<view class="back-name-title">
-						123元
+						{{bank.money}}元
 					</view>
 				</view>
 				
@@ -57,8 +58,12 @@
 		},
 		data(){
 			return {
-				
+				bank:'',//银行信息
 			}
+		},
+		onLoad(options) {
+			let bank = JSON.parse(options.bank)
+			this.bank = bank
 		},
 		onLoad() {
 			

@@ -1,7 +1,7 @@
 <template>
 	<view class="index">
 		<view class=""  v-if="dataList.length>0">
-			<view class="item" v-for="(item,index) in 5" :key="index">
+			<view class="item" v-for="(item,index) in dataList" :key="index">
 				<view class="item-top">
 					<view class="item-top-img">
 						<image src="/static/user/rw.png" mode=""></image>
@@ -9,20 +9,20 @@
 					<view class="item-top-main">
 						<view class="main-name">
 							<view class="name">
-								张三 18987985627
+								{{item.username}} {{item.uphone}}
 							</view>
 							<view class="count">
-								200
+								{{item.score}}
 							</view>
 						</view>
 						<view class="main-price">
 							<view class="name">
-								07-02 09:26:48
+								{{item.createtime}}
 							</view>
-							<!-- <view class="label">
+							<view class="label"  v-if="item.returnstatus == 1">
 								已退还
-							</view> -->
-							<view class="label2" @click="send">
+							</view>
+							<view class="label2" @click="send(JSON.stringify(item))" v-if="item.returnstatus == 0">
 								退积分
 							</view>
 							
@@ -30,15 +30,16 @@
 					</view>
 				</view>
 				<view class="item-bot">
-					<view class="item-bot-img">
+					<!-- <view class="item-bot-img">
 						<image src="/static/user/rw.png" mode=""></image>
 					</view>
 					<view class="item-bot-name">
-						张三 18987985627
-					</view>
-					<view class="item-bot-date">
-						07-02 09:26:48
-					</view>
+						{{item.username}} {{item.uphone}}
+					</view> -->
+					<!-- <view class="item-bot-date">
+						{{item.createtime}}
+					</view> -->
+					
 				</view>
 				<view class="br20"></view>
 			</view>
@@ -81,12 +82,12 @@
 				pagesize: 10,
 				page: 1,
 				isMore: false,
-				uid: '',
+				storeid: '',
 				dilog:false
 			}
 		},
 		onLoad() {
-			this.uid = uni.getStorageSync('uid')
+			this.storeid = uni.getStorageSync('storeid')
 			this.getShopList()
 		},
 		onReachBottom() {
@@ -110,12 +111,12 @@
 			},
 			getShopList() {
 				let data = {
-					cmd: 'getuserwithdraw',
+					cmd: 'getreturnstorescores',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					page: this.page,
 					pagesize: this.pagesize,
-					uid: this.uid
+					storeid: this.storeid
 				}
 				this.$post('', data).then((res) => {
 						console.log(res)

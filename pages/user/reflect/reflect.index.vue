@@ -30,12 +30,13 @@
 					选择银行卡
 				</view>
 				<view class="back-name" v-if="isBank" @click="toBank">
+					<view class="back-name-img">
+						<image :src="bank.bankicon" mode=""></image>
+					</view>
 					<view class="back-name-title">
 						{{bank.issuing_bank}}({{bank.cardno.substr(-4)}})
 					</view>
-					<!-- <view class="back-name-img">
-						<image src="/static/index/cf.png" mode=""></image>
-					</view> -->
+					
 
 				</view>
 
@@ -83,7 +84,7 @@
 				isBank: false, //是否选择银行卡
 				money: '', //提现金额
 				reflect: {}, //资金信息
-				uid: '',
+				storeid: '',
 				bank: '' //获取的选定的银行卡
 			}
 		},
@@ -91,7 +92,7 @@
 
 		},
 		onShow() {
-			this.uid = uni.getStorageSync('uid')
+			this.storeid = uni.getStorageSync('storeid')
 			this.getReflect()
 			//获取选定的银行卡
 			this.getBank()
@@ -112,10 +113,10 @@
 					title: '提现中'
 				})
 				let data = {
-					cmd: 'userwithdrawal',
+					cmd: 'storewithdrawal',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
-					uid: this.uid,
+					storeid: this.storeid,
 					fee: this.money,
 					bankid: this.bank.bankid,
 					yzcode: '123456'
@@ -125,11 +126,20 @@
 					.then((res) => {
 						uni.hideLoading()
 						if (res.status == 0) {
-							this.money = ''
+							
 							uni.showToast({
 								title: res.msg,
 								icon: 'none',
-								duration: 2000
+								duration: 2000,
+								success() {
+									setTimeout(()=>{
+										this.bank.money = this.money
+										this.money = ''
+										uni.navigateTo({
+											url:'./bank.five?bank=' + JSON.stringify(bank)
+										})
+									})
+								}
 							})
 						} else {
 							uni.showToast({
@@ -164,10 +174,10 @@
 			//获取资金信息
 			getReflect() {
 				let data = {
-					cmd: 'getuseraccountcash',
+					cmd: 'getstoreaccountcash',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
-					uid: this.uid
+					storeid: this.storeid
 				}
 				this.$post('', data)
 					.then((res) => {
@@ -274,7 +284,7 @@
 					height: 114upx;
 
 					display: flex;
-					flex-direction: row-reverse;
+					
 
 					.back-name-img {
 						flex-basis: 70upx;

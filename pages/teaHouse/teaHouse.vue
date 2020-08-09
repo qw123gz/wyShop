@@ -202,6 +202,7 @@
 
 		#myVideo {
 			width: 100%;
+			object-fit: fill;
 		}
 	}
 

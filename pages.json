@@ -21,12 +21,11 @@
 				        "buttons": [
 				            {
 				               "type":"",
-				               "text": "店铺信息",
+				               "text": "编辑",
 				               "fontSize": "16px",
 				               "color":"#0F624D",
 				               "float":"right",
-				               "right":"50px"
-							   
+				               "width":"40px"
 				            }
 				        ]
 				    }
@@ -65,6 +64,13 @@
 			"path": "pages/user/acount/reset",
 			"style": {
 				"navigationBarTitleText": "账号设置",
+				"navigationBarBackgroundColor":"#FFFFFF"
+			}
+		},
+		{
+			"path": "pages/user/edit/edit.information",
+			"style": {
+				"navigationBarTitleText": "编辑店铺信息",
 				"navigationBarBackgroundColor":"#FFFFFF"
 			}
 		},
@@ -309,7 +315,7 @@
 	        "pagePath": "pages/shogakuin/shogakuin",
 	       "iconPath": "static/tabBar/tab3.png",
 	       "selectedIconPath": "static/tabBar/tab3active.png",
-	        "text": "商学院"
+	        "text": "学院"
 	    },
 		{
 		    "pagePath": "pages/user/user",

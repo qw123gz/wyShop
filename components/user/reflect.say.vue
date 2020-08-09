@@ -91,7 +91,7 @@
 			position: fixed;
 			z-index: 999999;
 			margin: 0 10%;
-			top:20%;
+			top:15%;
 			height:auto;
 			background:rgba(255,255,255,1);
 			border-radius:20upx;
@@ -181,7 +181,7 @@
 		.know{
 			position: fixed;
 			z-index: 999999;
-			bottom: 240upx;
+			bottom: 100upx;
 			left: 46%;
 			width: 56upx;
 			height: 56upx;

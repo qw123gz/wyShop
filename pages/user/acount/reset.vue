@@ -78,7 +78,7 @@
 			//点击去提交
 			sendCode() {
 				let data = {
-					cmd: 'updateuserpwd',
+					cmd: 'setmyaccount',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					oldpwd: this.userPassword.oldPassword,
@@ -120,7 +120,7 @@
 	.index {
 		width: 100%;
 		height: 100vh;
-		background: #F6F5F5;
+		background: #fff;
 
 		.ntop {
 			padding-top: 0 !important;
@@ -173,7 +173,7 @@
 			margin: auto;
 			margin-top: 100upx;
 			height: 88upx;
-			background: #06C795;
+			background: rgba(6,199,149,1);;
 			border-radius: 44upx;
 			font-size: 30upx;
 			font-family: PingFang SC;
@@ -182,7 +182,9 @@
 		}
 
 		.btn-no {
-			opacity: 0.5;
+			// opacity: 0.5;
+			color:rgba(206,206,206,1);
+			background:rgba(246,246,246,1);
 		}
 	}
 </style>
