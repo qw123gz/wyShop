@@ -3,18 +3,21 @@
 		<view class="content" v-if="dataList.length>0">
 			<view class="team-item" v-for="(item,index) in dataList" :key="index">
 				<view class="item-img">
-					<image v-if="item.type==0" src="/static/user/r1.png" mode=""></image>
-					<image v-if="item.type==1" src="/static/user/r2.png" mode=""></image>
-					<image v-if="item.type==2" src="/static/user/r3.png" mode=""></image>
+					<image v-if="item.feetype==8" src="/static/user/r1.png" mode=""></image>
+					<image v-if="item.feetype==9" src="/static/user/r2.png" mode=""></image>
+					<image v-if="item.feetype==7" src="/static/user/r3.png" mode=""></image>
 				</view>
 				<view class="item-main">
-					<view class="name">{{item.label}}
+					<view class="name">{{item.owner}}
 						<text>-¥{{item.fee}}</text>
 					</view>
-					<view class="title">{{item.label}} </text>
+					<view class="title">
+						<!-- {{item.issuing_bank}} {{item.bankcardno.substr(0,4)}}********{{item.bankcardno.substr(-4)}} -->
 					</view>
 					<view class="phone">{{item.createtime}}
-					   <text>{{item.label}}</text>
+					    <text v-if="item.feetype==7">待审核</text>
+					    <text v-if="item.feetype==8">审核通过</text>
+						<text v-if="item.feetype==9">审核拒绝</text>
 					</view>
 				</view>
 			</view>

@@ -59,7 +59,7 @@
 				</view>
 			</view>
 			<view class="money-all" v-if="money<=reflect.withdrawable">
-				实到金额{{reflect.withdrawable || 0}}
+				实到金额{{money}}
 			</view>
 			<view class="money-ti" v-if="money>reflect.withdrawable">
 				超出可提现余额
