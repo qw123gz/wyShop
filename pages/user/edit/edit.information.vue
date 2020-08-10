@@ -120,7 +120,7 @@
 <script>
 	import LbPicker from '@/components/lb-picker'
 	import areaData from '@/servers/base/area-data-min'
-	import hourList from '@/servers/base/date'
+	import hourList from '@/servers/base/date' 
 	export default {
 		components: {
 			LbPicker
