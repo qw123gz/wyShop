@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import App from './App'
+
+import uView from "uview-ui"
+Vue.use(uView)
+
 import './servers/utils.js'
 import Base from './servers/base.js'
 Vue.config.productionTip = false

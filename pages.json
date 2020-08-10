@@ -323,5 +323,8 @@
 		   "selectedIconPath": "static/tabBar/tab4active.png",
 		    "text": "我的"
 		}]
+	},
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 	}
 }
