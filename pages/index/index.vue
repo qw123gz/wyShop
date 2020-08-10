@@ -216,7 +216,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.index {
 		width: 100%;
 		overflow: hidden;

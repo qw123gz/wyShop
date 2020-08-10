@@ -12,7 +12,8 @@
 	}
 </script>
 
-<style>
+<style  >
+	/* @import "uview-ui/index.scss"; */
 	/*每个页面公共css */
 	.bgmask{
 		width: 100%;
@@ -30,6 +31,12 @@
 	/*每个页面公共css */
 	.hoderClass{
 		font-size:34upx;
+		font-family:PingFang SC;
+		font-weight:500;
+		color:rgba(206,206,206,1);
+	}
+	.hoderClassadd{
+		font-size:32upx;
 		font-family:PingFang SC;
 		font-weight:500;
 		color:rgba(206,206,206,1);

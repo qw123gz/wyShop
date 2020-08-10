@@ -5,7 +5,7 @@
 				<view class="item-name">
 					联系人
 				</view>
-				<input class="item-title" placeholder="请输入联系姓名" data-type="name" 
+				<input class="item-title" placeholder="请输入联系姓名" data-type="name"  placeholder-class="hoderClassadd"
 				@input="handleInput" type="text" v-model="info.name">
 
 				</input>
@@ -14,7 +14,7 @@
 				<view class="item-name">
 					电话
 				</view>
-				<input class="item-title" placeholder="请输入联系人电话" data-type="phone"
+				<input class="item-title" placeholder="请输入联系人电话" data-type="phone" placeholder-class="hoderClassadd"
 				 @input="handleInput" type="number" v-model="info.phone">
 
 				</input>
@@ -23,7 +23,7 @@
 				<view class="item-name">
 					地址
 				</view>
-				<input class="item-title" placeholder="请选择地区" disabled data-type="city"
+				<input class="item-title" placeholder="请选择地区" disabled data-type="city" placeholder-class="hoderClassadd"
 				 @input="handleInput" type="text" v-model="info.city">
 
 				</input>
@@ -35,7 +35,7 @@
 				<view class="item-name">
 					详细地址
 				</view>
-				<input class="item-title" placeholder="请输入详细地址" data-type="address"
+				<input class="item-title" placeholder="请输入详细地址" data-type="address" placeholder-class="hoderClassadd"
 				 @input="handleInput" type="text" v-model="info.address">
 
 				</input>
@@ -44,7 +44,12 @@
 				<view class="item-name">
 					营业时间
 				</view>
-				<view class="item-title">
+				<view class="item-title"v-if="!isDate">
+					<view class="item-title-no" >
+						请设置营业时间
+					</view>
+				</view>
+				<view class="item-title" v-else>
 					<view class="item-title-date">
 						周一~周五 8:00~18:00 <text>删除</text>
 					</view>
@@ -52,7 +57,7 @@
 						周六~周日 8:30~17:30 <text>删除</text>
 					</view>
 				</view>
-				<view class="input-add">
+				<view class="input-add" @click="handleTap('pickerDate')">
 					<image src="/static/user/addre.png" mode=""></image>
 				</view>
 			</view>
@@ -93,7 +98,21 @@
 		</view>
 		<!-- 省市区三级 -->
 		<lb-picker ref="pickerCity" v-model="cityList" mode="multiSelector" :list="list" :level="3" @change="handleChange"
-		 @confirm="handleConfirm" @cancel="handleCancel">
+		 @confirm="handleConfirm" @cancel="handleCancel" cancel-color="#06C795" confirm-color="#06C795">
+		</lb-picker>
+		<lb-picker ref="pickerDate" mode="unlinkedSelector"  :list="datelist"  confirm-text="下一步" @confirm="confirmDate"
+		@cancel="cancelDate"  v-model="dateValue"   cancel-color="#06C795" confirm-color="#06C795"
+		>
+		  <view slot="action-center" class="picker">
+		  	选择星期
+		  </view>
+		</lb-picker>
+		<lb-picker ref="pickerHour" mode="unlinkedSelector"  :list="hourList"   @confirm="confirmHour"
+		@cancel="cancelHour"  v-model="hourValue"   cancel-color="#06C795" confirm-color="#06C795"
+		>
+		  <view slot="action-center" class="picker">
+		  	选择时间
+		  </view>
 		</lb-picker>
 	</view>
 </template>
@@ -101,12 +120,16 @@
 <script>
 	import LbPicker from '@/components/lb-picker'
 	import areaData from '@/servers/base/area-data-min'
+	import hourList from '@/servers/base/date' 
 	export default {
 		components: {
 			LbPicker
 		},
 		data() {
 			return {
+				dateShow:false,//星期是否选择
+				dateValue:[],//星期的值
+				hourValue:[],//时间区间的值
 				info: {
 					name: '',
 					address: '',
@@ -123,12 +146,54 @@
 
 				],
 				isSubimt: false, //是否提交
+				datelist: [
+					[
+						{value: '01',label: '周一'},
+						{value: '02',label: '周二'},
+						{value: '03',label: '周三'},
+						{value: '04',label: '周四'},
+						{value: '05',label: '周五'},
+						{value: '06',label: '周六'},
+						{value: '07',label: '周日'},
+					],
+					[
+						{value: '00',label: '至'}
+					],
+					[
+						{value: '11',label: '周一'},
+						{value: '12',label: '周二'},
+						{value: '13',label: '周三'},
+						{value: '14',label: '周四'},
+						{value: '15',label: '周五'},
+						{value: '16',label: '周六'},
+						{value: '17',label: '周日'},
+					]
+				],
+				hourList:hourList,
+				isDate:false,//是否设置营业时间
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
+			//获取选择的时间
+			confirmHour(e){
+				console.log(e)
+			},
+			//点击取消时间
+			cancelHour(e){
+				
+			},
+			//获取选择的星期
+			confirmDate(e){
+				console.log(e)
+				this.$refs['pickerHour'].show()
+			},
+			//点击取消星期
+			cancelDate(e){
+				
+			},
 			// 输入框的获取
 			handleInput(e) {
 				let type = e.currentTarget.dataset.type
@@ -247,6 +312,7 @@
 					font-family: PingFang SC;
 					font-weight: 500;
 					color: rgba(49, 48, 48, 1);
+					
 				}
 
 				.input-yjt {
@@ -301,6 +367,15 @@
 							color: rgba(255, 61, 62, 1);
 							margin-left: 20upx;
 						}
+					}
+					.item-title-no{
+						width: 100%;
+						height: 80upx;
+						line-height: 80upx;
+						font-size: 32upx;
+						font-family: PingFang SC;
+						font-weight: 500;
+						color:rgba(206,206,206,1);
 					}
 				}
 
@@ -437,6 +512,12 @@
 					color: rgba(228, 195, 125, 1);
 				}
 			}
+		}
+		.picker{
+			font-size:30upx;
+			font-family:PingFang SC;
+			font-weight:500;
+			color:rgba(49,48,48,1);
 		}
 	}
 </style>

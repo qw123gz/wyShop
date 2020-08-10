@@ -509,7 +509,6 @@
 					height: 24upx;
 				}
 			}
-
 		}
 	.logOut{
 		width: 690upx;
@@ -525,7 +524,6 @@
 		color:rgba(244,83,46,1);
 		
 	}
-
 		/* 弹出层 */
 		.mask{
 		  width: 100%;
@@ -634,5 +632,4 @@
 		}
 
 	}
-
 </style>
