@@ -1,0 +1,23 @@
+{
+  "id": "1949138",
+  "name": "2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "691730",
+      "name": "扫一扫",
+      "font_class": "saoyisao",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "9844402",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    }
+  ]
+}
