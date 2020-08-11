@@ -203,8 +203,20 @@
 			},
 			//退出登录
 			logout(){
-				uni.navigateTo({
-					url:'../login/login'
+				uni.showModal({
+					title:'提示',
+					content:'是否确定退出登录？',
+					success:((res)=>{
+						if(res.confirm){
+							console.log('退出')
+							uni.clearStorageSync()
+							uni.reLaunch({
+								url:'../login/login'
+							})
+						}else if (res.cancel){
+							console.log('取消退出')
+						}
+					})
 				})
 			},
 			//获取积分收益

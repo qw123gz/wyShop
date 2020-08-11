@@ -1,7 +1,7 @@
 <template>
 	<view class="index">
 		<view class="" v-if="dataList.length>0">
-			<view class="item" v-for="(item,index) in 5" :key="index">
+			<view class="item" v-for="(item,index) in dataList" :key="index">
 				<view class="item-top">
 					<view class="item-top-img">
 						<image src="/static/user/utab4.png" mode=""></image>
@@ -14,7 +14,7 @@
 							<view class="label" v-if="item.is_send == 1">
 								已送出
 							</view>
-							<view class="label2" @click="send"  v-if="item.is_send == 0">
+							<view class="label2" @click="send(JSON.stringify(item),index)"  v-if="item.is_send == 0">
 								送出
 							</view>
 						</view>
@@ -76,7 +76,9 @@
 				page: 1,
 				isMore: false,
 				storeid: '',
-				dilog:false
+				dilog:false,
+				item:'',//点中选择的item
+				index:0,//点击item
 			}
 		},
 		onLoad() {
@@ -97,9 +99,42 @@
 			//点击确认
 			confrim(){
 				this.dilog = false
+				let that = this
+				let data = {
+					cmd: 'sendpackage',
+					clientid: this.$clientid.index,
+					sign: this.$clientid.sign,
+					storeid: this.storeid,
+					orderid:this.item.orderid
+				}
+				this.$post('',data).then((res) => {
+					console.log(res)
+					if(res.status == 0){
+						uni.showToast({
+							title:'套餐已送出',
+							icon:'none',
+							duration:1500,
+							success() {
+								setTimeout(()=>{
+									console.log(that.dataList[that.index])
+									that.dataList[that.index].is_send = '1'
+								},1500)
+							}
+						})
+					}else{
+						uni.showToast({
+							title:res.msg,
+							icon:'none',
+							duration:1500
+						})
+					}
+				})
 			},
 			//点击送出
-			send(){
+			send(e,index){
+				let item = JSON.parse(e)
+				this.item = item
+				this.index = index
 				this.dilog = true
 			},
 			getShopList() {
@@ -185,6 +220,7 @@
 
 						.label {
 							flex-basis: 120upx;
+							text-align: right;
 							font-size: 30upx;
 							font-family: PingFang SC;
 							font-weight: 500;

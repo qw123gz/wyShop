@@ -31,10 +31,10 @@
 				</view>
 				<view class="item-title">
 					<view class="">
-						周一~周五 8:00~18:00             
+						{{info.sbusinesshours}}          
 					</view>
 					<view class="">
-						周六~周日 8:30~17:30        
+						{{info.sbusinesshours_end}}         
 					</view>
 				</view>
 			</view>
@@ -71,7 +71,7 @@
 					账号
 				</view>
 				<view class="item-title">
-					{{info.scode}}
+					{{info.stel}}
 				</view>
 			</view>
 			<view class="item">

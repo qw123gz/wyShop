@@ -22,7 +22,7 @@
 							<view class="label"  v-if="item.returnstatus == 1">
 								已退还
 							</view>
-							<view class="label2" @click="send(JSON.stringify(item))" v-if="item.returnstatus == 0">
+							<view class="label2" @click="send(JSON.stringify(item),index)" v-if="item.returnstatus == 0">
 								退积分
 							</view>
 							
@@ -50,7 +50,7 @@
 				提示
 			</view>
 			<view class="dilog-title">
-				是否确认退还积分给张三？
+				是否确认退还积分给{{uname}}？
 			</view>
 			<view class="dilog-btn">
 				<view class="btn-no" @click="cancel">
@@ -83,7 +83,10 @@
 				page: 1,
 				isMore: false,
 				storeid: '',
-				dilog:false
+				dilog:false,
+				item:'',//点中选择的item
+				index:0,//点击item
+				uname:''
 			}
 		},
 		onLoad() {
@@ -104,10 +107,45 @@
 			//点击确认
 			confrim(){
 				this.dilog = false
+				let that = this
+				let data = {
+					cmd: 'backreturnscore',
+					clientid: this.$clientid.index,
+					sign: this.$clientid.sign,
+					storeid: this.storeid,
+					sfid:this.item.sf_id
+				}
+				this.$post('',data).then((res) => {
+					console.log(res)
+					if(res.status == 0){
+						uni.showToast({
+							title:'积分退还成功',
+							icon:'none',
+							duration:1500,
+							success() {
+								setTimeout(()=>{
+									console.log(that.dataList[that.index])
+									that.dataList[that.index].returnstatus = '1'
+								},1500)
+							}
+						})
+					}else{
+						uni.showToast({
+							title:res.msg,
+							icon:'none',
+							duration:1500
+						})
+					}
+				})
 			},
 			//点击送出
-			send(){
+			send(e,index){
 				this.dilog = true
+				let item = JSON.parse(e)
+				this.item = item
+				console.log(this.item)
+				this.index = index
+				this.uname = this.item.username
 			},
 			getShopList() {
 				let data = {

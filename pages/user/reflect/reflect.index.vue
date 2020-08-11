@@ -110,8 +110,9 @@
 			},
 			submit() {
 				uni.showLoading({
-					title: '提现中'
+					title:'提现中'
 				})
+				let that = this
 				let data = {
 					cmd: 'storewithdrawal',
 					clientid: this.$clientid.index,
@@ -133,12 +134,13 @@
 								duration: 2000,
 								success() {
 									setTimeout(()=>{
-										this.bank.money = this.money
-										this.money = ''
+										that.bank.money = that.money
+										console.log(that.bank)
+										that.money = ''
 										uni.navigateTo({
-											url:'./bank.five?bank=' + JSON.stringify(bank)
+											url:'./bank.five?bank=' + JSON.stringify(that.bank)
 										})
-									})
+									},2000)
 								}
 							})
 						} else {

@@ -9,7 +9,7 @@
 		<view class="version">
 			Version {{integral.version}}
 		</view>
-		<view class="type bt">
+		<view class="type bt"@click="upVersion">
 			<view class="type-name">
 				检查更新
 			</view>
@@ -45,7 +45,7 @@
 					发现新版本
 				</view>
 				<view class="main-vertion">
-					V1.1.2
+					V{{integral.version_s}}
 				</view>
 			</view>
 			<view class="title">
@@ -74,7 +74,7 @@
 				version : '1.0.0',
 				integral:{},
 				dilog:false,
-				upversion:100,//当前版本号
+				upversion:99,//当前版本号
 				newUpversion:'',//最新版本号
 				isUpversiion:false
 			}
@@ -124,7 +124,7 @@
 					// console.log(res)
 					if (res.status == 0) {
 						this.integral = res.detail
-						this.newUpversion = Number(res.detail.upversion)
+						this.newUpversion = Number(res.detail.upversion_s)
 						this.isUpversiion = this.upversion < this.newUpversion ? true :false
 					} else {
 				        

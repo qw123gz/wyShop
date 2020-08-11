@@ -165,16 +165,17 @@
 						{value: '13',label: '周三'},
 						{value: '14',label: '周四'},
 						{value: '15',label: '周五'},
-						{value: '16',label: '周六'},
+						{value: '16',label: '周六'},	
 						{value: '17',label: '周日'},
 					]
 				],
 				hourList:hourList,
 				isDate:false,//是否设置营业时间
+				storeid:''
 			}
 		},
 		onLoad() {
-
+             this.storeid = uni.getStorageSync('storeid')
 		},
 		methods: {
 			//获取选择的时间
@@ -236,6 +237,7 @@
 			// 选择图片和上传到服务器函数
 			chooseAndUp: function() {
 				// let token = wx.getStorageSync('token')
+				
 				var that = this;
 				uni.chooseImage({
 					count: 1,
@@ -247,11 +249,13 @@
 						
 						// 将图片上传到服务器
 						const tempFilePaths = res.tempFilePaths;
+						var timestamp  = Date.parse(new Date()) / 1000
 						console.log(tempFilePaths)
 						for (var i = 0; i < tempFilePaths.length; i++) {
-
+                            let url = 'https://api.51chafang.vip/wyapis/?cmd=uploadfiles&clientid' + that.$clientid.index + '&sign=' +
+							that.$clientid.sign + '&storeid=' + that.storeid + '&timestamp=' + timestamp + '&ftype=storeimg'
 							uni.uploadFile({
-								url: '',
+								url: url,
 								filePath: tempFilePaths[i],
 								name: 'image',
 								formData: {

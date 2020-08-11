@@ -25,7 +25,7 @@
 				<view class="items" @click="toItemDetail(JSON.stringify(item))">
 					<view class="texts">
 						<view class="text-title">
-							{{item.describe}}
+							{{item.title}}
 						</view>
 						<view class="action">
 							<view class="text-type">
