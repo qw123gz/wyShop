@@ -101,33 +101,12 @@
 		},
 		onLoad(options) {
 		   let bank = JSON.parse(options.bank)
-		   this.getBankName(bank.bankCode)
+		   this.bankInfo = bank
 		},
 		onShow() {
 			
 		},
 		methods: {
-			//获取银行卡所属信息
-			getBankName(cardno){
-				let data = {
-					cmd:'getbankinfo',
-					clientid:this.$clientid.index,
-					sign:this.$clientid.sign,
-					cardno:cardno
-				}
-				this.$post('',data)
-				   .then((res)=>{
-					   if(res.status == 0){
-						   this.bankInfo.bankName = res.detail.ofbank
-					   }else{
-						   uni.showToast({
-						   	  title:res.msg,
-						   	  icon:'none',
-						   	  duration:1000
-						   })
-					   }
-				   })
-			},
 			handleTap (picker) {
 				this.$refs[picker].show()
 			},

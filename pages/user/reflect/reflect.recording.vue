@@ -12,7 +12,7 @@
 						<text>-¥{{item.fee}}</text>
 					</view>
 					<view class="title">
-						<!-- {{item.issuing_bank}} {{item.bankcardno.substr(0,4)}}********{{item.bankcardno.substr(-4)}} -->
+						{{item.issuing_bank}} {{item.bankcardno.substr(0,4)}}********{{item.bankcardno.substr(-4)}}
 					</view>
 					<view class="phone">{{item.createtime}}
 					    <text v-if="item.feetype==7">待审核</text>

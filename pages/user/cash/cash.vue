@@ -75,6 +75,7 @@
 						} else {
 							this.isMore = false
 						}
+						console.log(this.isMore)
 					}),
 					((err) => {
 						console.log(err)

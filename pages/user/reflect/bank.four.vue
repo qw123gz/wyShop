@@ -53,7 +53,7 @@
 				phoneTitle:'获取验证码',
 				isSubmit:false,//是否可以提交
 				bank:'',//缓存的银行卡信息
-				uid:'',
+				storeid:'',
 			}
 		},
 		onLoad() {
@@ -61,7 +61,7 @@
 		},
 		onShow() {
 			this.bank = uni.getStorageSync('bankInfo')
-			this.uid = uni.getStorageSync('uid')
+			this.storeid = uni.getStorageSync('storeid')
 			this.bankInfo.bankPhone = this.bank.bankPhone.substr(0,3) + '****' + this.bank.bankPhone.substr(-4)
 		},
 		methods: {
@@ -108,11 +108,11 @@
 				let bankInfo = uni.getStorageSync('bankInfo')
 				console.log(bankInfo)
 				let data = {
-					cmd:'binduserbankcard',
+					cmd:'bindstorebankcard',
 					clientid:this.$clientid.index,
 					sign:this.$clientid.sign,
 					owner:'1',
-					uid:this.uid,
+					storeid:this.storeid,
 					cardno:bankInfo.bankCode,
 					isbank:bankInfo.bankName,
 					obank:bankInfo.bankCity,

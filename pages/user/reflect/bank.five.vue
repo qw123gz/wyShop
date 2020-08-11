@@ -21,7 +21,8 @@
 				<view class="back-name">
 					<view class="back-name-title">
 						<!-- 工商银行(尾号1234) -->
-						{{bank.issuing_bank}}(尾号{{bank.cardno.substr(-4)}})
+						<!-- {{bank.issuing_bank}}(尾号{{bank.cardno.substr(-4)}}) -->
+						<!-- {{bank.issuing_bank}}(尾号{{bank.cardno.substr(-4)}}) -->
 					</view>
 					<view class="back-name-img">
 						<image src="/static/index/cf.png" mode=""></image>
@@ -63,6 +64,7 @@
 		},
 		onLoad(options) {
 			let bank = JSON.parse(options.bank)
+			console.log(bank)
 			this.bank = bank
 		},
 		onLoad() {
@@ -208,7 +210,7 @@
 			margin: 100upx auto;
 			height:88upx;
 			line-height: 88upx;
-			background:rgba(15,98,77,1);
+			background:rgba(6,199,149,1);
 			border-radius:44upx;
 			font-size:30upx;
 			font-family:PingFang SC;

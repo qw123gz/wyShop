@@ -181,7 +181,7 @@
 		.know{
 			position: fixed;
 			z-index: 999999;
-			bottom: 100upx;
+			bottom: 300upx;
 			left: 46%;
 			width: 56upx;
 			height: 56upx;

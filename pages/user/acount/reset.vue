@@ -48,10 +48,11 @@
 					newPasswordTwo: ''
 				},
 				isSubmit: false, //是否提交
+				storeid:''
 			}
 		},
 		onLoad() {
-
+            this.storeid = uni.getStorageSync('storeid')
 		},
 		methods: {
 			//input框的值变化
@@ -61,6 +62,8 @@
 				this.userPassword[type] = value
 				if (this.userPassword.oldPassword && this.userPassword.newPassword && this.userPassword.newPasswordTwo) {
 					this.isSubmit = true
+				}else{
+					this.isSubmit = false
 				}
 			},
 			//验证输入框
@@ -82,7 +85,7 @@
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					oldpwd: this.userPassword.oldPassword,
-					uid: uni.getStorageSync('uid') || '',
+					storeid: this.storeid,
 					newpwd: this.userPassword.newPassword,
 					repwd: this.userPassword.newPasswordTwo
 				}
