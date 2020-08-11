@@ -1,7 +1,7 @@
 <template>
 	<view class="index">
 		<view class="" v-if="dataList.length>0">
-			<view class="item" v-for="(item,index) in 5" :key="index">
+			<view class="item" v-for="(item,index) in dataList" :key="index">
 				<view class="item-top">
 					<view class="item-top-img">
 						<image src="/static/user/utab4.png" mode=""></image>
