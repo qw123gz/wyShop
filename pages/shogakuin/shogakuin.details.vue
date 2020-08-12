@@ -1,7 +1,7 @@
 <template>
 	<view class="details">
 		<view class="details-title">
-			{{info.describe}}
+			{{info.title}}
 		</view>
 		<view class="news clear">
 			<view class="text-type font24">

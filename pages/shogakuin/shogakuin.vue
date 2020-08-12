@@ -203,6 +203,7 @@
 <style lang="less" scoped>
 	.index{
 		width: 100%;
+		padding-top: 80upx;
 		.top-ban{
 			width: 100%;
 			background: #fff;

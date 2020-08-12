@@ -4,8 +4,18 @@
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": ""
+				
 			}
 		},
+		{
+			"path": "pages/index/swiper",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+
+
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -110,13 +120,12 @@
 				    "titleNView": {
 				        "buttons": [
 				            {
-				               "type":"",
 				               "text": "提现记录",
 				               "fontSize": "16px",
 				               "color":"#0F624D",
 				               "float":"right",
-				               "right":"28upx"
-							   
+				               "right":"40upx",
+				               "width":"100px"
 				            }
 				        ]
 				    }
@@ -168,13 +177,12 @@
 				    "titleNView": {
 				        "buttons": [
 				            {
-				               "type":"reacording",
 				               "text": "提现记录",
 				               "fontSize": "16px",
-				               "color":"#06C795",
+				               "color":"#0F624D",
 				               "float":"right",
-				               "right":"28px",
-							   "width":"100px"
+				               "right":"40upx",
+				               "width":"100px"
 				            }
 				        ]
 				    }
@@ -267,8 +275,8 @@
 				               "fontSrc":"/static/newIcon/iconfont.ttf",
 				               "float":"right",
 				               "right":"28px",
-							   "width":"30px"
-							   
+				               "width":"60px"
+				               
 				            }
 				        ]
 				    }

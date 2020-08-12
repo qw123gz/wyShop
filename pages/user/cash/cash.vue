@@ -89,7 +89,8 @@
 <style lang="less" scoped>
 	.index {
 		width: 100%;
-		overflow: hidden;
+		height: auto;
+		// overflow: hidden;
 
 		.main {
 			width: 100%;
