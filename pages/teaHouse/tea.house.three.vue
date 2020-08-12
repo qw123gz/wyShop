@@ -1,6 +1,6 @@
 <template>
 	<view class="store">
-		<storeList :storeList="store"></storeList>
+		<storeList  :isType='1' :storeList="store"></storeList>
 		<NoRecord v-if="store.length == 0" description="暂无可选择门店"></NoRecord>
 		<noMore v-if="!isMore && store.length > 0"></noMore>
 	</view>

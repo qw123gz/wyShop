@@ -39,6 +39,9 @@
             storeList:{
 				type:Array,
 				value:5
+			},
+			isType:{
+				value:'1'
 			}
         },
         data () {
@@ -49,11 +52,13 @@
         methods: {
            handleChangeShop(e){
 			   console.log(e)
-			   let item = e
-			   uni.$emit('back',item)
-			   uni.navigateBack({
-			   	
-			   })
+			  let item = e
+			  if(this.isType == '2'){
+				   uni.$emit('back',item)
+				   uni.navigateBack({
+					
+				   })
+			  }
 		   }
         }
     }
@@ -86,7 +91,7 @@
 					margin-right: 10upx;
 					padding: 0 15upx;
 					text-align: center;
-					background:rgba(188,158,104,1);
+					background:rgba(6,199,149,1);
 					border-radius:6upx;
 					font-size:22upx;
 					font-family:PingFang SC;

@@ -157,6 +157,27 @@
 					}
 				})
 			},
+			//点击都tab
+			toItem(e) {
+				console.log(e)
+				let item = JSON.parse(e)
+				if(item.menuid == 5){
+					uni.navigateTo({
+						url:'./shogakuin.one?item=' + JSON.stringify(item)
+					})
+				}
+				if(item.menuid == 6){
+					uni.navigateTo({
+						url:'./shogakuin.two?item=' + JSON.stringify(item)
+					})
+				}
+				if(item.menuid == 7){
+					uni.navigateTo({
+						url:'./shogakuin.three?item=' + JSON.stringify(item)
+					})
+				}
+				
+			},
 			//跳转详情页
 			toItemDetail(e){
 				let item = JSON.parse(e)

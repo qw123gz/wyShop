@@ -122,7 +122,7 @@
 				            {
 				               "text": "提现记录",
 				               "fontSize": "16px",
-				               "color":"#0F624D",
+				               "color":"#06C795",
 				               "float":"right",
 				               "right":"40upx",
 				               "width":"100px"
@@ -179,7 +179,7 @@
 				            {
 				               "text": "提现记录",
 				               "fontSize": "16px",
-				               "color":"#0F624D",
+				               "color":"#06C795",
 				               "float":"right",
 				               "right":"40upx",
 				               "width":"100px"
@@ -209,6 +209,7 @@
 		    "path" : "pages/teaHouse/tea.house.three",
 		    "style" : {
 				"navigationBarTitleText": "分店地图",
+				"navigationBarBackgroundColor":"#FFFFFF",
 				"app-plus": {
 						"titleNView": {
 							"buttons": [ 
@@ -216,15 +217,17 @@
 									"text": "搜索", 
 									"fontSize":"14",
 									"float": "right",
-									"color":"#0F624D"
+									"color":"#06C795",
+									"width":"50px"
 								}
 							],
 							"searchInput":{
 									"align": "left",
 									"placeholder": "请输入门店名称搜索",
 									"borderRadius":"35upx",
-									"width":"500upx",
-									"backgroundColor": "#fff"
+									"width":"450upx",
+									"backgroundColor": "#F6F5F5",
+									"right":"40upx"
 								}
 						}
 					
@@ -259,6 +262,24 @@
 				"navigationBarTitleText": "",
 				"navigationBarBackgroundColor":"#0F624D",
 				"navigationStyle":"custom"
+			}
+		},
+		{
+			"path": "pages/shogakuin/shogakuin.one",
+			"style": {
+				"navigationBarTitleText": "运营指南"
+			}
+		},
+		{
+			"path": "pages/shogakuin/shogakuin.two",
+			"style": {
+				"navigationBarTitleText": "生意经"
+			}
+		},
+		{
+			"path": "pages/shogakuin/shogakuin.three",
+			"style": {
+				"navigationBarTitleText": "商学院"
 			}
 		},
 		{

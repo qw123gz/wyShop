@@ -22,10 +22,10 @@
 					<view class="back-name-title">
 						<!-- 工商银行(尾号1234) -->
 						<!-- {{bank.issuing_bank}}(尾号{{bank.cardno.substr(-4)}}) -->
-						<!-- {{bank.issuing_bank}}(尾号{{bank.cardno.substr(-4)}}) -->
+						{{bank.issuing_bank}}(尾号{{cardno}})
 					</view>
 					<view class="back-name-img">
-						<image src="/static/index/cf.png" mode=""></image>
+						<image :src="bank.bankicon" mode=""></image>
 					</view>
 					
 				</view>
@@ -60,15 +60,15 @@
 		data(){
 			return {
 				bank:'',//银行信息
+				cardno:''
 			}
 		},
 		onLoad(options) {
+			console.log(options)
 			let bank = JSON.parse(options.bank)
 			console.log(bank)
 			this.bank = bank
-		},
-		onLoad() {
-			
+			this.cardno = this.bank.cardno.substr(-4)
 		},
 		//监听又上角点击事件
 		onNavigationBarButtonTap(e){
