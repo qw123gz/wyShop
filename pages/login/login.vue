@@ -34,7 +34,7 @@
 			return {
 				uesrInfo: {
 					account: '15071307905',
-					password: '111111'
+					password: 'qaz123456'
 				}
 			}
 		},

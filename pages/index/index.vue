@@ -7,7 +7,7 @@
 				</view>
 				<view class="shop-card">
 					({{information.scode}})
-				</view>
+				</view> 
 			</view>
 			<view class="shop-icon" >
 				<image :src="information.slogo" mode=""></image>

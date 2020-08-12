@@ -113,6 +113,11 @@
 					title:'提现中'
 				})
 				let that = this
+				// that.bank.money = that.money
+				// uni.navigateTo({
+				// 	url:'./bank.five?bank=' + JSON.stringify(that.bank)
+				// })
+				// return false
 				let data = {
 					cmd: 'storewithdrawal',
 					clientid: this.$clientid.index,
@@ -126,6 +131,7 @@
 				this.$post('', data)
 					.then((res) => {
 						uni.hideLoading()
+						
 						if (res.status == 0) {
 							
 							uni.showToast({
@@ -159,7 +165,7 @@
 					this.bank = JSON.parse(res)
 					this.isBank = true
 					console.log(this.bank)
-					console.log(this.bank.issuing_bank)
+					// console.log(this.bank.issuing_bank)
 				})
 			},
 			//获取金额

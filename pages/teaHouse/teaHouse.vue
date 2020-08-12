@@ -188,7 +188,7 @@
 							this.navList = res.response
 						} else {
 							this.navList = this.navData
-							
+
 						}
 					})
 			}
@@ -197,117 +197,122 @@
 </script>
 
 <style lang="less">
-	.video {
+	.tea-house {
 		width: 100%;
+		overflow: hidden;
 
-		#myVideo {
-			width: 100%;
-			object-fit: fill;
-		}
-	}
+		.video {
+			width: 750upx;
 
-
-
-	.nav-menu {
-		margin: 0 32upx;
-		padding: 40upx 20upx;
-		border-bottom: 1px solid #EBEBEBFF;
-		display: flex;
-		justify-content: space-between;
-
-		.menu-item {
-			padding: 5px;
-
-			.item-img {
-				width: 100upx;
-				height: 100upx;
-				margin: 0 auto;
-
-				image {
-					width: 100%;
-					height: 100%;
-				}
-			}
-
-			.item-name {
-				width: 100upx;
-				text-align: center;
-				margin-top: 20upx;
-				font-size: 24upx;
-				font-family: PingFang SC;
-				font-weight: 500;
-				color: rgba(102, 102, 102, 1);
+			video {
+				width: 750upx;
+				object-fit: fill;
 			}
 		}
-	}
 
-	.title {
-		padding: 32upx 0 39upx 32upx;
-		color: #333333FF;
-		font-size: 34upx;
-		font-weight: bold;
-	}
 
-	.main-box {
-		padding: 0 20upx;
 
-		.items {
-			width: 710upx;
-			height: 136upx;
+		.nav-menu {
+			margin: 0 32upx;
+			padding: 40upx 20upx;
 			border-bottom: 1px solid #EBEBEBFF;
-			padding: 30upx 0 20upx 0;
 			display: flex;
 			justify-content: space-between;
 
-			.img {
-				width: 180upx;
-				height: 136upx;
-			}
+			.menu-item {
+				padding: 5px;
 
-			//item内容
-			.texts {
-				margin-left: 24upx;
-				position: relative;
-				flex-basis: 500upx;
+				.item-img {
+					width: 100upx;
+					height: 100upx;
+					margin: 0 auto;
 
-				.text-title {
-					font-size: 32upx;
+					image {
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+				.item-name {
+					width: 100upx;
+					text-align: center;
+					margin-top: 20upx;
+					font-size: 24upx;
 					font-family: PingFang SC;
 					font-weight: 500;
-					color: rgba(51, 51, 51, 1);
-					padding-right: 52upx;
-					box-sizing: border-box;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 2;
-					overflow: hidden;
+					color: rgba(102, 102, 102, 1);
+				}
+			}
+		}
+
+		.title {
+			padding: 32upx 0 39upx 32upx;
+			color: #333333FF;
+			font-size: 34upx;
+			font-weight: bold;
+		}
+
+		.main-box {
+			padding: 0 20upx;
+
+			.items {
+				width: 710upx;
+				height: 136upx;
+				border-bottom: 1px solid #EBEBEBFF;
+				padding: 30upx 0 20upx 0;
+				display: flex;
+				justify-content: space-between;
+
+				.img {
+					width: 180upx;
+					height: 136upx;
 				}
 
-				.action {
-					position: absolute;
-					bottom: 0;
-					font-size: 24upx;
+				//item内容
+				.texts {
+					margin-left: 24upx;
+					position: relative;
+					flex-basis: 500upx;
 
-					view {
-						display: inline-block;
-					}
-
-					.text-type {
-						font-size: 24upx;
+					.text-title {
+						font-size: 32upx;
 						font-family: PingFang SC;
 						font-weight: 500;
-						color: rgba(153, 153, 153, 1);
+						color: rgba(51, 51, 51, 1);
+						padding-right: 52upx;
+						box-sizing: border-box;
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+						overflow: hidden;
 					}
 
-					.text-look {
-						margin-left: 50upx;
+					.action {
+						position: absolute;
+						bottom: 0;
 						font-size: 24upx;
-						font-family: PingFang SC;
-						font-weight: 500;
-						color: rgba(153, 153, 153, 1);
+
+						view {
+							display: inline-block;
+						}
+
+						.text-type {
+							font-size: 24upx;
+							font-family: PingFang SC;
+							font-weight: 500;
+							color: rgba(153, 153, 153, 1);
+						}
+
+						.text-look {
+							margin-left: 50upx;
+							font-size: 24upx;
+							font-family: PingFang SC;
+							font-weight: 500;
+							color: rgba(153, 153, 153, 1);
+						}
 					}
+
 				}
-
 			}
 		}
 	}

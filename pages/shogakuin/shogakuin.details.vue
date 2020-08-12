@@ -1,7 +1,7 @@
 <template>
 	<view class="details">
 		<view class="details-title">
-			{{info.describe}}
+			{{info.title}}
 		</view>
 		<view class="news clear">
 			<view class="text-type font24">
@@ -21,7 +21,7 @@
 			</uni-popup-share>
 		</uni-popup>
 		<!-- 著作权 -->
-		<Copyright></Copyright>
+		<!-- <Copyright></Copyright> -->
 	</view>
 </template>
 
@@ -49,6 +49,7 @@
 		 },
 		onLoad(options) {
 			console.log(options)
+			 this.storeid = uni.getStorageSync('storeid')
 		    let item = JSON.parse(options.item)
 			// console.log(item)
 			this.infoid = item.infoid
@@ -67,11 +68,11 @@
 					  if(res.status == 0){
 						  this.info = res.detail
 					  }else{
-						  uni.showToast({
-						  	title:res.msg,
-							icon:'none',
-							duration:1500
-						  })
+						 //  uni.showToast({
+						 //  	title:res.msg,
+							// icon:'none',
+							// duration:1500
+						 //  })
 					  }
 				  })
 			}

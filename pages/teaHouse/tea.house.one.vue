@@ -11,21 +11,21 @@
 		<view class="br20"></view>
 		<view class="title-name">
 			<text class="xbg"></text>
-			{{info[0].title}}
+			{{info[1].title}}
 		</view>
 		<view class="text-data">
-			<rich-text :nodes="info[0].describe"></rich-text>
+			<rich-text :nodes="info[1].describe"></rich-text>
 		</view>
 		<view class="br20"></view>
 		<view class="title-name">
 			<text class="xbg"></text>
-			{{info[0].title}}
+			{{info[2].title}}
 		</view>
 		<view class="text-data">
-			<rich-text :nodes="info[0].describe"></rich-text>
+			<rich-text :nodes="info[2].describe"></rich-text>
 		</view>
 		<!-- 著作权 -->
-		<Copyright></Copyright>
+		<!-- <Copyright></Copyright> -->
 	</view>
 </template>
 
@@ -46,7 +46,7 @@
 		methods:{
 			getDetails(){
 				let data = {
-					cmd: 'getabout',
+					cmd: 'getstoreabout',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign
 				}

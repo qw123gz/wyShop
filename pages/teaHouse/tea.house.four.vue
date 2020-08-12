@@ -1,7 +1,7 @@
 <template>
 	<view class="details">
 		<view class="details-title">
-			{{info.describe}}
+			{{info.title}}
 		</view>
 		<view class="news clear">
 			<view class="text-type font24">
@@ -16,7 +16,7 @@
 			<rich-text :nodes="info.details"></rich-text>
 		</view>
 		<!-- 著作权 -->
-		<Copyright></Copyright>
+		<!-- <Copyright></Copyright> -->
 	</view>
 </template>
 

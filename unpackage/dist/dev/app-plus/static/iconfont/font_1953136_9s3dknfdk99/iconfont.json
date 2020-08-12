@@ -1,0 +1,16 @@
+{
+  "id": "1953136",
+  "name": "扫一扫",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1573791",
+      "name": "扫一扫",
+      "font_class": "saoyisao",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    }
+  ]
+}
