@@ -210,6 +210,7 @@
 						if(res.confirm){
 							console.log('退出')
 							uni.clearStorageSync()
+							uni.setStorageSync('launchFlag',true)
 							uni.reLaunch({
 								url:'../login/login'
 							})

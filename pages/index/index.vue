@@ -146,6 +146,16 @@
 			
 		},
 		methods: {
+			//getGude
+			getGude(){
+				let value = uni.getStorageSync('launchFlag');
+				console.log(value)
+				if(!value){
+					uni.navigateTo({
+						url:'./swiper'
+					})
+				}
+			},
 			//获取门店最新消息通知
 			getNotice(){
 				let data = {

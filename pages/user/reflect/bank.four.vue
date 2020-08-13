@@ -111,7 +111,7 @@
 					cmd:'bindstorebankcard',
 					clientid:this.$clientid.index,
 					sign:this.$clientid.sign,
-					owner:'1',
+					owner:bankInfo.uname,
 					storeid:this.storeid,
 					cardno:bankInfo.bankCode,
 					isbank:bankInfo.bankName,

@@ -6,7 +6,7 @@
 					<image :src="item.images" mode="" class="img"></image>
 					<view class="texts">
 						<view class="text-title">
-							{{item.describe}}
+							{{item.title}}
 						</view>
 						<view class="action">
 							<view class="text-type">
