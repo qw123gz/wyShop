@@ -4,7 +4,7 @@
 			<view class="item" v-for="(item,index) in dataList" :key="index">
 				<view class="item-top">
 					<view class="item-top-img">
-						<image src="/static/user/utab4.png" mode=""></image>
+						<image :src="item.pimage_ithumbnail" mode=""></image>
 					</view>
 					<view class="item-top-main">
 						<view class="main-name">

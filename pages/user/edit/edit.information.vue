@@ -138,7 +138,13 @@
 					imgList: [
 						'https://file.9sheng.wang//upload/business/images/20200730/products/369/9361113b120d4ef9a21a64464c62e190_thumbnail.jpg',
 						'https://file.9sheng.wang//upload/business/images/20200728/products/365/f7bc18158041447894ac6653fd761b69_thumbnail.jpg'
-					] //线上照片路径
+					], //线上照片路径
+					province:'',
+					provincecode:'',
+					cityy:'',
+					citycode:'',
+					area:'',
+					areacode:''
 				},
 				localImgList: [], //选择的本地照片路径
 				list: areaData,
@@ -303,7 +309,13 @@
 					address: this.info.address,
 					businesshours: this.info.startTime,
 					businesshours_end: this.info.endTime,
-					imglist: this.info.imgList
+					imglist: this.info.imgList,
+					province:this.info.province,
+					provincecode:this.info.provincecode,
+					city:this.info.cityy,
+					citycode:this.info.citycode,
+					area:this.info.area,
+					areacode:this.info.areacode
 				}
 				this.$post('', data).
 				then((res) => {
@@ -332,7 +344,14 @@
 			},
 			handleConfirm(res) {
 				let item = res.item
+				
 				this.info.city = item[0].label + '' + item[1].label + '' + item[2].label
+				this.info.province = item[0].label
+				this.info.provincecode = item[0].value
+				this.info.cityy = item[1].label
+				this.info.citycode = item[1].value
+				this.info.area = item[2].label
+				this.info.areacode = item[2].value
 				console.log(this.info.city)
 
 			},
