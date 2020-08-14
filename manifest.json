@@ -1,5 +1,5 @@
 {
-    "name" : "myShop",
+    "name" : "无忧茶坊店主端",
     "appid" : "__UNI__A9ED3C7",
     "description" : "",
     "versionName" : "1.0.0",
@@ -19,7 +19,8 @@
         /* 模块配置 */
         "modules" : {
             "Maps" : {},
-            "Push" : {}
+            "Push" : {},
+            "Share" : {}
         },
         /* 应用发布信息 */
         "distribute" : {

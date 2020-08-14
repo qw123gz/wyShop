@@ -16,7 +16,7 @@ let domain = 'https://api.51chafang.vip/wyapis/'
 //app上强制使用线上地址，再也不用担心打包忘记改地址了
 //#ifdef APP-PLUS
 // domain = 'http://wyapi.zybaiyou.com/wyapiu/'
-domain = 'https://api.51chafang.vip/wyapiu/'
+domain = 'https://api.51chafang.vip/wyapis/'
 //#endif
 
 //下载地址
