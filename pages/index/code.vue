@@ -3,7 +3,7 @@
 		<view class="name">
 			<view class="main">
 				<view class="name-img">
-					<image :src="info.slogo" mode=""></image>
+					<image src="/static/index/wynn.png" mode=""></image>
 				</view>
 				<view class="name-main">
 					<view class="name-title">

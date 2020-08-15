@@ -20,7 +20,8 @@
         "modules" : {
             "Maps" : {},
             "Push" : {},
-            "Share" : {}
+            "Share" : {},
+            "VideoPlayer" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -88,6 +89,13 @@
                         "spotlight@2x" : "unpackage/res/icons/80x80.png",
                         "spotlight@3x" : "unpackage/res/icons/120x120.png"
                     }
+                }
+            },
+            "splashscreen" : {
+                "android" : {
+                    "hdpi" : "static/guid/wy4.png",
+                    "xhdpi" : "static/guid/wy4.png",
+                    "xxhdpi" : "static/guid/wy4.png"
                 }
             }
         }

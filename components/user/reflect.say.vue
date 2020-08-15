@@ -34,16 +34,16 @@
 					<view class="son"></view>
 					<view class="rule-type-title">当日提现金额最低1000元，最高不超过100000元 </view>
 				</view>
-				<view class="rule-type">
+				<view class="rule-type"> 
 					<view class="son"></view>
 					<view class="rule-type-title">账户中有待审核的提现申请时，不能发起提现申请</view>
 				</view>
 			</view>
-			
+			<view class="know" @click="handleKnow">
+				<image src="/static/user/close.png" mode=""></image>
+			</view>
 		</view>
-		<view class="know" @click="handleKnow">
-			<image src="/static/user/close.png" mode=""></image>
-		</view>
+		
 		<view class="mask"  :catchtouchmove="true"></view>
 	</view>
 	

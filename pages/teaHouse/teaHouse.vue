@@ -1,7 +1,7 @@
 <template>
 	<view class="tea-house">
 		<view class="video">
-			<video id="myVideo" src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317.mp4"
+			<video id="myVideo" :src="video"
 			 @error="videoErrorCallback" controls show-mute-btn=true></video>
 		</view>
 		<!-- 导航栏，跳转不同页面路由 -->
@@ -84,6 +84,7 @@
 						img: '/static/teaHouse/kd.png'
 					}
 				],
+				video:''
 			}
 		},
 		onReady: function(res) {
@@ -102,6 +103,24 @@
 			}
 		},
 		methods: {
+			//获取新闻
+			getVideo(){
+				let data = {
+					cmd: 'getv',
+					clientid: this.$clientid.index,
+					sign: this.$clientid.sign,
+					status: '11'
+				}
+				this.$post('', data)
+					.then((res) => {
+						console.log(res)
+						if (res.status == 0) {
+							this.video = res.response[0].images
+						} else {
+							
+						}
+					})
+			},
 			//跳转详情页
 			toItemDetail(e) {
 				let item = JSON.parse(e)
@@ -169,10 +188,10 @@
 			},
 			//获取视频权限
 			videoErrorCallback: function(e) {
-				uni.showModal({
-					content: e.target.errMsg,
-					showCancel: false
-				})
+				// uni.showModal({
+				// 	content: e.target.errMsg,
+				// 	showCancel: false
+				// })
 			},
 			//获取分类导航栏
 			getNewData() {

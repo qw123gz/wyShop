@@ -136,15 +136,14 @@
 					startTime: '',
 					endTime: '',
 					imgList: [
-						'https://file.9sheng.wang//upload/business/images/20200730/products/369/9361113b120d4ef9a21a64464c62e190_thumbnail.jpg',
-						'https://file.9sheng.wang//upload/business/images/20200728/products/365/f7bc18158041447894ac6653fd761b69_thumbnail.jpg'
+						
 					], //线上照片路径
-					province:'',
-					provincecode:'',
-					cityy:'',
-					citycode:'',
-					area:'',
-					areacode:''
+					province: '',
+					provincecode: '',
+					cityy: '',
+					citycode: '',
+					area: '',
+					areacode: ''
 				},
 				localImgList: [], //选择的本地照片路径
 				list: areaData,
@@ -289,7 +288,8 @@
 				let type = e.currentTarget.dataset.type
 				let value = e.detail.value
 				this.info[type] = value
-				console.log(this.info.address,this.info.city,this.info.phone,this.info.name,this.info.imgList.length,this.info.startTime,this.info.endTime)
+				console.log(this.info.address, this.info.city, this.info.phone, this.info.name, this.info.imgList.length, this.info
+					.startTime, this.info.endTime)
 				if (this.info.address && this.info.city && this.info.phone &&
 					this.info.name && this.info.imgList.length > 0 && this.info.startTime && this.info.endTime) {
 					this.isSubimt = true
@@ -310,12 +310,12 @@
 					businesshours: this.info.startTime,
 					businesshours_end: this.info.endTime,
 					imglist: this.info.imgList,
-					province:this.info.province,
-					provincecode:this.info.provincecode,
-					city:this.info.cityy,
-					citycode:this.info.citycode,
-					area:this.info.area,
-					areacode:this.info.areacode
+					province: this.info.province,
+					provincecode: this.info.provincecode,
+					city: this.info.cityy,
+					citycode: this.info.citycode,
+					area: this.info.area,
+					areacode: this.info.areacode
 				}
 				this.$post('', data).
 				then((res) => {
@@ -344,7 +344,7 @@
 			},
 			handleConfirm(res) {
 				let item = res.item
-				
+
 				this.info.city = item[0].label + '' + item[1].label + '' + item[2].label
 				this.info.province = item[0].label
 				this.info.provincecode = item[0].value
@@ -382,22 +382,31 @@
 						var timestamp = Date.parse(new Date()) / 1000
 						console.log(tempFilePaths)
 						for (var i = 0; i < tempFilePaths.length; i++) {
-							let url = 'https://api.51chafang.vip/wyapis/?cmd=uploadfiles&clientid' + that.$clientid.index + '&sign=' +
-								that.$clientid.sign + '&storeid=' + that.storeid + '&timestamp=' + timestamp + '&ftype=storeimg'
+							// let url = 'https://api.51chafang.vip/wyapis/?cmd=uploadfiles&clientid' + that.$clientid.index + '&sign=' +
+							// 	that.$clientid.sign + '&storeid=' + that.storeid + '&timestamp=' + timestamp + '&ftype=storeimg'
+
 							uni.uploadFile({
-								url: url,
+								url: 'https://api.51chafang.vip/wyapis/',
 								filePath: tempFilePaths[i],
 								name: 'image',
-								formData: { 
-
+								formData: {
+									cmd: 'uploadfiles',
+									clientid: that.$clientid.index,
+									sign: that.$clientid.sign,
+									storeid: that.storeid,
+									timestamp: timestamp,
+									ftype: 'storeimg'
+								},
+								header: {
+									'content-type': 'multipart/form-data'
 								},
 								success(res) {
 									console.log(res)
 									var obj = JSON.parse(res.data);
 									console.log(obj)
-									var picture = obj.uploadfileurl;
-									this.info.imgList.push(picture)
-									console.log(this.info.imgList)
+									var picture = obj.detail.uploadfilenmae;
+									that.info.imgList.push(picture)
+									console.log(that.info.imgList)
 								}
 
 							})

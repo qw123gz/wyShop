@@ -10,7 +10,7 @@
 				</view> 
 			</view>
 			<view class="shop-icon" >
-				<image :src="information.slogo" mode=""></image>
+				<image src="/static/index/wynn.png" mode=""></image>
 			</view>
 		</view>
 		<view class="sales">

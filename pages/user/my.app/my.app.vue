@@ -4,7 +4,7 @@
 			<image src="/static/user/applogo.png" mode=""></image>
 		</view>
 		<view class="name">
-			无忧茶坊
+			无忧茶坊店主
 		</view>
 		<view class="version">
 			Version {{integral.version}}

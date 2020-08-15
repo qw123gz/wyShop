@@ -90,10 +90,13 @@ var http = {
 							let currentRouter = pages[pages.length - 1].route
 						//#endif
 						if(http.filterPages.indexOf(currentRouter) == -1){
-							uni.redirectTo({
-								url: '/pages/login/login',
-							});
+							
 						}
+					}
+					if(response.data.status == 401){
+						uni.redirectTo({
+							url: '/pages/login/login',
+						});
 					}
 					resolve(response.data);
 				} else if(statusCode === 401) {
@@ -149,7 +152,7 @@ var http = {
 		}
 		options.url = url
 		options.data = data
-		// options.data.token = data.token || uni.getStorageSync('token')
+		options.data.token = data.token || uni.getStorageSync('token')
 		// options.data.lang = data.lang || uni.getStorageSync('locale')
 		options.data.timestamp= Date.parse(new Date()) / 1000
 		options.method = 'POST'
