@@ -224,7 +224,7 @@
 <style lang="less" scoped>
 	.index{
 		width: 100%;
-		padding-top: 80upx;
+		padding-top: 100upx;
 		.top-ban{
 			width: 100%;
 			background: #fff;
@@ -261,11 +261,10 @@
 					.item-name {
 						width: 130upx;
 						text-align: center;
-						margin-top: 20upx;
-						font-size: 24upx;
-						font-family: PingFang SC;
-						font-weight: 500;
-						color: rgba(102, 102, 102, 1);
+						font-size:30upx;
+						font-family:PingFang SC;
+						font-weight:bold;
+						color:rgba(49,48,48,1);
 					}
 				}
 			}

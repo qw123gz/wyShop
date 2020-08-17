@@ -74,7 +74,7 @@
 				version : '1.0.0',
 				integral:{},
 				dilog:false,
-				upversion:99,//当前版本号
+				upversion:100,//当前版本号
 				newUpversion:'',//最新版本号
 				isUpversiion:false
 			}

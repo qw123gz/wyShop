@@ -33,13 +33,16 @@
 		data() {
 			return {
 				uesrInfo: {
-					account: '15071307905',
-					password: 'qaz123456'
+					account: '18610026867',
+					password: '111111'
 				}
 			}
 		},
 		onLoad() {
 
+		},
+		onShow() {
+			this.uesrInfo.account = uni.getStorageSync('account')
 		},
 		methods: {
 			//点击忘记密码
@@ -97,6 +100,7 @@
 						   uni.setStorageSync('isLogin',true)
 						   uni.setStorageSync('storeid',res.storeid)
 						   uni.setStorageSync('encry_storeid',res.encry_storeid)
+						   uni.setStorageSync('account',this.uesrInfo.account)
 						   this.$emit('login')
 						   uni.showToast({
 						   	title:'登录成功',

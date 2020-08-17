@@ -1,7 +1,7 @@
 <template>
 	<view class="tea-house">
 		<view class="video">
-			<video id="myVideo" :src="video"
+			<video id="myVideo" :src="video" v-if="show"
 			 @error="videoErrorCallback" controls show-mute-btn=true></video>
 		</view>
 		<!-- 导航栏，跳转不同页面路由 -->
@@ -56,6 +56,7 @@
 		},
 		data() {
 			return {
+				show:true,
 				dataList: [],
 				pagesize: 10,
 				page: 1,
@@ -95,11 +96,21 @@
 		onLoad() {
 			this.getNewData()
 			this.getNews()
+			this.getVideo()//获取视频
+		},
+		onShow() {
+			this.show = true
+		},
+		onHide() {
+			// #ifndef MP-ALIPAY
+			this.videoContext = uni.createVideoContext('myVideo')
+			this.show = false
+			// #endif
 		},
 		onReachBottom() {
 			console.log(this.isMore)
 			if (this.isMore) {
-				this.getNews()
+				this.getNews() 
 			}
 		},
 		methods: {

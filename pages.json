@@ -3,23 +3,25 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor":"#FFFFFF"
 				
 			}
 		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "无忧茶坊",
+				"navigationBarBackgroundColor":"#FFFFFF"
+				
+			}
+		},
+
 		{
 			"path": "pages/index/swiper",
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom"
-			}
-		},
-
-
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "无忧茶坊"
 			}
 		},
 		{
@@ -30,7 +32,6 @@
 				    "titleNView": {
 				        "buttons": [
 				            {
-				               "type":"",
 				               "text": "编辑",
 				               "fontSize": "16px",
 				               "color":"#06C795",
@@ -192,7 +193,7 @@
 		{
 			"path": "pages/teaHouse/teaHouse",
 			"style": {
-				"navigationBarTitleText": "茶坊"
+				
 			}
 		},
 		{
@@ -247,8 +248,7 @@
 				              "fontSize": "24px",
 				              "fontSrc":"/static/newIcon/iconfont.ttf",
 				              "float":"right",
-				              "right":"28px",
-				              "width":"60px"
+				              "width":"50px"
 				              
 				           }
 				        ]

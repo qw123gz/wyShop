@@ -65,6 +65,7 @@
 				}
 				this.$getShop(data).then((res)=>{
 					console.log(res)
+					uni.hideKeyboard();//隐藏软键盘
 					if(res.status == 0){
 						let data = res.response
 						this.store = this.store.concat(data)

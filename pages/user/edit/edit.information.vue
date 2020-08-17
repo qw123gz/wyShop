@@ -225,8 +225,36 @@
 		},
 		onLoad() {
 			this.storeid = uni.getStorageSync('storeid')
+			this.getInformation()
 		},
 		methods: {
+			//获取门店信息
+			getInformation(){
+				let data = {
+					cmd:'getstoreinfobystoreid',
+					clientid:this.$clientid.index,
+					sign:this.$clientid.sign,
+					storeid:this.storeid
+				}
+				this.$post('',data).
+				  then((res)=>{
+					  // console.log(res)
+					  if(res.status == 0){
+						  // this.information = res.detail
+						  this.info.name = res.detail.scontacts
+						  this.info.address = res.detail.saddress
+						  this.info.city = res.detail.sprovince + '' + res.detail.scity + '' +res.detail.sarea
+						  this.info.phone = res.detail.sphone
+						  if(res.detail.sbusinesshours){
+							  this.isDate = true
+							  this.info.startTime = res.detail.sbusinesshours
+							  this.info.endTime = res.detail.sbusinesshours_end
+						  }
+						  
+						  // this.info.imgList = res.detail.imglist
+					  }
+				  })
+			},
 			//删除时间
 			deleteDate(e) {
 				let type = e
@@ -288,8 +316,7 @@
 				let type = e.currentTarget.dataset.type
 				let value = e.detail.value
 				this.info[type] = value
-				console.log(this.info.address, this.info.city, this.info.phone, this.info.name, this.info.imgList.length, this.info
-					.startTime, this.info.endTime)
+				
 				if (this.info.address && this.info.city && this.info.phone &&
 					this.info.name && this.info.imgList.length > 0 && this.info.startTime && this.info.endTime) {
 					this.isSubimt = true
@@ -352,7 +379,7 @@
 				this.info.citycode = item[1].value
 				this.info.area = item[2].label
 				this.info.areacode = item[2].value
-				console.log(this.info.city)
+				// console.log(this.info.city)
 
 			},
 			handleCancel(res) {
@@ -363,6 +390,10 @@
 				let imglist = this.info.imgList
 				imglist.splice(index, 1);
 				this.info.imgList = imglist
+				console.log('cancel::', this.info.imgList.length)
+				if(this.info.imgList.length==0){
+					this.isSubimt = false
+				}
 			},
 			// 选择图片和上传到服务器函数
 			chooseAndUp: function() {
@@ -401,12 +432,18 @@
 									'content-type': 'multipart/form-data'
 								},
 								success(res) {
-									console.log(res)
+									// console.log(res)
 									var obj = JSON.parse(res.data);
-									console.log(obj)
+									// console.log(obj)
 									var picture = obj.detail.uploadfilenmae;
 									that.info.imgList.push(picture)
-									console.log(that.info.imgList)
+									// console.log(that.info.imgList.length)
+									if (that.info.address && that.info.city && that.info.phone &&
+										that.info.name && that.info.imgList.length > 0 && that.info.startTime && that.info.endTime) {
+										that.isSubimt = true
+									} else {
+										that.isSubimt = false
+									}
 								}
 
 							})

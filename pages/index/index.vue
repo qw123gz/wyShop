@@ -151,7 +151,7 @@
 				let value = uni.getStorageSync('launchFlag');
 				console.log(value)
 				if(!value){
-					uni.navigateTo({
+					uni.redirectTo({
 						url:'./swiper'
 					})
 				}
@@ -300,9 +300,7 @@
 						height: 64upx;
 					}
 				}
-				.two{
-					flex-basis: 120upx !important;
-				}
+
 				.yest-total{
 					flex-basis: 220upx;
 					height: 100upx;
@@ -324,6 +322,9 @@
 						font-weight:400;
 						color:rgba(255,255,255,1);
 					}
+				}
+				.two{
+					flex-basis: 160upx !important;
 				}
 			}
 		}

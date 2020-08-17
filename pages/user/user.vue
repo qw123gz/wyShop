@@ -40,10 +40,14 @@
 					</view>
 				</view>
 			</view>
+			<view class="bbb"></view>
 			<view class="reflect-btn" @click="toReflect">
 				<view class="btn">
 					去提现
 				</view>
+			</view>
+			<view class="cly">
+				
 			</view>
 		</view>
 		<!-- tab -->
@@ -378,16 +382,16 @@
 		}
 		.reflect{
 			width: 690upx;
-			height: 300upx;
+			height: 280upx;
 			margin: 30upx auto;
 			background:linear-gradient(90deg,rgba(231,211,151,1) 0%,rgba(224,190,112,1) 99%);
+			border-radius: 20upx 20upx 5upx 5upx;
 			.reflect-money{
 				width: 100%;
 				height: 170upx;
 				padding: 30upx 0;
 				box-sizing: border-box;
 				display: flex;
-				border-bottom: 1px solid #FFFFFF;
 				.money-total{
 					flex: 1;
 					.money-name{
@@ -422,12 +426,18 @@
 					}
 				}
 			}
+			.bbb{
+				width: 100%;
+				height: 1upx;
+				background: #fff;
+				opacity: 0.3;
+			}
 			.reflect-btn{
 				width: 100%;
-				height: 130upx;
+				height: 80upx;
 				display: flex;
 				justify-content: center;
-				align-items: center;
+				align-items: flex-end;
 				.btn{
 					width:180upx;
 					text-align: center;
@@ -440,6 +450,12 @@
 					font-weight:400;
 					color:rgba(162,133,89,1);
 				}
+			}
+			.cly{
+				width: 100%;
+				height: 52upx;
+				background:linear-gradient(90deg,rgba(231,211,151,1) 0%,rgba(224,190,112,1) 99%);
+				border-radius:0 0 50% 50%;
 			}
 		}
 		.tab{
@@ -494,7 +510,7 @@
 				flex: 1;
 				height: 100upx;
 				margin-left: 15upx;
-				line-height: 100upx;
+				line-height: 106upx;
 				font-size:30upx;
 				font-family:PingFang SC;
 				font-weight:500;

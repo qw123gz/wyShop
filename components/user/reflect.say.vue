@@ -39,11 +39,11 @@
 					<view class="rule-type-title">账户中有待审核的提现申请时，不能发起提现申请</view>
 				</view>
 			</view>
-			<view class="know" @click="handleKnow">
-				<image src="/static/user/close.png" mode=""></image>
-			</view>
+			
 		</view>
-		
+		<view class="know" @click="handleKnow">
+			<image src="/static/user/close.png" mode=""></image>
+		</view>
 		<view class="mask"  :catchtouchmove="true"></view>
 	</view>
 	
@@ -92,7 +92,7 @@
 			z-index: 999999;
 			margin: 0 10%;
 			top:15%;
-			height:auto;
+			height:900upx;
 			background:rgba(255,255,255,1);
 			border-radius:20upx;
 			background-size: 100% 100% !important;
@@ -181,7 +181,7 @@
 		.know{
 			position: fixed;
 			z-index: 999999;
-			bottom: 300upx;
+			top:1100upx;
 			left: 46%;
 			width: 56upx;
 			height: 56upx;
