@@ -6,7 +6,7 @@
 			</view>
 
 			<view class="banner">
-				<swiper class="swiper" indicator-dots=true autoplay=true interval=3000>
+				<swiper class="swiper" :indicator-dots="bannerList.length>1 ? true :false"  :autoplay="true" :circular="true" :interval="3000" :duration="1000">
 					<swiper-item v-for="(item,index) in bannerList" :key="index">
 						<image class="sip" :src="item.images"  mode=""></image>
 					</swiper-item>
@@ -110,9 +110,24 @@
 			}
 		},
 		onLoad() {
+			
+		},
+		onShow() {
+			this.dataList = []
+			this.pagesize = 10
+			this.page = 1
+			this.isMore = false
 			this.getNews()
 			this.getBanner()
 			this.getNewData()
+		},
+		onPullDownRefresh() {
+			uni.startPullDownRefresh();
+			this.dataList = []
+			this.pagesize = 10
+			this.page = 1
+			this.isMore = false
+			this.getNews()
 		},
 		onReachBottom() {
 			console.log(this.isMore)
@@ -198,6 +213,7 @@
 				this.$getNewsList(data).
 				then((res) => {
 					// console.log(res)
+					uni.stopPullDownRefresh();
 					if (res.status == 0) {
 						let data = res.response
 						this.dataList = this.dataList.concat(data)

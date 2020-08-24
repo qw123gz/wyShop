@@ -2,14 +2,15 @@
 	<view class="list">
 		<view class="list-item" v-for="(item,index) in storeList" :key="index" @click="handleChangeShop(item)">
 			<view class="item-title">
-				<text>无忧茶坊</text>{{item.sname}}
+				<text>无忧茶坊</text>{{item.sname}}({{item.scode}})
 			</view>
+			
 			<view class="item-date">
 				<view class="date-img">
-					<image src="/static/index/date.png" mode=""></image>
+					<image src="/static/index/address.png" mode=""></image>
 				</view>
 				<view class="date-title">
-					{{item.sbusinesshours}}
+					{{item.saddress}}
 				</view>
 			</view>
 			<view class="item-date">
@@ -17,15 +18,15 @@
 					<image src="/static/index/phone.png" mode=""></image>
 				</view>
 				<view class="date-title">
-					{{item.sphone}}
+					{{item.stel}}
 				</view>
 			</view>
 			<view class="item-date">
 				<view class="date-img">
-					<image src="/static/index/address.png" mode=""></image>
+					<image src="/static/index/date.png" mode=""></image>
 				</view>
 				<view class="date-title">
-					{{item.saddress}}
+					{{item.sbusinesshours}} {{item.sbusinesshours_end}}
 				</view>
 			</view>
 		</view>
@@ -69,6 +70,7 @@
 		width: 100%;
 		background: #F6F5F5;
 		height: auto;
+		padding-top: 2upx;
 		.list-item{
 			width: 94%;
 			margin: 20upx auto;

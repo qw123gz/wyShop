@@ -41,7 +41,12 @@
 				wk:'',
 			}
 		},
-		onLoad() {
+		onLoad(options) {
+			let  item = JSON.parse(options.item)
+			console.log(item)
+			uni.setNavigationBarTitle({
+				title:item.mtitle
+			})
 			this.getNews()
 		},
 		onReachBottom() {

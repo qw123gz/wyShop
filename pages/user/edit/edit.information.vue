@@ -14,8 +14,8 @@
 				<view class="item-name">
 					电话
 				</view>
-				<input class="item-title" placeholder="请输入联系人电话" data-type="phone" placeholder-class="hoderClassadd" @input="handleInput"
-				 type="number" v-model="info.phone">
+				<input class="item-title" placeholder="请输入联系人电话" data-type="stel" placeholder-class="hoderClassadd" @input="handleInput"
+				 type="text" v-model="info.stel">
 
 				</input>
 			</view>
@@ -51,10 +51,14 @@
 				</view>
 				<view class="item-title" v-else>
 					<view class="item-title-date">
-						{{info.startTime}} <text @click="deleteDate(0)" v-if="info.startTime">删除</text>
+						
+						<text @click="editDate('1')">{{info.startTime}} </text>
+						<text @click="deleteDate(0)" v-if="info.startTime">删除</text>
 					</view>
 					<view class="item-title-date">
-						{{info.endTime}} <text @click="deleteDate(1)" v-if="info.endTime">删除</text>
+						
+						<text @click="editDate('2')">{{info.endTime}}  </text>
+						<text @click="deleteDate(1)" v-if="info.endTime">删除</text>
 					</view>
 				</view>
 				<view class="input-add" @click="handleTap('pickerDate')">
@@ -73,7 +77,7 @@
 							<view class="delete-box">
 								<image src="/static/user/delete.png" mode=""></image>
 								<view class="">
-									-
+									
 								</view>
 							</view>
 						</view>
@@ -132,7 +136,7 @@
 					name: '',
 					address: '',
 					city: '',
-					phone: '',
+					stel: '',
 					startTime: '',
 					endTime: '',
 					imgList: [
@@ -221,6 +225,7 @@
 				storeid: '',
 				temporaryStartTime: '', //临时起始营业时间
 				temporaryEndTime: '', //临时结束营业时间
+				typeDate:'',//点击时间
 			}
 		},
 		onLoad() {
@@ -228,6 +233,11 @@
 			this.getInformation()
 		},
 		methods: {
+			//点击时间修改时间
+			editDate(e){
+				// this.typeDate = e
+				// this.$refs['pickerDate'].show()
+			},
 			//获取门店信息
 			getInformation(){
 				let data = {
@@ -244,14 +254,15 @@
 						  this.info.name = res.detail.scontacts
 						  this.info.address = res.detail.saddress
 						  this.info.city = res.detail.sprovince + '' + res.detail.scity + '' +res.detail.sarea
-						  this.info.phone = res.detail.sphone
+						  this.info.stel = res.detail.stel
+						  console.log(this.info.stel)
 						  if(res.detail.sbusinesshours){
 							  this.isDate = true
 							  this.info.startTime = res.detail.sbusinesshours
 							  this.info.endTime = res.detail.sbusinesshours_end
 						  }
 						  
-						  // this.info.imgList = res.detail.imglist
+						  this.info.imgList = res.detail.imglist
 					  }
 				  })
 			},
@@ -261,10 +272,19 @@
 				if (type == 0) {
 					this.temporaryStartTime = ''
 					this.info.startTime = ''
-					this.isSubimt = false
+
 				} else {
 					this.temporaryEndTime = ''
 					this.info.endTime = ''
+				}
+				if(this.info.startTime == ''  && this.info.endTime == ''){
+					this.isDate = false
+					this.isSubimt = false
+				}
+				if (this.info.address && this.info.city && this.info.stel &&
+					this.info.name && this.info.imgList.length > 0 && (this.info.startTime || this.info.endTime)) {
+					this.isSubimt = true
+				} else {
 					this.isSubimt = false
 				}
 			},
@@ -281,8 +301,18 @@
 						this.info.endTime = this.temporaryEndTime
 					}
 				}
-				if (this.info.address && this.info.city && this.info.phone &&
-					this.info.name && this.info.imgList.length > 0 && this.info.startTime && this.info.endTime) {
+				if(this.typeDate != ''){
+					if(this.typeDate == '1'){
+						this.temporaryStartTime = this.temporaryStartTime + ' ' + value
+						this.info.startTime = this.temporaryStartTime
+					}
+					if(this.typeDate == '2'){
+						this.temporaryEndTime = this.temporaryEndTime + ' ' + value
+						this.info.endTime = this.temporaryEndTime
+					}
+				}
+				if (this.info.address && this.info.city && this.info.stel &&
+					this.info.name && this.info.imgList.length > 0 && (this.info.startTime || this.info.endTime)) {
 					this.isSubimt = true
 				} else {
 					this.isSubimt = false
@@ -305,6 +335,14 @@
 				if (this.info.endTime == '' && this.info.startTime != '') {
 					this.temporaryEndTime = value
 				}
+				if(this.typeDate != ''){
+					if(this.typeDate == '1'){
+						this.temporaryStartTime = value
+					}
+					if(this.typeDate == '2'){
+						this.temporaryEndTime = value
+					}
+				}
 				this.$refs['pickerHour'].show()
 			},
 			//点击取消星期
@@ -317,8 +355,8 @@
 				let value = e.detail.value
 				this.info[type] = value
 				
-				if (this.info.address && this.info.city && this.info.phone &&
-					this.info.name && this.info.imgList.length > 0 && this.info.startTime && this.info.endTime) {
+				if (this.info.address && this.info.city && this.info.stel &&
+					this.info.name && this.info.imgList.length > 0 &&  (this.info.startTime || this.info.endTime)) {
 					this.isSubimt = true
 				} else {
 					this.isSubimt = false
@@ -326,13 +364,14 @@
 			},
 			//点击保存信息
 			send() {
+				console.log(11)
 				let data = {
 					cmd: 'updatestoreinfo',
 					clientid: this.$clientid.index,
 					sign: this.$clientid.sign,
 					storeid: this.storeid,
 					contacts: this.info.name,
-					phone: this.info.phone,
+					tel: this.info.stel,
 					address: this.info.address,
 					businesshours: this.info.startTime,
 					businesshours_end: this.info.endTime,
@@ -351,7 +390,14 @@
 						uni.showToast({
 							title: '信息保存成功',
 							icon: 'none',
-							duration: 1500
+							duration: 1500,
+							success() {
+								setTimeout(()=>{
+									uni.switchTab({
+										url:'../../index/index'
+									})
+								},1500)
+							}
 						})
 					} else {
 						uni.showToast({
@@ -360,6 +406,9 @@
 							duration: 1500
 						})
 					}
+				})
+				.catch((err)=>{
+					console.log(err)
 				})
 			},
 			//显示picker
@@ -393,6 +442,8 @@
 				console.log('cancel::', this.info.imgList.length)
 				if(this.info.imgList.length==0){
 					this.isSubimt = false
+				}else{
+					this.isSubimt = true
 				}
 			},
 			// 选择图片和上传到服务器函数
@@ -423,6 +474,7 @@
 								formData: {
 									cmd: 'uploadfiles',
 									clientid: that.$clientid.index,
+									token:uni.getStorageSync('token'),
 									sign: that.$clientid.sign,
 									storeid: that.storeid,
 									timestamp: timestamp,
@@ -432,14 +484,14 @@
 									'content-type': 'multipart/form-data'
 								},
 								success(res) {
-									// console.log(res)
+									console.log(res)
 									var obj = JSON.parse(res.data);
-									// console.log(obj)
+									console.log(obj)
 									var picture = obj.detail.uploadfilenmae;
 									that.info.imgList.push(picture)
 									// console.log(that.info.imgList.length)
-									if (that.info.address && that.info.city && that.info.phone &&
-										that.info.name && that.info.imgList.length > 0 && that.info.startTime && that.info.endTime) {
+									if (that.info.address && that.info.city && that.info.stel &&
+										that.info.name && that.info.imgList.length > 0 &&  (this.info.startTime || this.info.endTime)) {
 										that.isSubimt = true
 									} else {
 										that.isSubimt = false
@@ -540,7 +592,7 @@
 						font-weight: 500;
 						color: rgba(49, 48, 48, 1);
 
-						text {
+						text:nth-child(2){
 							font-size: 32upx;
 							font-family: PingFang SC;
 							font-weight: 500;

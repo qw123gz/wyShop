@@ -36,16 +36,18 @@
 			console.log(options)
 			let item = JSON.parse(options.type)
 			console.log(item)
-			this.infoid = item.infoid
+			uni.setNavigationBarTitle({
+				title:item.mtitle
+			})
+			this.infoid = item.urlto
 			this.getDetails()
 		},
 		methods:{
 			getDetails(){
 				let data = {
-					cmd: 'getinfobyid',
+					cmd: 'storeopeningpolicy',
 					clientid: this.$clientid.index,
-					sign: this.$clientid.sign,
-					infoid:'7'
+					sign: this.$clientid.sign
 				}
 				this.$post('',data).
 				  then((res)=>{

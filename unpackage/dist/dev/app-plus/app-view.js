@@ -136,8 +136,8 @@ if (typeof Promise !== 'undefined' && !Promise.prototype.finally) {
 if (uni.restoreGlobal) {
   uni.restoreGlobal(weex, plus, setTimeout, clearTimeout, setInterval, clearInterval);
 }
-__definePage('pages/login/login', function () {return Vue.extend(__webpack_require__(/*! pages/login/login.vue?mpType=page */ 14).default);});
 __definePage('pages/index/index', function () {return Vue.extend(__webpack_require__(/*! pages/index/index.vue?mpType=page */ 2).default);});
+__definePage('pages/login/login', function () {return Vue.extend(__webpack_require__(/*! pages/login/login.vue?mpType=page */ 14).default);});
 __definePage('pages/index/swiper', function () {return Vue.extend(__webpack_require__(/*! pages/index/swiper.vue?mpType=page */ 22).default);});
 __definePage('pages/index/edit.index', function () {return Vue.extend(__webpack_require__(/*! pages/index/edit.index.vue?mpType=page */ 38).default);});
 __definePage('pages/index/code', function () {return Vue.extend(__webpack_require__(/*! pages/index/code.vue?mpType=page */ 46).default);});
@@ -258,19 +258,19 @@ var render = function() {
     [
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        {
+          staticClass: _vm._$g(1, "sc"),
+          attrs: { _i: 1 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
         [
           _c(
             "v-uni-view",
-            {
-              staticClass: _vm._$g(2, "sc"),
-              attrs: { _i: 2 },
-              on: {
-                click: function($event) {
-                  return _vm.$handleViewEvent($event)
-                }
-              }
-            },
+            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
             [
               _c(
                 "v-uni-view",
@@ -318,12 +318,20 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+                {
+                  staticClass: _vm._$g(11, "sc"),
+                  attrs: { _i: 11 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-                    [_vm._v("销售额(元)")]
+                    [_vm._v("收入(元)")]
                   ),
                   _c(
                     "v-uni-view",
@@ -335,7 +343,15 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                {
+                  staticClass: _vm._$g(14, "sc"),
+                  attrs: { _i: 14 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "v-uni-view",
@@ -352,7 +368,15 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                {
+                  staticClass: _vm._$g(17, "sc"),
+                  attrs: { _i: 17 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "v-uni-view",
@@ -386,12 +410,20 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                {
+                  staticClass: _vm._$g(23, "sc"),
+                  attrs: { _i: 23 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
-                    [_vm._v("销售额(元)")]
+                    [_vm._v("收入(元)")]
                   ),
                   _c(
                     "v-uni-view",
@@ -403,7 +435,15 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
+                {
+                  staticClass: _vm._$g(26, "sc"),
+                  attrs: { _i: 26 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "v-uni-view",
@@ -420,7 +460,15 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
+                {
+                  staticClass: _vm._$g(29, "sc"),
+                  attrs: { _i: 29 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "v-uni-view",
@@ -535,7 +583,7 @@ var render = function() {
                     [
                       _c("v-uni-image", {
                         attrs: {
-                          src: "/static/index/login.png",
+                          src: _vm._$g("47-" + $30, "a-src"),
                           mode: "",
                           _i: "47-" + $30
                         }
@@ -678,7 +726,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.index[data-v-2be84a3c] {\r\n  width: 100%;\r\n  overflow: hidden;\n}\n.index .shop[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 120upx;\r\n  padding: 0 30upx;\r\n  box-sizing: border-box;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index .shop .shop-name[data-v-2be84a3c] {\r\n  -webkit-box-flex: 1;\r\n  -webkit-flex: 1;\r\n          flex: 1;\r\n  height: 120upx;\n}\n.index .shop .shop-name .shop-title[data-v-2be84a3c] {\r\n  width: 570upx;\r\n  font-size: 50upx;\r\n  height: 70upx;\r\n  line-height: 70upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #121217;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\n}\n.index .shop .shop-name .shop-card[data-v-2be84a3c] {\r\n  width: 570upx;\r\n  height: 50upx;\r\n  line-height: 50upx;\r\n  font-size: 30upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #121217;\n}\n.index .shop .shop-icon[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 120upx;\r\n          flex-basis: 120upx;\r\n  height: 120upx;\n}\n.index .shop .shop-icon uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .sales[data-v-2be84a3c] {\r\n  width: 100%;\r\n  padding: 0 30upx;\r\n  box-sizing: border-box;\r\n  margin: 44upx 0;\n}\n.index .sales .today-sales[data-v-2be84a3c] {\r\n  background: -webkit-linear-gradient(bottom, #3c3631 0%, #4f4845 100%) !important;\r\n  background: linear-gradient(0deg, #3c3631 0%, #4f4845 100%) !important;\r\n  box-shadow: 0px 10upx 20upx 0px rgba(0, 0, 0, 0.1);\r\n  border-radius: 11upx !important;\r\n  margin-top: 30upx;\n}\n.index .sales .yest-sales[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100upx;\r\n  padding: 30upx 0;\r\n  background: -webkit-linear-gradient(left, #ff6f06 0%, #ff7809 100%);\r\n  background: linear-gradient(90deg, #ff6f06 0%, #ff7809 100%);\r\n  box-shadow: 0px 10upx 20upx 0px rgba(0, 0, 0, 0.1);\r\n  border-radius: 20upx;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index .sales .yest-sales .yest-img[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 124upx;\r\n          flex-basis: 124upx;\r\n  height: 100upx;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n  -webkit-justify-content: center;\r\n          justify-content: center;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index .sales .yest-sales .yest-img uni-image[data-v-2be84a3c] {\r\n  width: 64upx;\r\n  height: 64upx;\n}\n.index .sales .yest-sales .yest-total[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 220upx;\r\n          flex-basis: 220upx;\r\n  height: 100upx;\n}\n.index .sales .yest-sales .yest-total .yest-total-name[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 40upx;\r\n  line-height: 40upx;\r\n  font-size: 22upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #ffe2cb;\n}\n.index .sales .yest-sales .yest-total .yest-total-count[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 60upx;\r\n  line-height: 60upx;\r\n  font-size: 54upx;\r\n  font-family: DIN 1451 Mittelschrift;\r\n  font-weight: 400;\r\n  color: white;\n}\n.index .sales .yest-sales .two[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 160upx !important;\r\n          flex-basis: 160upx !important;\n}\n.index .code[data-v-2be84a3c] {\r\n  width: 690upx;\r\n  height: 300upx;\r\n  background: white;\r\n  border: 1px solid #e4e4e4;\r\n  border-radius: 20upx;\r\n  margin: 30upx auto;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  padding: 25upx;\r\n  box-sizing: border-box;\n}\n.index .code .code-title[data-v-2be84a3c] {\r\n  -webkit-box-flex: 1;\r\n  -webkit-flex: 1;\r\n          flex: 1;\r\n  height: 250upx;\r\n  padding-right: 86upx;\r\n  padding-top: 50upx;\r\n  box-sizing: border-box;\n}\n.index .code .code-title .code-title-name[data-v-2be84a3c] {\r\n  font-size: 48upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #656567;\n}\n.index .code .code-title .code-title-msg[data-v-2be84a3c] {\r\n  font-size: 30upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #919297;\r\n  line-height: 48upx;\n}\n.index .code .code-box[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 250upx;\r\n          flex-basis: 250upx;\r\n  height: 250upx;\r\n  position: relative;\n}\n.index .code .code-box .code-bg[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .code .code-box .code-bg uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .code .code-box .code-son[data-v-2be84a3c] {\r\n  position: absolute;\r\n  z-index: 10;\r\n  top: 61upx;\r\n  left: 80upx;\r\n  width: 90upx;\r\n  height: 90upx;\n}\n.index .code .code-box .code-son uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .code .code-box .code-integral[data-v-2be84a3c] {\r\n  position: absolute;\r\n  z-index: 10;\r\n  top: 170upx;\r\n  left: 80upx;\r\n  font-size: 28upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: white;\n}\n.index .notice[data-v-2be84a3c] {\r\n  width: 750upx;\r\n  padding: 0 30upx;\r\n  margin-top: 50upx;\n}\n.index .notice .notice-name[data-v-2be84a3c] {\r\n  width: 690upx;\r\n  height: 80upx;\r\n  line-height: 80upx;\r\n  font-size: 44upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #313030;\n}\n.index .notice .notice-list[data-v-2be84a3c] {\r\n  width: 690upx;\n}\n.index .notice .notice-list .list[data-v-2be84a3c] {\r\n  width: 690upx;\r\n  height: auto;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  padding: 30upx 0;\r\n  border-bottom: 1px solid #E4E4E4;\n}\n.index .notice .notice-list .list .list-img[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 80upx;\r\n          flex-basis: 80upx;\r\n  height: 80upx;\n}\n.index .notice .notice-list .list .list-img uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 80upx;\n}\n.index .notice .notice-list .list .list-main[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 610upx;\r\n          flex-basis: 610upx;\r\n  padding-left: 32upx;\r\n  box-sizing: border-box;\n}\n.index .notice .notice-list .list .list-main .list-main-name[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 80upx;\r\n  line-height: 80upx;\r\n  font-size: 34upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #313030;\n}\n.index .notice .notice-list .list .list-main .list-main-title[data-v-2be84a3c] {\r\n  width: 100%;\r\n  font-size: 32upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #313030;\r\n  line-height: 48upx;\r\n  display: -webkit-box;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-line-clamp: 2;\r\n  overflow: hidden;\n}\n.index .notice .notice-list .list .list-main .list-main-date[data-v-2be84a3c] {\r\n  width: 100%;\r\n  font-size: 26upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #919297;\r\n  line-height: 46upx;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.index[data-v-2be84a3c] {\r\n  width: 100%;\r\n  overflow: hidden;\n}\n.index .shop[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 120upx;\r\n  padding: 0 30upx;\r\n  box-sizing: border-box;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index .shop .shop-name[data-v-2be84a3c] {\r\n  -webkit-box-flex: 1;\r\n  -webkit-flex: 1;\r\n          flex: 1;\r\n  height: 120upx;\n}\n.index .shop .shop-name .shop-title[data-v-2be84a3c] {\r\n  width: 570upx;\r\n  font-size: 50upx;\r\n  height: 70upx;\r\n  line-height: 70upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #121217;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\n}\n.index .shop .shop-name .shop-card[data-v-2be84a3c] {\r\n  width: 570upx;\r\n  height: 50upx;\r\n  line-height: 50upx;\r\n  font-size: 30upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #121217;\n}\n.index .shop .shop-icon[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 120upx;\r\n          flex-basis: 120upx;\r\n  height: 120upx;\n}\n.index .shop .shop-icon uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .sales[data-v-2be84a3c] {\r\n  width: 100%;\r\n  padding: 0 30upx;\r\n  box-sizing: border-box;\r\n  margin: 44upx 0;\n}\n.index .sales .today-sales[data-v-2be84a3c] {\r\n  background: -webkit-linear-gradient(bottom, #3c3631 0%, #4f4845 100%) !important;\r\n  background: linear-gradient(0deg, #3c3631 0%, #4f4845 100%) !important;\r\n  box-shadow: 0px 10upx 20upx 0px rgba(0, 0, 0, 0.1);\r\n  border-radius: 11upx !important;\r\n  margin-top: 30upx;\n}\n.index .sales .yest-sales[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100upx;\r\n  padding: 30upx 0;\r\n  background: -webkit-linear-gradient(left, #ff6f06 0%, #ff7809 100%);\r\n  background: linear-gradient(90deg, #ff6f06 0%, #ff7809 100%);\r\n  box-shadow: 0px 10upx 20upx 0px rgba(0, 0, 0, 0.1);\r\n  border-radius: 20upx;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index .sales .yest-sales .yest-img[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 124upx;\r\n          flex-basis: 124upx;\r\n  height: 100upx;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n  -webkit-justify-content: center;\r\n          justify-content: center;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index .sales .yest-sales .yest-img uni-image[data-v-2be84a3c] {\r\n  width: 64upx;\r\n  height: 64upx;\n}\n.index .sales .yest-sales .yest-total[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 220upx;\r\n          flex-basis: 220upx;\r\n  height: 100upx;\n}\n.index .sales .yest-sales .yest-total .yest-total-name[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 40upx;\r\n  line-height: 40upx;\r\n  font-size: 22upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #ffe2cb;\n}\n.index .sales .yest-sales .yest-total .yest-total-count[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 60upx;\r\n  line-height: 60upx;\r\n  font-size: 54upx;\r\n  font-family: DIN 1451 Mittelschrift;\r\n  font-weight: 400;\r\n  color: white;\n}\n.index .sales .yest-sales .two[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 160upx !important;\r\n          flex-basis: 160upx !important;\n}\n.index .code[data-v-2be84a3c] {\r\n  width: 690upx;\r\n  height: 300upx;\r\n  background: white;\r\n  border: 1px solid #e4e4e4;\r\n  border-radius: 20upx;\r\n  margin: 30upx auto;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  padding: 25upx;\r\n  box-sizing: border-box;\n}\n.index .code .code-title[data-v-2be84a3c] {\r\n  -webkit-box-flex: 1;\r\n  -webkit-flex: 1;\r\n          flex: 1;\r\n  height: 250upx;\r\n  padding-right: 86upx;\r\n  padding-top: 50upx;\r\n  box-sizing: border-box;\n}\n.index .code .code-title .code-title-name[data-v-2be84a3c] {\r\n  font-size: 48upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #656567;\n}\n.index .code .code-title .code-title-msg[data-v-2be84a3c] {\r\n  font-size: 30upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #919297;\r\n  line-height: 48upx;\n}\n.index .code .code-box[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 250upx;\r\n          flex-basis: 250upx;\r\n  height: 250upx;\r\n  position: relative;\n}\n.index .code .code-box .code-bg[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .code .code-box .code-bg uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .code .code-box .code-son[data-v-2be84a3c] {\r\n  position: absolute;\r\n  z-index: 10;\r\n  top: 61upx;\r\n  left: 80upx;\r\n  width: 90upx;\r\n  height: 90upx;\n}\n.index .code .code-box .code-son uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.index .code .code-box .code-integral[data-v-2be84a3c] {\r\n  position: absolute;\r\n  z-index: 10;\r\n  top: 170upx;\r\n  left: 80upx;\r\n  font-size: 28upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: white;\n}\n.index .notice[data-v-2be84a3c] {\r\n  width: 750upx;\r\n  padding: 0 30upx;\r\n  margin-top: 50upx;\n}\n.index .notice .notice-name[data-v-2be84a3c] {\r\n  width: 690upx;\r\n  height: 80upx;\r\n  line-height: 80upx;\r\n  font-size: 44upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #313030;\n}\n.index .notice .notice-list[data-v-2be84a3c] {\r\n  width: 690upx;\n}\n.index .notice .notice-list .list[data-v-2be84a3c] {\r\n  width: 690upx;\r\n  height: auto;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  padding: 30upx 0;\r\n  border-bottom: 1px solid #E4E4E4;\n}\n.index .notice .notice-list .list .list-img[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 80upx;\r\n          flex-basis: 80upx;\r\n  height: 80upx;\n}\n.index .notice .notice-list .list .list-img uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 80upx;\n}\n.index .notice .notice-list .list .list-main[data-v-2be84a3c] {\r\n  -webkit-flex-basis: 610upx;\r\n          flex-basis: 610upx;\r\n  padding-left: 32upx;\r\n  box-sizing: border-box;\n}\n.index .notice .notice-list .list .list-main .list-main-name[data-v-2be84a3c] {\r\n  width: 100%;\r\n  height: 80upx;\r\n  line-height: 80upx;\r\n  font-size: 34upx;\r\n  font-family: PingFang SC;\r\n  font-weight: bold;\r\n  color: #313030;\n}\n.index .notice .notice-list .list .list-main .list-main-title[data-v-2be84a3c] {\r\n  width: 100%;\r\n  font-size: 32upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #313030;\r\n  line-height: 48upx;\n}\n.index .notice .notice-list .list .list-main .list-main-date[data-v-2be84a3c] {\r\n  width: 100%;\r\n  font-size: 26upx;\r\n  font-family: PingFang SC;\r\n  font-weight: 500;\r\n  color: #919297;\r\n  line-height: 46upx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -1319,7 +1367,7 @@ var render = function() {
                   "placeholder-class": "hoderClass",
                   "data-type": "account",
                   type: "number",
-                  placeholder: "请输入会员手机号",
+                  placeholder: "请输入店主手机号",
                   value: "",
                   _i: 4
                 },
@@ -1498,7 +1546,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".login[data-v-5b26a3ac] {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background: #fff;\n}\n.login .login-name[data-v-5b26a3ac] {\n  width: 100%;\n  text-align: center;\n  height: 200upx;\n  line-height: 200upx;\n  font-size: 46upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n}\n.login .login-main[data-v-5b26a3ac] {\n  width: 590upx;\n  margin: 0 auto;\n  margin-top: 50upx;\n  height: auto;\n}\n.login .login-main .login-input[data-v-5b26a3ac] {\n  width: 100%;\n  height: 100upx;\n  line-height: 100upx;\n  border-bottom: 1px solid #EBEBEB;\n  margin-top: 20upx;\n}\n.login .login-main .login-input uni-input[data-v-5b26a3ac] {\n  padding: 0 !important;\n  height: 100%;\n  font-size: 34upx;\n  font-family: Sanomat Grab Web;\n  font-weight: 400;\n  color: #333333;\n}\n.login .login-main .btn[data-v-5b26a3ac] {\n  width: 100%;\n  height: 88upx;\n  text-align: center;\n  line-height: 88upx;\n  background: #06c795;\n  border-radius: 44upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n  margin: 100upx 0 50upx 0;\n}\n.login .login-main .btn-no[data-v-5b26a3ac] {\n  color: #cecece;\n  background: #ffffff;\n}\n.login .login-main .login-reset[data-v-5b26a3ac] {\n  width: 100%;\n  height: 50upx;\n  padding: 0 40upx;\n  box-sizing: border-box;\n  line-height: 50upx;\n}\n.login .login-main .login-reset .password[data-v-5b26a3ac] {\n  float: left;\n  font-size: 26upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n}\n.login .login-main .login-reset .register[data-v-5b26a3ac] {\n  float: right;\n  font-size: 26upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n", ""]);
+exports.push([module.i, ".login[data-v-5b26a3ac] {\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background: #fff;\n}\n.login .login-name[data-v-5b26a3ac] {\n  width: 100%;\n  text-align: center;\n  height: 200upx;\n  line-height: 200upx;\n  font-size: 46upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n}\n.login .login-main[data-v-5b26a3ac] {\n  width: 590upx;\n  margin: 0 auto;\n  margin-top: 50upx;\n  height: auto;\n}\n.login .login-main .login-input[data-v-5b26a3ac] {\n  width: 100%;\n  height: 100upx;\n  line-height: 100upx;\n  border-bottom: 1px solid #EBEBEB;\n  margin-top: 20upx;\n}\n.login .login-main .login-input uni-input[data-v-5b26a3ac] {\n  padding: 0 !important;\n  height: 100%;\n  font-size: 34upx;\n  font-family: Sanomat Grab Web;\n  font-weight: 400;\n  color: #333333;\n}\n.login .login-main .btn[data-v-5b26a3ac] {\n  width: 100%;\n  height: 88upx;\n  text-align: center;\n  line-height: 88upx;\n  background: #06C795;\n  border-radius: 44upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n  margin: 100upx 0 50upx 0;\n}\n.login .login-main .btn-no[data-v-5b26a3ac] {\n  color: #cecece;\n  background: #F6F6F6;\n}\n.login .login-main .login-reset[data-v-5b26a3ac] {\n  width: 100%;\n  height: 50upx;\n  padding: 0 40upx;\n  box-sizing: border-box;\n  line-height: 50upx;\n}\n.login .login-main .login-reset .password[data-v-5b26a3ac] {\n  float: left;\n  font-size: 26upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n}\n.login .login-main .login-reset .register[data-v-5b26a3ac] {\n  float: right;\n  font-size: 26upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2336,17 +2384,16 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
-                [
-                  _c("v-uni-image", {
-                    attrs: { src: "/static/index/cfbj.png", mode: "", _i: 19 }
-                  }),
-                  _c("v-uni-image", {
-                    attrs: { src: "/static/index/cfbj.png", mode: "", _i: 20 }
-                  }),
-                  _c("v-uni-image", {
-                    attrs: { src: "/static/index/cfbj.png", mode: "", _i: 21 }
+                _vm._l(_vm._$g(19, "f"), function(item, index, $20, $30) {
+                  return _c("v-uni-image", {
+                    key: item,
+                    attrs: {
+                      src: _vm._$g("19-" + $30, "a-src"),
+                      mode: "",
+                      _i: "19-" + $30
+                    }
                   })
-                ],
+                }),
                 1
               )
             ],
@@ -2354,21 +2401,21 @@ var render = function() {
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+            { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: "/static/index/gt.png", mode: "", _i: 24 }
+                    attrs: { src: "/static/index/gt.png", mode: "", _i: 22 }
                   })
                 ],
                 1
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
                 [_vm._v("以下信息不可修改，如需修改请联系总部")]
               )
             ],
@@ -2376,85 +2423,85 @@ var render = function() {
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
+            { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
+                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
                 [_vm._v("店主")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
-                [_vm._v(_vm._$g(28, "t0-0"))]
+                { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
+                [_vm._v(_vm._$g(26, "t0-0"))]
               )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
+            { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+                { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
                 [_vm._v("账号")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
-                [_vm._v(_vm._$g(31, "t0-0"))]
+                { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
+                [_vm._v(_vm._$g(29, "t0-0"))]
               )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
+            { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
+                { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
                 [_vm._v("店铺名称")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
-                [_vm._v(_vm._$g(34, "t0-0"))]
+                { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
+                [_vm._v(_vm._$g(32, "t0-0"))]
               )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(35, "sc"), attrs: { _i: 35 } },
+            { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
+                { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
                 [_vm._v("店铺编号")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
-                [_vm._v(_vm._$g(37, "t0-0"))]
+                { staticClass: _vm._$g(35, "sc"), attrs: { _i: 35 } },
+                [_vm._v(_vm._$g(35, "t0-0"))]
               )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(38, "sc"), attrs: { _i: 38 } },
+            { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(39, "sc"), attrs: { _i: 39 } },
+                { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
                 [_vm._v("店铺类型")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(40, "sc"), attrs: { _i: 40 } },
-                [_vm._v("商业店")]
+                { staticClass: _vm._$g(38, "sc"), attrs: { _i: 38 } },
+                [_vm._v(_vm._$g(38, "t0-0"))]
               )
             ],
             1
@@ -4313,7 +4360,7 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
-                [_vm._v("等于已提现金额+可提现金额+提现审核中的金额")]
+                [_vm._v("等于已提现金额+可提现金额")]
               )
             ],
             1
@@ -4353,7 +4400,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
-                    [_vm._v("当日提现金额最低1000元，最高不超过100000元")]
+                    [_vm._v("当日提现金额最低50元，最高不超过100000元")]
                   )
                 ],
                 1
@@ -4494,7 +4541,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "/* 弹出层 */\n.mask[data-v-3087fb31] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 9000;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.index[data-v-3087fb31] {\n  width: 100%;\n  height: 100vh;\n}\n.index .main[data-v-3087fb31] {\n  width: 80%;\n  position: fixed;\n  z-index: 999999;\n  margin: 0 10%;\n  top: 15%;\n  height: 900upx;\n  background: #ffffff;\n  border-radius: 20upx;\n  background-size: 100% 100% !important;\n  padding: 0 50upx;\n  box-sizing: border-box;\n}\n.index .main .main-content[data-v-3087fb31] {\n  width: 100%;\n  padding-top: 80upx;\n  margin-bottom: 140upx;\n}\n.index .main .main-content .main-name[data-v-3087fb31] {\n  width: 100%;\n  text-align: right;\n  font-size: 44upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #ffffff;\n  height: 60upx;\n  line-height: 60upx;\n  text-shadow: 0px 3px 7px rgba(0, 118, 88, 0.2);\n}\n.index .main .main-content .main-title[data-v-3087fb31] {\n  width: 100%;\n  text-align: right;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n  line-height: 48upx;\n}\n.index .main .say[data-v-3087fb31] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .say .say-name[data-v-3087fb31] {\n  width: 130upx;\n  height: 46upx;\n  line-height: 46upx;\n  text-align: center;\n  background: #e4c37d;\n  border-radius: 4upx;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .main .say .say-title[data-v-3087fb31] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  line-height: 48upx;\n  margin-left: 30upx;\n}\n.index .main .rule[data-v-3087fb31] {\n  width: 100%;\n  margin-top: 50upx;\n  padding-bottom: 50upx;\n}\n.index .main .rule .rule-type[data-v-3087fb31] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  margin-top: 15upx;\n}\n.index .main .rule .rule-type .son[data-v-3087fb31] {\n  width: 10upx;\n  height: 10upx;\n  background: #06C795;\n  border-radius: 50%;\n  position: relative;\n  top: 10upx;\n}\n.index .main .rule .rule-type .rule-type-title[data-v-3087fb31] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  margin-left: 20upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #666666;\n  line-height: 40upx;\n}\n.index .know[data-v-3087fb31] {\n  position: fixed;\n  z-index: 999999;\n  top: 1100upx;\n  left: 46%;\n  width: 56upx;\n  height: 56upx;\n  margin: 50upx auto;\n}\n.index .know uni-image[data-v-3087fb31] {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+exports.push([module.i, "/* 弹出层 */\n.mask[data-v-3087fb31] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 9000;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.index[data-v-3087fb31] {\n  width: 100%;\n  height: auto;\n}\n.index .main[data-v-3087fb31] {\n  width: 80%;\n  position: fixed;\n  z-index: 999999;\n  margin: 0 10%;\n  top: 15%;\n  height: 900upx;\n  background: #ffffff;\n  border-radius: 20upx;\n  background-size: 100% 100% !important;\n  padding: 0 50upx;\n  box-sizing: border-box;\n}\n.index .main .main-content[data-v-3087fb31] {\n  width: 100%;\n  padding-top: 80upx;\n  margin-bottom: 140upx;\n}\n.index .main .main-content .main-name[data-v-3087fb31] {\n  width: 100%;\n  text-align: right;\n  font-size: 44upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #ffffff;\n  height: 60upx;\n  line-height: 60upx;\n  text-shadow: 0px 3px 7px rgba(0, 118, 88, 0.2);\n}\n.index .main .main-content .main-title[data-v-3087fb31] {\n  width: 100%;\n  text-align: right;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n  line-height: 48upx;\n}\n.index .main .say[data-v-3087fb31] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .say .say-name[data-v-3087fb31] {\n  width: 130upx;\n  height: 46upx;\n  line-height: 46upx;\n  text-align: center;\n  background: #e4c37d;\n  border-radius: 4upx;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .main .say .say-title[data-v-3087fb31] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  line-height: 48upx;\n  margin-left: 30upx;\n}\n.index .main .rule[data-v-3087fb31] {\n  width: 100%;\n  margin-top: 50upx;\n  padding-bottom: 50upx;\n}\n.index .main .rule .rule-type[data-v-3087fb31] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  margin-top: 15upx;\n}\n.index .main .rule .rule-type .son[data-v-3087fb31] {\n  width: 10upx;\n  height: 10upx;\n  background: #06C795;\n  border-radius: 50%;\n  position: relative;\n  top: 10upx;\n}\n.index .main .rule .rule-type .rule-type-title[data-v-3087fb31] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  margin-left: 20upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #666666;\n  line-height: 40upx;\n}\n.index .know[data-v-3087fb31] {\n  position: fixed;\n  z-index: 999999;\n  top: 1100upx;\n  left: 46%;\n  width: 56upx;\n  height: 56upx;\n  margin: 50upx auto;\n}\n.index .know uni-image[data-v-3087fb31] {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -5179,9 +5226,9 @@ var render = function() {
                 staticClass: _vm._$g(7, "sc"),
                 attrs: {
                   placeholder: "请输入联系人电话",
-                  "data-type": "phone",
+                  "data-type": "stel",
                   "placeholder-class": "hoderClassadd",
-                  type: "number",
+                  type: "text",
                   _i: 7
                 },
                 on: {
@@ -5192,7 +5239,7 @@ var render = function() {
                 model: {
                   value: _vm._$g(7, "v-model"),
                   callback: function() {},
-                  expression: "info.phone"
+                  expression: "info.stel"
                 }
               })
             ],
@@ -5311,12 +5358,23 @@ var render = function() {
                         "v-uni-view",
                         { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
                         [
-                          _vm._v(_vm._$g(21, "t0-0")),
-                          _vm._$g(22, "i")
+                          _c(
+                            "v-uni-text",
+                            {
+                              attrs: { _i: 22 },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$handleViewEvent($event)
+                                }
+                              }
+                            },
+                            [_vm._v(_vm._$g(22, "t0-0"))]
+                          ),
+                          _vm._$g(23, "i")
                             ? _c(
                                 "v-uni-text",
                                 {
-                                  attrs: { _i: 22 },
+                                  attrs: { _i: 23 },
                                   on: {
                                     click: function($event) {
                                       return _vm.$handleViewEvent($event)
@@ -5331,14 +5389,25 @@ var render = function() {
                       ),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                        { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
                         [
-                          _vm._v(_vm._$g(23, "t0-0")),
-                          _vm._$g(24, "i")
+                          _c(
+                            "v-uni-text",
+                            {
+                              attrs: { _i: 25 },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$handleViewEvent($event)
+                                }
+                              }
+                            },
+                            [_vm._v(_vm._$g(25, "t0-0"))]
+                          ),
+                          _vm._$g(26, "i")
                             ? _c(
                                 "v-uni-text",
                                 {
-                                  attrs: { _i: 24 },
+                                  attrs: { _i: 26 },
                                   on: {
                                     click: function($event) {
                                       return _vm.$handleViewEvent($event)
@@ -5357,8 +5426,8 @@ var render = function() {
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(25, "sc"),
-                  attrs: { _i: 25 },
+                  staticClass: _vm._$g(27, "sc"),
+                  attrs: { _i: 27 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
@@ -5367,7 +5436,7 @@ var render = function() {
                 },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: "/static/user/addre.png", mode: "", _i: 26 }
+                    attrs: { src: "/static/user/addre.png", mode: "", _i: 28 }
                   })
                 ],
                 1
@@ -5377,39 +5446,39 @@ var render = function() {
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
+            { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
+                { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
                 [_vm._v("门店照片")]
               ),
-              _vm._$g(29, "i")
+              _vm._$g(31, "i")
                 ? _c(
                     "v-uni-view",
-                    { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
+                    { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
                     [
-                      _vm._l(_vm._$g(30, "f"), function(item, index, $20, $30) {
+                      _vm._l(_vm._$g(32, "f"), function(item, index, $20, $30) {
                         return _c(
                           "v-uni-view",
                           {
                             key: item,
-                            staticClass: _vm._$g("30-" + $30, "sc"),
-                            attrs: { _i: "30-" + $30 }
+                            staticClass: _vm._$g("32-" + $30, "sc"),
+                            attrs: { _i: "32-" + $30 }
                           },
                           [
                             _c("v-uni-image", {
                               attrs: {
-                                src: _vm._$g("31-" + $30, "a-src"),
+                                src: _vm._$g("33-" + $30, "a-src"),
                                 mode: "",
-                                _i: "31-" + $30
+                                _i: "33-" + $30
                               }
                             }),
                             _c(
                               "v-uni-view",
                               {
-                                staticClass: _vm._$g("32-" + $30, "sc"),
-                                attrs: { _i: "32-" + $30 },
+                                staticClass: _vm._$g("34-" + $30, "sc"),
+                                attrs: { _i: "34-" + $30 },
                                 on: {
                                   click: function($event) {
                                     return _vm.$handleViewEvent($event)
@@ -5420,22 +5489,20 @@ var render = function() {
                                 _c(
                                   "v-uni-view",
                                   {
-                                    staticClass: _vm._$g("33-" + $30, "sc"),
-                                    attrs: { _i: "33-" + $30 }
+                                    staticClass: _vm._$g("35-" + $30, "sc"),
+                                    attrs: { _i: "35-" + $30 }
                                   },
                                   [
                                     _c("v-uni-image", {
                                       attrs: {
                                         src: "/static/user/delete.png",
                                         mode: "",
-                                        _i: "34-" + $30
+                                        _i: "36-" + $30
                                       }
                                     }),
-                                    _c(
-                                      "v-uni-view",
-                                      { attrs: { _i: "35-" + $30 } },
-                                      [_vm._v("-")]
-                                    )
+                                    _c("v-uni-view", {
+                                      attrs: { _i: "37-" + $30 }
+                                    })
                                   ],
                                   1
                                 )
@@ -5446,12 +5513,12 @@ var render = function() {
                           1
                         )
                       }),
-                      _vm._$g(36, "i")
+                      _vm._$g(38, "i")
                         ? _c(
                             "v-uni-view",
                             {
-                              staticClass: _vm._$g(36, "sc"),
-                              attrs: { _i: 36 },
+                              staticClass: _vm._$g(38, "sc"),
+                              attrs: { _i: 38 },
                               on: {
                                 click: function($event) {
                                   return _vm.$handleViewEvent($event)
@@ -5463,7 +5530,7 @@ var render = function() {
                                 attrs: {
                                   src: "/static/user/addimg.png",
                                   mode: "",
-                                  _i: 37
+                                  _i: 39
                                 }
                               })
                             ],
@@ -5476,8 +5543,8 @@ var render = function() {
                 : _c(
                     "v-uni-view",
                     {
-                      staticClass: _vm._$g(38, "sc"),
-                      attrs: { _i: 38 },
+                      staticClass: _vm._$g(40, "sc"),
+                      attrs: { _i: 40 },
                       on: {
                         click: function($event) {
                           return _vm.$handleViewEvent($event)
@@ -5487,13 +5554,13 @@ var render = function() {
                     [
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(39, "sc"), attrs: { _i: 39 } },
+                        { staticClass: _vm._$g(41, "sc"), attrs: { _i: 41 } },
                         [
                           _c("v-uni-image", {
                             attrs: {
                               src: "/static/user/addimg.png",
                               mode: "",
-                              _i: 40
+                              _i: 42
                             }
                           })
                         ],
@@ -5505,12 +5572,12 @@ var render = function() {
             ],
             1
           ),
-          _vm._$g(41, "i")
+          _vm._$g(43, "i")
             ? _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(41, "sc"),
-                  attrs: { _i: 41 },
+                  staticClass: _vm._$g(43, "sc"),
+                  attrs: { _i: 43 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
@@ -5521,7 +5588,7 @@ var render = function() {
               )
             : _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(42, "sc"), attrs: { _i: 42 } },
+                { staticClass: _vm._$g(44, "sc"), attrs: { _i: 44 } },
                 [_vm._v("保存")]
               )
         ],
@@ -5529,7 +5596,7 @@ var render = function() {
       ),
       _c("lb-picker", {
         ref: "pickerCity",
-        attrs: { _i: 43 },
+        attrs: { _i: 45 },
         on: {
           change: function($event) {
             return _vm.$handleViewEvent($event)
@@ -5542,7 +5609,7 @@ var render = function() {
           }
         },
         model: {
-          value: _vm._$g(43, "v-model"),
+          value: _vm._$g(45, "v-model"),
           callback: function() {},
           expression: "cityList"
         }
@@ -5551,38 +5618,6 @@ var render = function() {
         "lb-picker",
         {
           ref: "pickerDate",
-          attrs: { _i: 44 },
-          on: {
-            confirm: function($event) {
-              return _vm.$handleViewEvent($event)
-            },
-            cancel: function($event) {
-              return _vm.$handleViewEvent($event)
-            }
-          },
-          model: {
-            value: _vm._$g(44, "v-model"),
-            callback: function() {},
-            expression: "dateValue"
-          }
-        },
-        [
-          _c(
-            "v-uni-view",
-            {
-              staticClass: _vm._$g(45, "sc"),
-              attrs: { slot: "action-center", _i: 45 },
-              slot: "action-center"
-            },
-            [_vm._v("选择星期")]
-          )
-        ],
-        1
-      ),
-      _c(
-        "lb-picker",
-        {
-          ref: "pickerHour",
           attrs: { _i: 46 },
           on: {
             confirm: function($event) {
@@ -5595,7 +5630,7 @@ var render = function() {
           model: {
             value: _vm._$g(46, "v-model"),
             callback: function() {},
-            expression: "hourValue"
+            expression: "dateValue"
           }
         },
         [
@@ -5604,6 +5639,38 @@ var render = function() {
             {
               staticClass: _vm._$g(47, "sc"),
               attrs: { slot: "action-center", _i: 47 },
+              slot: "action-center"
+            },
+            [_vm._v("选择星期")]
+          )
+        ],
+        1
+      ),
+      _c(
+        "lb-picker",
+        {
+          ref: "pickerHour",
+          attrs: { _i: 48 },
+          on: {
+            confirm: function($event) {
+              return _vm.$handleViewEvent($event)
+            },
+            cancel: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          },
+          model: {
+            value: _vm._$g(48, "v-model"),
+            callback: function() {},
+            expression: "hourValue"
+          }
+        },
+        [
+          _c(
+            "v-uni-view",
+            {
+              staticClass: _vm._$g(49, "sc"),
+              attrs: { slot: "action-center", _i: 49 },
               slot: "action-center"
             },
             [_vm._v("选择时间")]
@@ -6774,7 +6841,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".index[data-v-1c4a5e72] {\n  width: 100%;\n  padding: 0 30upx;\n  box-sizing: border-box;\n  overflow: hidden;\n}\n.index .main[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n}\n.index .main .item[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n  padding: 30upx 0;\n  border-bottom: 1px solid #E4E4E4;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .item .item-name[data-v-1c4a5e72] {\n  -webkit-flex-basis: 150upx;\n          flex-basis: 150upx;\n  height: 50upx;\n  line-height: 50upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item .item-title[data-v-1c4a5e72] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  text-align: right;\n  height: 50upx;\n  line-height: 50upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item .input-yjt[data-v-1c4a5e72] {\n  -webkit-flex-basis: 30upx;\n          flex-basis: 30upx;\n  height: 50upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.index .main .item .input-yjt uni-image[data-v-1c4a5e72] {\n  width: 14upx;\n  height: 24upx;\n}\n.index .main .item-date[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n  padding: 30upx 0;\n  border-bottom: 1px solid #E4E4E4;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .item-date .item-name[data-v-1c4a5e72] {\n  -webkit-flex-basis: 150upx;\n          flex-basis: 150upx;\n  height: 80upx;\n  line-height: 80upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item-date .item-title[data-v-1c4a5e72] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n}\n.index .main .item-date .item-title uni-view[data-v-1c4a5e72] {\n  width: 100%;\n  text-align: right;\n  height: 40upx;\n  line-height: 40upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item-date .item-title uni-view uni-text[data-v-1c4a5e72] {\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ff3d3e;\n  margin-left: 20upx;\n}\n.index .main .item-date .item-title .item-title-no[data-v-1c4a5e72] {\n  width: 100%;\n  height: 80upx;\n  line-height: 80upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #cecece;\n}\n.index .main .item-date .input-add[data-v-1c4a5e72] {\n  -webkit-flex-basis: 50upx;\n          flex-basis: 50upx;\n  height: 80upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  margin-left: 20upx;\n}\n.index .main .item-date .input-add uni-image[data-v-1c4a5e72] {\n  width: 40upx;\n  height: 40upx;\n}\n.index .main .shop[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n  padding-bottom: 30upx;\n}\n.index .main .shop .shop-name[data-v-1c4a5e72] {\n  width: 100%;\n  height: 120upx;\n  line-height: 120upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .shop .shop-banner[data-v-1c4a5e72] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .shop .shop-banner .banner-img[data-v-1c4a5e72] {\n  -webkit-flex-basis: 190upx;\n          flex-basis: 190upx;\n  height: 190upx;\n  border-radius: 20upx;\n  margin-right: 20upx;\n  position: relative;\n}\n.index .main .shop .shop-banner .banner-img uni-image[data-v-1c4a5e72] {\n  width: 100%;\n  height: 100%;\n}\n.index .main .shop .shop-banner .banner-img .delete[data-v-1c4a5e72] {\n  position: absolute;\n  right: -20upx;\n  top: -28upx;\n  width: 60upx;\n  height: 60upx;\n}\n.index .main .shop .shop-banner .banner-img .delete .delete-box[data-v-1c4a5e72] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  width: 60upx;\n  height: 60upx;\n}\n.index .main .shop .shop-banner .banner-img .delete .delete-box uni-image[data-v-1c4a5e72] {\n  width: 38upx;\n  height: 38upx;\n}\n.index .main .shop .shop-banner .banner-img .delete .delete-box uni-view[data-v-1c4a5e72] {\n  width: 20upx;\n  height: 4upx;\n  background: #ffffff;\n  border-radius: 2upx;\n  position: absolute;\n  z-index: 10;\n}\n.index .main .btn[data-v-1c4a5e72] {\n  width: 690upx;\n  height: 88upx;\n  text-align: center;\n  line-height: 88upx;\n  margin: 50upx auto;\n  background: #06c795;\n  border-radius: 44upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .main .btn-no[data-v-1c4a5e72] {\n  background: #f6f6f6 !important;\n  color: #cecece !important;\n}\n.index .main .message[data-v-1c4a5e72] {\n  width: 100%;\n  height: 92upx;\n  height: auto;\n  margin-bottom: 30upx;\n  padding-left: 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  background: #fbfafa;\n  border-radius: 20upx;\n}\n.index .main .message .message-icon[data-v-1c4a5e72] {\n  -webkit-flex-basis: 32upx;\n          flex-basis: 32upx;\n  height: 92upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.index .main .message .message-icon uni-image[data-v-1c4a5e72] {\n  width: 32upx;\n  height: 32upx;\n}\n.index .main .message .message-title[data-v-1c4a5e72] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 92upx;\n  margin-left: 20upx;\n  line-height: 92upx;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #e4c37d;\n}\n.index .picker[data-v-1c4a5e72] {\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n", ""]);
+exports.push([module.i, ".index[data-v-1c4a5e72] {\n  width: 100%;\n  padding: 0 30upx;\n  box-sizing: border-box;\n  overflow: hidden;\n}\n.index .main[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n}\n.index .main .item[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n  padding: 30upx 0;\n  border-bottom: 1px solid #E4E4E4;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .item .item-name[data-v-1c4a5e72] {\n  -webkit-flex-basis: 150upx;\n          flex-basis: 150upx;\n  height: 50upx;\n  line-height: 50upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item .item-title[data-v-1c4a5e72] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  text-align: right;\n  height: 50upx;\n  line-height: 50upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item .input-yjt[data-v-1c4a5e72] {\n  -webkit-flex-basis: 30upx;\n          flex-basis: 30upx;\n  height: 50upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.index .main .item .input-yjt uni-image[data-v-1c4a5e72] {\n  width: 14upx;\n  height: 24upx;\n}\n.index .main .item-date[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n  padding: 30upx 0;\n  border-bottom: 1px solid #E4E4E4;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .item-date .item-name[data-v-1c4a5e72] {\n  -webkit-flex-basis: 150upx;\n          flex-basis: 150upx;\n  height: 80upx;\n  line-height: 80upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item-date .item-title[data-v-1c4a5e72] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n}\n.index .main .item-date .item-title uni-view[data-v-1c4a5e72] {\n  width: 100%;\n  text-align: right;\n  height: 40upx;\n  line-height: 40upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .item-date .item-title uni-view uni-text[data-v-1c4a5e72]:nth-child(2) {\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ff3d3e;\n  margin-left: 20upx;\n}\n.index .main .item-date .item-title .item-title-no[data-v-1c4a5e72] {\n  width: 100%;\n  height: 80upx;\n  line-height: 80upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #cecece;\n}\n.index .main .item-date .input-add[data-v-1c4a5e72] {\n  -webkit-flex-basis: 50upx;\n          flex-basis: 50upx;\n  height: 80upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  margin-left: 20upx;\n}\n.index .main .item-date .input-add uni-image[data-v-1c4a5e72] {\n  width: 40upx;\n  height: 40upx;\n}\n.index .main .shop[data-v-1c4a5e72] {\n  width: 100%;\n  height: auto;\n  padding-bottom: 30upx;\n}\n.index .main .shop .shop-name[data-v-1c4a5e72] {\n  width: 100%;\n  height: 120upx;\n  line-height: 120upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .main .shop .shop-banner[data-v-1c4a5e72] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .shop .shop-banner .banner-img[data-v-1c4a5e72] {\n  -webkit-flex-basis: 190upx;\n          flex-basis: 190upx;\n  height: 190upx;\n  border-radius: 20upx;\n  margin-right: 20upx;\n  position: relative;\n}\n.index .main .shop .shop-banner .banner-img uni-image[data-v-1c4a5e72] {\n  width: 100%;\n  height: 100%;\n}\n.index .main .shop .shop-banner .banner-img .delete[data-v-1c4a5e72] {\n  position: absolute;\n  right: -20upx;\n  top: -28upx;\n  width: 60upx;\n  height: 60upx;\n}\n.index .main .shop .shop-banner .banner-img .delete .delete-box[data-v-1c4a5e72] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  width: 60upx;\n  height: 60upx;\n}\n.index .main .shop .shop-banner .banner-img .delete .delete-box uni-image[data-v-1c4a5e72] {\n  width: 38upx;\n  height: 38upx;\n}\n.index .main .shop .shop-banner .banner-img .delete .delete-box uni-view[data-v-1c4a5e72] {\n  width: 20upx;\n  height: 4upx;\n  background: #ffffff;\n  border-radius: 2upx;\n  position: absolute;\n  z-index: 10;\n}\n.index .main .btn[data-v-1c4a5e72] {\n  width: 690upx;\n  height: 88upx;\n  text-align: center;\n  line-height: 88upx;\n  margin: 50upx auto;\n  background: #06c795;\n  border-radius: 44upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .main .btn-no[data-v-1c4a5e72] {\n  background: #f6f6f6 !important;\n  color: #cecece !important;\n}\n.index .main .message[data-v-1c4a5e72] {\n  width: 100%;\n  height: 92upx;\n  height: auto;\n  margin-bottom: 30upx;\n  padding-left: 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  background: #fbfafa;\n  border-radius: 20upx;\n}\n.index .main .message .message-icon[data-v-1c4a5e72] {\n  -webkit-flex-basis: 32upx;\n          flex-basis: 32upx;\n  height: 92upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.index .main .message .message-icon uni-image[data-v-1c4a5e72] {\n  width: 32upx;\n  height: 32upx;\n}\n.index .main .message .message-title[data-v-1c4a5e72] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 92upx;\n  margin-left: 20upx;\n  line-height: 92upx;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #e4c37d;\n}\n.index .picker[data-v-1c4a5e72] {\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -7619,15 +7686,7 @@ var render = function() {
                       )
                     ],
                     1
-                  ),
-                  _c("v-uni-view", {
-                    staticClass: _vm._$g("14-" + $30, "sc"),
-                    attrs: { _i: "14-" + $30 }
-                  }),
-                  _c("v-uni-view", {
-                    staticClass: _vm._$g("15-" + $30, "sc"),
-                    attrs: { _i: "15-" + $30 }
-                  })
+                  )
                 ],
                 1
               )
@@ -7635,30 +7694,30 @@ var render = function() {
             1
           )
         : _vm._e(),
-      _vm._$g(16, "i")
+      _vm._$g(14, "i")
         ? _c(
             "v-uni-view",
-            { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
                 [_vm._v("提示")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
-                [_vm._v("是否确认退还积分给" + _vm._$g(18, "t0-0") + "？")]
+                { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                [_vm._v("是否确认退还积分给" + _vm._$g(16, "t0-0") + "？")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
                 [
                   _c(
                     "v-uni-view",
                     {
-                      staticClass: _vm._$g(20, "sc"),
-                      attrs: { _i: 20 },
+                      staticClass: _vm._$g(18, "sc"),
+                      attrs: { _i: 18 },
                       on: {
                         click: function($event) {
                           return _vm.$handleViewEvent($event)
@@ -7670,8 +7729,8 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     {
-                      staticClass: _vm._$g(21, "sc"),
-                      attrs: { _i: 21 },
+                      staticClass: _vm._$g(19, "sc"),
+                      attrs: { _i: 19 },
                       on: {
                         click: function($event) {
                           return _vm.$handleViewEvent($event)
@@ -7687,14 +7746,14 @@ var render = function() {
             1
           )
         : _vm._e(),
-      _vm._$g(22, "i")
+      _vm._$g(20, "i")
         ? _c("v-uni-view", {
-            staticClass: _vm._$g(22, "sc"),
-            attrs: { catchtouchmove: true, _i: 22 }
+            staticClass: _vm._$g(20, "sc"),
+            attrs: { catchtouchmove: true, _i: 20 }
           })
         : _vm._e(),
-      _vm._$g(23, "i") ? _c("NoRecord", { attrs: { _i: 23 } }) : _vm._e(),
-      _vm._$g(24, "i") ? _c("noMore", { attrs: { _i: 24 } }) : _vm._e()
+      _vm._$g(21, "i") ? _c("NoRecord", { attrs: { _i: 21 } }) : _vm._e(),
+      _vm._$g(22, "i") ? _c("noMore", { attrs: { _i: 22 } }) : _vm._e()
     ],
     1
   )
@@ -7790,7 +7849,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".index[data-v-0c3acef4] {\n  width: 100%;\n  overflow: hidden;\n  /* 弹出层 */\n}\n.index .item[data-v-0c3acef4] {\n  width: 100%;\n}\n.index .item .item-top[data-v-0c3acef4] {\n  width: 100%;\n  padding: 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  border-bottom: 1px solid #E4E4E4;\n}\n.index .item .item-top .item-top-img[data-v-0c3acef4] {\n  -webkit-flex-basis: 34upx;\n          flex-basis: 34upx;\n  height: 34upx;\n}\n.index .item .item-top .item-top-img uni-image[data-v-0c3acef4] {\n  width: 34upx;\n  height: 34upx;\n}\n.index .item .item-top .item-top-main[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 120upx;\n  position: relative;\n  margin-left: 20upx;\n}\n.index .item .item-top .item-top-main .main-name[data-v-0c3acef4] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .item .item-top .item-top-main .main-name .name[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.index .item .item-top .item-top-main .main-name .count[data-v-0c3acef4] {\n  -webkit-flex-basis: 150upx;\n          flex-basis: 150upx;\n  text-align: right;\n  font-size: 36upx;\n  font-family: DIN 1451 Mittelschrift;\n  font-weight: 400;\n  color: #313030;\n}\n.index .item .item-top .item-top-main .main-price[data-v-0c3acef4] {\n  width: 100%;\n  margin-top: 20upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .item .item-top .item-top-main .main-price .name[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #919297;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.index .item .item-top .item-top-main .main-price .label[data-v-0c3acef4] {\n  -webkit-flex-basis: 120upx;\n          flex-basis: 120upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .item .item-top .item-top-main .main-price .label2[data-v-0c3acef4] {\n  -webkit-flex-basis: 120upx;\n          flex-basis: 120upx;\n  height: 54upx;\n  text-align: center;\n  line-height: 54upx;\n  background: #06c795;\n  border-radius: 27upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .item .item-bot[data-v-0c3acef4] {\n  width: 100%;\n  padding: 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .item .item-bot .item-bot-img[data-v-0c3acef4] {\n  -webkit-flex-basis: 30upx;\n          flex-basis: 30upx;\n  height: 40upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.index .item .item-bot .item-bot-img uni-image[data-v-0c3acef4] {\n  width: 34upx;\n  height: 34upx;\n}\n.index .item .item-bot .item-bot-name[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 40upx;\n  line-height: 40upx;\n  margin-left: 20upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .item .item-bot .item-bot-date[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 40upx;\n  text-align: right;\n  line-height: 40upx;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #919297;\n}\n.index .mask[data-v-0c3acef4] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 10;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.index .dilog[data-v-0c3acef4] {\n  width: 80%;\n  height: 379upx;\n  background: #ffffff;\n  border-radius: 20upx;\n  position: fixed;\n  z-index: 100;\n  top: 450upx;\n  left: 10%;\n}\n.index .dilog .dilog-name[data-v-0c3acef4] {\n  width: 100%;\n  text-align: center;\n  padding: 30upx 0;\n  font-size: 38upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #313030;\n}\n.index .dilog .dilog-title[data-v-0c3acef4] {\n  width: 100%;\n  text-align: center;\n  padding: 30upx 0;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .dilog .dilog-btn[data-v-0c3acef4] {\n  width: 100%;\n  padding: 0 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  margin-top: 50upx;\n}\n.index .dilog .dilog-btn .btn-no[data-v-0c3acef4] {\n  width: 235upx;\n  text-align: center;\n  height: 74upx;\n  line-height: 74upx;\n  border: 1px solid #06c795;\n  border-radius: 37upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n.index .dilog .dilog-btn .btn-yes[data-v-0c3acef4] {\n  width: 235upx;\n  text-align: center;\n  height: 74upx;\n  border-radius: 37upx;\n  line-height: 74upx;\n  background: #06c795;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n", ""]);
+exports.push([module.i, ".index[data-v-0c3acef4] {\n  width: 100%;\n  min-height: 100vh;\n  overflow: hidden;\n  /* 弹出层 */\n}\n.index .item[data-v-0c3acef4] {\n  width: 100%;\n  background: #fff;\n}\n.index .item .item-top[data-v-0c3acef4] {\n  width: 92%;\n  margin: 0 auto;\n  padding: 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  border-bottom: 1px solid #E4E4E4;\n}\n.index .item .item-top .item-top-img[data-v-0c3acef4] {\n  -webkit-flex-basis: 34upx;\n          flex-basis: 34upx;\n  height: 34upx;\n}\n.index .item .item-top .item-top-img uni-image[data-v-0c3acef4] {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  top: -5upx;\n}\n.index .item .item-top .item-top-main[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 120upx;\n  position: relative;\n  margin-left: 20upx;\n}\n.index .item .item-top .item-top-main .main-name[data-v-0c3acef4] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .item .item-top .item-top-main .main-name .name[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.index .item .item-top .item-top-main .main-name .count[data-v-0c3acef4] {\n  -webkit-flex-basis: 150upx;\n          flex-basis: 150upx;\n  text-align: right;\n  font-size: 36upx;\n  font-family: DIN 1451 Mittelschrift;\n  font-weight: 400;\n  color: #313030;\n}\n.index .item .item-top .item-top-main .main-price[data-v-0c3acef4] {\n  width: 100%;\n  margin-top: 20upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .item .item-top .item-top-main .main-price .name[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #919297;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.index .item .item-top .item-top-main .main-price .label[data-v-0c3acef4] {\n  -webkit-flex-basis: 120upx;\n          flex-basis: 120upx;\n  text-align: right;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #929298;\n}\n.index .item .item-top .item-top-main .main-price .label2[data-v-0c3acef4] {\n  -webkit-flex-basis: 120upx;\n          flex-basis: 120upx;\n  height: 54upx;\n  text-align: center;\n  line-height: 54upx;\n  background: #06c795;\n  border-radius: 27upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .item .item-bot[data-v-0c3acef4] {\n  width: 100%;\n  padding: 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .item .item-bot .item-bot-img[data-v-0c3acef4] {\n  -webkit-flex-basis: 30upx;\n          flex-basis: 30upx;\n  height: 40upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.index .item .item-bot .item-bot-img uni-image[data-v-0c3acef4] {\n  width: 34upx;\n  height: 34upx;\n}\n.index .item .item-bot .item-bot-name[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 40upx;\n  line-height: 40upx;\n  margin-left: 20upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .item .item-bot .item-bot-date[data-v-0c3acef4] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 40upx;\n  text-align: right;\n  line-height: 40upx;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #919297;\n}\n.index .mask[data-v-0c3acef4] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 10;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.index .dilog[data-v-0c3acef4] {\n  width: 80%;\n  height: auto;\n  background: #ffffff;\n  border-radius: 20upx;\n  position: fixed;\n  z-index: 100;\n  top: 350upx;\n  left: 10%;\n  padding-bottom: 50upx;\n}\n.index .dilog .dilog-name[data-v-0c3acef4] {\n  width: 100%;\n  text-align: center;\n  padding: 30upx 0;\n  font-size: 38upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #313030;\n}\n.index .dilog .dilog-title[data-v-0c3acef4] {\n  width: 100%;\n  text-align: center;\n  padding: 30upx 30upx;\n  box-sizing: border-box;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.index .dilog .dilog-btn[data-v-0c3acef4] {\n  width: 100%;\n  padding: 0 30upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  margin-top: 40upx;\n}\n.index .dilog .dilog-btn .btn-no[data-v-0c3acef4] {\n  width: 235upx;\n  text-align: center;\n  height: 74upx;\n  line-height: 74upx;\n  border: 1px solid #06c795;\n  border-radius: 37upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n.index .dilog .dilog-btn .btn-yes[data-v-0c3acef4] {\n  width: 235upx;\n  text-align: center;\n  height: 74upx;\n  border-radius: 37upx;\n  line-height: 74upx;\n  background: #06c795;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -8162,7 +8221,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".app[data-v-4cad0a58] {\n  width: 100%;\n  height: 100vh;\n  background: #fff;\n  /* 弹出层 */\n}\n.app .logo[data-v-4cad0a58] {\n  width: 100%;\n  height: 234upx;\n  margin-top: 60upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.app .logo uni-image[data-v-4cad0a58] {\n  width: 120upx;\n  height: 114upx;\n}\n.app .name[data-v-4cad0a58] {\n  width: 100%;\n  text-align: center;\n  font-size: 40upx;\n  line-height: 50upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #333333;\n}\n.app .version[data-v-4cad0a58] {\n  width: 100%;\n  height: 100upx;\n  text-align: center;\n  line-height: 100upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n  margin-bottom: 50upx;\n}\n.app .bt[data-v-4cad0a58] {\n  border-top: 1px solid #EBEBEB;\n}\n.app .type[data-v-4cad0a58] {\n  width: 610upx;\n  height: 100upx;\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  border-bottom: 1px solid #EBEBEB;\n}\n.app .type .type-name[data-v-4cad0a58] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 100upx;\n  line-height: 100upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #333333;\n}\n.app .type .type-img[data-v-4cad0a58] {\n  -webkit-flex-basis: 30upx;\n          flex-basis: 30upx;\n  height: 100upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.app .type .type-img uni-image[data-v-4cad0a58] {\n  width: 13upx;\n  height: 22upx;\n}\n.app .mask[data-v-4cad0a58] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 10;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.app .diog[data-v-4cad0a58] {\n  width: 78%;\n  height: 555upx;\n  position: fixed;\n  z-index: 100;\n  left: 11%;\n  top: 520upx;\n  background-size: 100% 100% !important;\n}\n.app .diog .box[data-v-4cad0a58] {\n  width: 100%;\n  height: 162upx;\n  position: relative;\n  top: -80upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.app .diog .box uni-image[data-v-4cad0a58] {\n  width: 162upx;\n  height: 162upx;\n}\n.app .diog .main[data-v-4cad0a58] {\n  width: 100%;\n  position: relative;\n  top: -60upx;\n}\n.app .diog .main .main-name[data-v-4cad0a58] {\n  text-align: center;\n  font-size: 36upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.app .diog .main .main-vertion[data-v-4cad0a58] {\n  text-align: center;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n.app .diog .title[data-v-4cad0a58] {\n  width: 100%;\n  padding: 50upx 66upx;\n  box-sizing: border-box;\n  text-align: center;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  line-height: 48upx;\n}\n.app .diog .diog-btn[data-v-4cad0a58] {\n  width: 500upx;\n  height: 74upx;\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.app .diog .diog-btn .btn-no[data-v-4cad0a58] {\n  width: 235upx;\n  text-align: center;\n  line-height: 74upx;\n  height: 74upx;\n  border: 1px solid #06c795;\n  border-radius: 37upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n.app .diog .diog-btn .btn-yes[data-v-4cad0a58] {\n  width: 235upx;\n  text-align: center;\n  line-height: 74upx;\n  height: 74upx;\n  background: #06c795;\n  border-radius: 37upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n", ""]);
+exports.push([module.i, ".app[data-v-4cad0a58] {\n  width: 100%;\n  height: 100vh;\n  background: #fff;\n  /* 弹出层 */\n}\n.app .logo[data-v-4cad0a58] {\n  width: 100%;\n  height: 234upx;\n  margin-top: 60upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.app .logo uni-image[data-v-4cad0a58] {\n  width: 120upx;\n  height: 114upx;\n}\n.app .name[data-v-4cad0a58] {\n  width: 100%;\n  text-align: center;\n  font-size: 40upx;\n  line-height: 50upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #333333;\n}\n.app .version[data-v-4cad0a58] {\n  width: 100%;\n  height: 100upx;\n  text-align: center;\n  line-height: 100upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n  margin-bottom: 50upx;\n}\n.app .bt[data-v-4cad0a58] {\n  border-top: 1px solid #EBEBEB;\n}\n.app .type[data-v-4cad0a58] {\n  width: 610upx;\n  height: 100upx;\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  border-bottom: 1px solid #EBEBEB;\n}\n.app .type .type-name[data-v-4cad0a58] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 100upx;\n  line-height: 100upx;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #333333;\n}\n.app .type .type-img[data-v-4cad0a58] {\n  -webkit-flex-basis: 30upx;\n          flex-basis: 30upx;\n  height: 100upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.app .type .type-img uni-image[data-v-4cad0a58] {\n  width: 13upx;\n  height: 22upx;\n}\n.app .mask[data-v-4cad0a58] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 10;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.app .diog[data-v-4cad0a58] {\n  width: 78%;\n  height: 555upx;\n  position: fixed;\n  z-index: 100;\n  left: 11%;\n  top: 320upx;\n  background-size: 100% 100% !important;\n}\n.app .diog .box[data-v-4cad0a58] {\n  width: 100%;\n  height: 162upx;\n  position: relative;\n  top: -80upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.app .diog .box uni-image[data-v-4cad0a58] {\n  width: 162upx;\n  height: 162upx;\n}\n.app .diog .main[data-v-4cad0a58] {\n  width: 100%;\n  position: relative;\n  top: -60upx;\n}\n.app .diog .main .main-name[data-v-4cad0a58] {\n  text-align: center;\n  font-size: 36upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n}\n.app .diog .main .main-vertion[data-v-4cad0a58] {\n  text-align: center;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n.app .diog .title[data-v-4cad0a58] {\n  width: 100%;\n  padding: 50upx 66upx;\n  box-sizing: border-box;\n  text-align: center;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  line-height: 48upx;\n}\n.app .diog .diog-btn[data-v-4cad0a58] {\n  width: 500upx;\n  height: 74upx;\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.app .diog .diog-btn .btn-no[data-v-4cad0a58] {\n  width: 235upx;\n  text-align: center;\n  line-height: 74upx;\n  height: 74upx;\n  border: 1px solid #06c795;\n  border-radius: 37upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #06c795;\n}\n.app .diog .diog-btn .btn-yes[data-v-4cad0a58] {\n  width: 235upx;\n  text-align: center;\n  line-height: 74upx;\n  height: 74upx;\n  background: #06c795;\n  border-radius: 37upx;\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -11199,8 +11258,11 @@ var render = function() {
                 attrs: {
                   id: "myVideo",
                   src: _vm._$g(2, "a-src"),
+                  poster: _vm._$g(2, "a-poster"),
                   controls: true,
                   "show-mute-btn": "true",
+                  "auto-pause-if-navigate": "true",
+                  "auto-pause-if-open-native": "true",
                   _i: 2
                 },
                 on: {
@@ -11448,7 +11510,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tea-house {\n  width: 100%;\n  overflow: hidden;\n}\n.tea-house .video {\n  width: 750upx;\n}\n.tea-house .video uni-video {\n  width: 750upx;\n  object-fit: fill;\n}\n.tea-house .nav-menu {\n  margin: 0 32upx;\n  padding: 40upx 20upx;\n  border-bottom: 1px solid #EBEBEBFF;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.tea-house .nav-menu .menu-item {\n  padding: 5px;\n}\n.tea-house .nav-menu .menu-item .item-img {\n  width: 100upx;\n  height: 100upx;\n  margin: 0 auto;\n}\n.tea-house .nav-menu .menu-item .item-img uni-image {\n  width: 100%;\n  height: 100%;\n}\n.tea-house .nav-menu .menu-item .item-name {\n  width: 100upx;\n  text-align: center;\n  margin-top: 20upx;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #666666;\n}\n.tea-house .title {\n  padding: 32upx 0 39upx 32upx;\n  color: #333333FF;\n  font-size: 34upx;\n  font-weight: bold;\n}\n.tea-house .main-box {\n  padding: 0 20upx;\n}\n.tea-house .main-box .items {\n  width: 710upx;\n  height: 136upx;\n  border-bottom: 1px solid #EBEBEBFF;\n  padding: 30upx 0 20upx 0;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.tea-house .main-box .items .img {\n  width: 180upx;\n  height: 136upx;\n}\n.tea-house .main-box .items .texts {\n  margin-left: 24upx;\n  position: relative;\n  -webkit-flex-basis: 500upx;\n          flex-basis: 500upx;\n}\n.tea-house .main-box .items .texts .text-title {\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n  padding-right: 52upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 2;\n  overflow: hidden;\n}\n.tea-house .main-box .items .texts .action {\n  position: absolute;\n  bottom: 0;\n  font-size: 24upx;\n}\n.tea-house .main-box .items .texts .action uni-view {\n  display: inline-block;\n}\n.tea-house .main-box .items .texts .action .text-type {\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #999999;\n}\n.tea-house .main-box .items .texts .action .text-look {\n  margin-left: 50upx;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #999999;\n}\n", ""]);
+exports.push([module.i, ".tea-house {\n  width: 100%;\n  overflow: hidden;\n}\n.tea-house .video {\n  width: 750upx;\n  height: 450upx;\n  position: relative;\n}\n.tea-house .video uni-image {\n  width: 750upx;\n  height: 450upx;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 99999;\n}\n.tea-house .video uni-video {\n  width: 750upx;\n  object-fit: fill;\n}\n.tea-house .nav-menu {\n  margin: 0 32upx;\n  padding: 40upx 20upx;\n  border-bottom: 1px solid #EBEBEBFF;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.tea-house .nav-menu .menu-item {\n  padding: 5px;\n}\n.tea-house .nav-menu .menu-item .item-img {\n  width: 100upx;\n  height: 100upx;\n  margin: 0 auto;\n}\n.tea-house .nav-menu .menu-item .item-img uni-image {\n  width: 100%;\n  height: 100%;\n}\n.tea-house .nav-menu .menu-item .item-name {\n  width: 100upx;\n  text-align: center;\n  margin-top: 20upx;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #666666;\n}\n.tea-house .title {\n  padding: 32upx 0 39upx 32upx;\n  color: #333333FF;\n  font-size: 34upx;\n  font-weight: bold;\n}\n.tea-house .main-box {\n  padding: 0 20upx;\n}\n.tea-house .main-box .items {\n  width: 710upx;\n  height: 136upx;\n  border-bottom: 1px solid #EBEBEBFF;\n  padding: 30upx 0 20upx 0;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\n.tea-house .main-box .items .img {\n  width: 180upx;\n  height: 136upx;\n}\n.tea-house .main-box .items .texts {\n  margin-left: 24upx;\n  position: relative;\n  -webkit-flex-basis: 500upx;\n          flex-basis: 500upx;\n}\n.tea-house .main-box .items .texts .text-title {\n  font-size: 32upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n  padding-right: 52upx;\n  box-sizing: border-box;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 2;\n  overflow: hidden;\n}\n.tea-house .main-box .items .texts .action {\n  position: absolute;\n  bottom: 0;\n  font-size: 24upx;\n}\n.tea-house .main-box .items .texts .action uni-view {\n  display: inline-block;\n}\n.tea-house .main-box .items .texts .action .text-type {\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #999999;\n}\n.tea-house .main-box .items .texts .action .text-look {\n  margin-left: 50upx;\n  font-size: 24upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #999999;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -11541,60 +11603,8 @@ var render = function() {
         "v-uni-view",
         { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
         [
-          _c("v-uni-text", { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } }),
-          _vm._v(_vm._$g(1, "t1-0"))
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-        [
           _c("v-uni-rich-text", {
-            attrs: { nodes: _vm._$g(4, "a-nodes"), _i: 4 }
-          })
-        ],
-        1
-      ),
-      _c("v-uni-view", { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } }),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-        [
-          _c("v-uni-text", { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } }),
-          _vm._v(_vm._$g(6, "t1-0"))
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
-        [
-          _c("v-uni-rich-text", {
-            attrs: { nodes: _vm._$g(9, "a-nodes"), _i: 9 }
-          })
-        ],
-        1
-      ),
-      _c("v-uni-view", { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } }),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
-        [
-          _c("v-uni-text", {
-            staticClass: _vm._$g(12, "sc"),
-            attrs: { _i: 12 }
-          }),
-          _vm._v(_vm._$g(11, "t1-0"))
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
-        [
-          _c("v-uni-rich-text", {
-            attrs: { nodes: _vm._$g(14, "a-nodes"), _i: 14 }
+            attrs: { nodes: _vm._$g(2, "a-nodes"), _i: 2 }
           })
         ],
         1
@@ -12205,7 +12215,12 @@ var render = function() {
               _c("v-uni-text", { attrs: { _i: "3-" + $30 } }, [
                 _vm._v("无忧茶坊")
               ]),
-              _vm._v(_vm._$g("2-" + $30, "t1-0"))
+              _vm._v(
+                _vm._$g("2-" + $30, "t1-0") +
+                  "(" +
+                  _vm._$g("2-" + $30, "t1-1") +
+                  ")"
+              )
             ],
             1
           ),
@@ -12225,7 +12240,7 @@ var render = function() {
                 [
                   _c("v-uni-image", {
                     attrs: {
-                      src: "/static/index/date.png",
+                      src: "/static/index/address.png",
                       mode: "",
                       _i: "6-" + $30
                     }
@@ -12295,7 +12310,7 @@ var render = function() {
                 [
                   _c("v-uni-image", {
                     attrs: {
-                      src: "/static/index/address.png",
+                      src: "/static/index/date.png",
                       mode: "",
                       _i: "14-" + $30
                     }
@@ -12309,7 +12324,13 @@ var render = function() {
                   staticClass: _vm._$g("15-" + $30, "sc"),
                   attrs: { _i: "15-" + $30 }
                 },
-                [_vm._v(_vm._$g("15-" + $30, "t0-0"))]
+                [
+                  _vm._v(
+                    _vm._$g("15-" + $30, "t0-0") +
+                      " " +
+                      _vm._$g("15-" + $30, "t0-1")
+                  )
+                ]
               )
             ],
             1
@@ -12409,7 +12430,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".list[data-v-3d26d7ba] {\n  width: 100%;\n  background: #F6F5F5;\n  height: auto;\n}\n.list .list-item[data-v-3d26d7ba] {\n  width: 94%;\n  margin: 20upx auto;\n  padding: 40upx 20upx;\n  box-sizing: border-box;\n  background: #fff;\n  border-radius: 12upx;\n}\n.list .list-item .item-title[data-v-3d26d7ba] {\n  width: 100%;\n  height: 40upx;\n  line-height: 40upx;\n  padding: 10upx 0;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n}\n.list .list-item .item-title uni-text[data-v-3d26d7ba] {\n  display: inline-block;\n  width: auto;\n  margin-right: 10upx;\n  padding: 0 15upx;\n  text-align: center;\n  background: #06c795;\n  border-radius: 6upx;\n  font-size: 22upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.list .list-item .item-date[data-v-3d26d7ba] {\n  width: 100%;\n  height: 40upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.list .list-item .item-date .date-img[data-v-3d26d7ba] {\n  -webkit-flex-basis: 22upx;\n          flex-basis: 22upx;\n  height: 40upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.list .list-item .item-date .date-img uni-image[data-v-3d26d7ba] {\n  width: 22upx;\n  height: 22upx;\n}\n.list .list-item .item-date .date-title[data-v-3d26d7ba] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 40upx;\n  line-height: 40upx;\n  margin-left: 20upx;\n  font-size: 26upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #999999;\n}\n", ""]);
+exports.push([module.i, ".list[data-v-3d26d7ba] {\n  width: 100%;\n  background: #F6F5F5;\n  height: auto;\n  padding-top: 2upx;\n}\n.list .list-item[data-v-3d26d7ba] {\n  width: 94%;\n  margin: 20upx auto;\n  padding: 40upx 20upx;\n  box-sizing: border-box;\n  background: #fff;\n  border-radius: 12upx;\n}\n.list .list-item .item-title[data-v-3d26d7ba] {\n  width: 100%;\n  height: 40upx;\n  line-height: 40upx;\n  padding: 10upx 0;\n  font-size: 30upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #333333;\n}\n.list .list-item .item-title uni-text[data-v-3d26d7ba] {\n  display: inline-block;\n  width: auto;\n  margin-right: 10upx;\n  padding: 0 15upx;\n  text-align: center;\n  background: #06c795;\n  border-radius: 6upx;\n  font-size: 22upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.list .list-item .item-date[data-v-3d26d7ba] {\n  width: 100%;\n  height: 40upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.list .list-item .item-date .date-img[data-v-3d26d7ba] {\n  -webkit-flex-basis: 22upx;\n          flex-basis: 22upx;\n  height: 40upx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.list .list-item .item-date .date-img uni-image[data-v-3d26d7ba] {\n  width: 22upx;\n  height: 22upx;\n}\n.list .list-item .item-date .date-title[data-v-3d26d7ba] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 40upx;\n  line-height: 40upx;\n  margin-left: 20upx;\n  font-size: 26upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #999999;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -12786,9 +12807,11 @@ var render = function() {
                 {
                   staticClass: _vm._$g(4, "sc"),
                   attrs: {
-                    "indicator-dots": "true",
-                    autoplay: "true",
-                    interval: "3000",
+                    "indicator-dots": _vm._$g(4, "a-indicator-dots"),
+                    autoplay: true,
+                    circular: true,
+                    interval: 3000,
+                    duration: 1000,
                     _i: 4
                   }
                 },
@@ -15420,7 +15443,7 @@ var render = function() {
               _c(
                 "v-uni-view",
                 { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
-                [_vm._v("等于已提现金额+可提现金额+提现审核中的金额")]
+                [_vm._v("等于已提现金额+可提现金额")]
               )
             ],
             1
@@ -15460,7 +15483,7 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
-                    [_vm._v("当日提现金额最低1000元，最高不超过100000元")]
+                    [_vm._v("当日提现金额最低50元，最高不超过100000元")]
                   )
                 ],
                 1
@@ -15601,7 +15624,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../360Downloads/HBuilderX.2.7.14.20200618.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "/* 弹出层 */\n.mask[data-v-7b3b0701] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 9000;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.index[data-v-7b3b0701] {\n  width: 100%;\n  height: 100vh;\n}\n.index .main[data-v-7b3b0701] {\n  width: 80%;\n  position: fixed;\n  z-index: 999999;\n  margin: 0 10%;\n  top: 15%;\n  height: 900upx;\n  background: #ffffff;\n  border-radius: 20upx;\n  background-size: 100% 100% !important;\n  padding: 0 50upx;\n  box-sizing: border-box;\n}\n.index .main .main-content[data-v-7b3b0701] {\n  width: 100%;\n  padding-top: 80upx;\n  margin-bottom: 140upx;\n}\n.index .main .main-content .main-name[data-v-7b3b0701] {\n  width: 100%;\n  text-align: right;\n  font-size: 44upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #ffffff;\n  height: 60upx;\n  line-height: 60upx;\n  text-shadow: 0px 3px 7px rgba(0, 118, 88, 0.2);\n}\n.index .main .main-content .main-title[data-v-7b3b0701] {\n  width: 100%;\n  text-align: right;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n  line-height: 48upx;\n}\n.index .main .say[data-v-7b3b0701] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .say .say-name[data-v-7b3b0701] {\n  width: 130upx;\n  height: 46upx;\n  line-height: 46upx;\n  text-align: center;\n  background: #e4c37d;\n  border-radius: 4upx;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .main .say .say-title[data-v-7b3b0701] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  line-height: 48upx;\n  margin-left: 30upx;\n}\n.index .main .rule[data-v-7b3b0701] {\n  width: 100%;\n  margin-top: 50upx;\n  padding-bottom: 50upx;\n}\n.index .main .rule .rule-type[data-v-7b3b0701] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  margin-top: 15upx;\n}\n.index .main .rule .rule-type .son[data-v-7b3b0701] {\n  width: 10upx;\n  height: 10upx;\n  background: #06C795;\n  border-radius: 50%;\n  position: relative;\n  top: 10upx;\n}\n.index .main .rule .rule-type .rule-type-title[data-v-7b3b0701] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  margin-left: 20upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #666666;\n  line-height: 40upx;\n}\n.index .know[data-v-7b3b0701] {\n  position: fixed;\n  z-index: 999999;\n  top: 1100upx;\n  left: 46%;\n  width: 56upx;\n  height: 56upx;\n  margin: 50upx auto;\n}\n.index .know uni-image[data-v-7b3b0701] {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
+exports.push([module.i, "/* 弹出层 */\n.mask[data-v-7b3b0701] {\n  width: 100%;\n  height: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: #666666;\n  z-index: 9000;\n  opacity: 0.6;\n  overflow: hidden;\n}\n.index[data-v-7b3b0701] {\n  width: 100%;\n  height: auto;\n}\n.index .main[data-v-7b3b0701] {\n  width: 80%;\n  position: fixed;\n  z-index: 999999;\n  margin: 0 10%;\n  top: 15%;\n  height: 900upx;\n  background: #ffffff;\n  border-radius: 20upx;\n  background-size: 100% 100% !important;\n  padding: 0 50upx;\n  box-sizing: border-box;\n}\n.index .main .main-content[data-v-7b3b0701] {\n  width: 100%;\n  padding-top: 80upx;\n  margin-bottom: 140upx;\n}\n.index .main .main-content .main-name[data-v-7b3b0701] {\n  width: 100%;\n  text-align: right;\n  font-size: 44upx;\n  font-family: PingFang SC;\n  font-weight: bold;\n  color: #ffffff;\n  height: 60upx;\n  line-height: 60upx;\n  text-shadow: 0px 3px 7px rgba(0, 118, 88, 0.2);\n}\n.index .main .main-content .main-title[data-v-7b3b0701] {\n  width: 100%;\n  text-align: right;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n  line-height: 48upx;\n}\n.index .main .say[data-v-7b3b0701] {\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.index .main .say .say-name[data-v-7b3b0701] {\n  width: 130upx;\n  height: 46upx;\n  line-height: 46upx;\n  text-align: center;\n  background: #e4c37d;\n  border-radius: 4upx;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #ffffff;\n}\n.index .main .say .say-title[data-v-7b3b0701] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #313030;\n  line-height: 48upx;\n  margin-left: 30upx;\n}\n.index .main .rule[data-v-7b3b0701] {\n  width: 100%;\n  margin-top: 50upx;\n  padding-bottom: 50upx;\n}\n.index .main .rule .rule-type[data-v-7b3b0701] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  margin-top: 15upx;\n}\n.index .main .rule .rule-type .son[data-v-7b3b0701] {\n  width: 10upx;\n  height: 10upx;\n  background: #06C795;\n  border-radius: 50%;\n  position: relative;\n  top: 10upx;\n}\n.index .main .rule .rule-type .rule-type-title[data-v-7b3b0701] {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  font-size: 28upx;\n  margin-left: 20upx;\n  font-family: PingFang SC;\n  font-weight: 500;\n  color: #666666;\n  line-height: 40upx;\n}\n.index .know[data-v-7b3b0701] {\n  position: fixed;\n  z-index: 999999;\n  top: 1100upx;\n  left: 46%;\n  width: 56upx;\n  height: 56upx;\n  margin: 50upx auto;\n}\n.index .know uni-image[data-v-7b3b0701] {\n  width: 100%;\n  height: 100%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

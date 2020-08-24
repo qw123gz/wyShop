@@ -2,7 +2,7 @@ import Vue from 'vue'
 //验证手机号
 function isPhoneNum(phone){
 	let phonenum = phone;
-	let reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+	let reg =  /^1[3456789]\d{9}$/;
 	if(!reg.test(phonenum)){
 		uni.showToast({
 		   title:'请输入正确的手机号',

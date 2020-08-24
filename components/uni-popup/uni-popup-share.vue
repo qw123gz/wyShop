@@ -30,22 +30,22 @@
 			return {
 				bottomData: [{
 						text: '微信好友',
-						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-2.png',
+						icon: '/static/user/wx.png',
 						name: 'wx'
 					},
 					{
 						text: '朋友圈',
-						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-8.png',
+						icon: '/static/user/pyq.png',
 						name: 'pyq'
 					},
 					{
 						text: 'QQ',
-						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/gird-3.png',
+						icon: '/static/user/qq.png',
 						name: 'qq'
 					},
 					{
 						text: '微博',
-						icon: 'https://img-cdn-qiniu.dcloud.net.cn/uni-ui/grid-1.png',
+						icon: '/static/user/wb.png',
 						name: 'sina'
 					}
 					// {

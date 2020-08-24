@@ -7,7 +7,7 @@
 			无忧茶坊店主
 		</view>
 		<view class="version">
-			Version {{integral.version}}
+			Version {{integral.version_s}}
 		</view>
 		<view class="type bt"@click="upVersion">
 			<view class="type-name">
@@ -58,7 +58,7 @@
 				<view class="btn-yes" @click="downloadNew">
 					立即更新
 				</view>
-			</view>
+			</view> 
 		</view>
 	</view>
 </template>
@@ -74,7 +74,7 @@
 				version : '1.0.0',
 				integral:{},
 				dilog:false,
-				upversion:100,//当前版本号
+				upversion:109,//当前版本号
 				newUpversion:'',//最新版本号
 				isUpversiion:false
 			}
@@ -85,7 +85,8 @@
 		methods:{ 
 			//downloadNew点击下载新版本
 			downloadNew(){
-				window.location.href = 'https://51chafang.vip/?page_id=103'
+				// window.location.href = 'https://51chafang.vip/?page_id=103'
+				plus.runtime.openURL('https://51chafang.vip/?page_id=103');
 			},
 			//点击检查更新
 			upVersion(){
@@ -222,7 +223,7 @@
 		position: fixed;
 		z-index: 100;
 		left: 11%;
-		top:520upx;
+		top:320upx;
 		background-size: 100% 100% !important;
 		.box{
 			width: 100%;

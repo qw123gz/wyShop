@@ -5,7 +5,7 @@
 		</view>
 		<view class="login-main">
 			<view class="login-input">
-				<input placeholder-class="hoderClass"  data-type="account" @input="handleInput" type="number" placeholder="请输入会员手机号" value="" v-model="uesrInfo.account" />
+				<input placeholder-class="hoderClass"  data-type="account" @input="handleInput" type="number" placeholder="请输入店主手机号" value="" v-model="uesrInfo.account" />
 			</view>
 			<view class="login-input">
 				<input placeholder-class="hoderClass"  data-type="password" @input="handleInput" type="password" placeholder="请输入密码" value="" v-model="uesrInfo.password" />
@@ -20,7 +20,7 @@
 				<!-- <text @click="toReset" class="password">忘记密码?</text> -->
 				<text @click="toReset" class="register">忘记密码?</text>
 			</view>
-		</view>
+		</view> 
 	</view>
 
 </template>
@@ -33,16 +33,24 @@
 		data() {
 			return {
 				uesrInfo: {
-					account: '18610026867',
-					password: '111111'
+					account: '',
+					password: '' 
 				}
 			}
 		},
 		onLoad() {
-
+           uni.removeStorage({
+           	key:'jump'
+           })
 		},
 		onShow() {
-			this.uesrInfo.account = uni.getStorageSync('account')
+			let token =uni.getStorageSync('token')
+			console.log(token)
+			if(token != ''){
+				uni.switchTab({
+					url:'../index/index'
+				})
+			}
 		},
 		methods: {
 			//点击忘记密码
@@ -175,7 +183,7 @@
 				height: 88upx;
 				text-align: center;
 				line-height: 88upx;
-				background: rgba(6,199,149,1);;
+				background: #06C795;
 				border-radius: 44upx;
 				font-size: 30upx;
 				font-family: PingFang SC;
@@ -187,7 +195,7 @@
 			.btn-no {
 				// opacity: 0.5;
 				color:rgba(206,206,206,1);
-				background:rgba(255,255,255,1)
+				background:#F6F6F6;
 			}
 
 			.login-reset {

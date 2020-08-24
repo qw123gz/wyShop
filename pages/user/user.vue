@@ -177,11 +177,15 @@
 			}
 		},
 		onLoad() {
-             this.storeid = uni.getStorageSync('storeid')
-			 this.getInterga()
-			 this.getPhone()
-			 this.getInformation()//获取门店信息
+             
+			
 		}, 
+		onShow() {
+			this.storeid = uni.getStorageSync('storeid')
+			this.getInterga()
+			this.getPhone()
+			this.getInformation()//获取门店信息
+		},
 		methods: {
 			//获取门店信息
 			getInformation(){
@@ -201,9 +205,12 @@
 			},
 			//点击头部信息
 			edit(){
+				// uni.navigateTo({
+				// 	url:'./edit/edit.information'
+				// })
 				uni.navigateTo({
-					url:'./edit/edit.information'
-				})		
+					url:'../index/edit.index?info=' + encodeURIComponent(JSON.stringify(this.information))
+				})
 			},
 			//退出登录
 			logout(){

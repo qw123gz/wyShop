@@ -14,7 +14,7 @@
 					电话
 				</view>
 				<view class="item-title">
-					{{info.sphone}}
+					{{info.stel}}
 				</view>
 			</view>
 			<view class="item">
@@ -44,9 +44,10 @@
 					门店照片
 				</view>
 				<view class="shop-banner">
-					<image src="/static/index/cfbj.png" mode=""></image>
-					<image src="/static/index/cfbj.png" mode=""></image>
-					<image src="/static/index/cfbj.png" mode=""></image>
+					<!-- <view class=""  > -->
+						<image v-for="(item,index) in info.imglist" :key="index" :src="item" mode=""></image>
+						
+					<!-- </view> -->
 				</view>
 			</view>
 			<!-- 说明 -->
@@ -71,7 +72,7 @@
 					账号
 				</view>
 				<view class="item-title">
-					{{info.stel}}
+					{{info.sphone}}
 				</view>
 			</view>
 			<view class="item">
@@ -95,7 +96,7 @@
 					店铺类型
 				</view>
 				<view class="item-title">
-					商业店
+				    {{info.storetypelabel}}
 				</view>
 			</view>
 		</view>
@@ -120,7 +121,7 @@
 		},
 		onLoad(options) {
 			console.log(options)
-             let info = JSON.parse(options.info)
+             let info = JSON.parse(decodeURIComponent(options.info))
 			 this.info = info 
 		},
 		methods: {

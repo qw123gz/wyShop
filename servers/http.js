@@ -94,9 +94,17 @@ var http = {
 						}
 					}
 					if(response.data.status == 401){
-						uni.redirectTo({
-							url: '/pages/login/login',
-						});
+						let jump = uni.getStorageSync('jump')
+						if(!jump){
+							setTimeout(()=>{
+								uni.clearStorageSync()
+								uni.setStorageSync('launchFlag',true)
+								uni.redirectTo({
+									url: '/pages/login/login',
+								});
+							},300)
+							uni.setStorageSync('jump',true)
+						}
 					}
 					resolve(response.data);
 				} else if(statusCode === 401) {

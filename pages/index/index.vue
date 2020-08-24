@@ -1,7 +1,7 @@
 <template>
 	<view class="index">
-		<view class="shop">
-			<view class="shop-name" @click="toEdit">
+		<view class="shop" @click="toEdit">
+			<view class="shop-name">
 				<view class="shop-title">
 					{{information.sname}}
 				</view>
@@ -18,15 +18,15 @@
 				<view class="yest-img">
 					<image src="/static/index/today.png" mode=""></image>
 				</view>
-				<view class="yest-total">
+				<view class="yest-total" @click="toCash">
 					<view class="yest-total-name">
-						销售额(元)
+						收入(元)
 					</view>
 					<view class="yest-total-count">
 						{{info.todaysincome || 0}}
 					</view>
 				</view>
-				<view class="yest-total two">
+				<view class="yest-total two"  @click="toSetMeal">
 					<view class="yest-total-name">
 						套餐
 					</view>
@@ -34,7 +34,7 @@
 						{{info.todayspageket || 0}}
 					</view>
 				</view>
-				<view class="yest-total">
+				<view class="yest-total"  @click="toIntegral">
 					<view class="yest-total-name">
 						积分
 					</view>
@@ -47,15 +47,15 @@
 				<view class="yest-img">
 					<image src="/static/index/yesday.png" mode=""></image>
 				</view>
-				<view class="yest-total">
+				<view class="yest-total"  @click="toCash">
 					<view class="yest-total-name">
-						销售额(元)
+						收入(元)
 					</view>
 					<view class="yest-total-count">
 						{{info.yesterdayincome || 0}}
 					</view>
 				</view>
-				<view class="yest-total two">
+				<view class="yest-total two"  @click="toSetMeal">
 					<view class="yest-total-name">
 						套餐
 					</view>
@@ -63,7 +63,7 @@
 						{{info.yesterdaypageket || 0}}
 					</view>
 				</view>
-				<view class="yest-total">
+				<view class="yest-total"  @click="toIntegral">
 					<view class="yest-total-name">
 						积分
 					</view>
@@ -102,7 +102,7 @@
 			<view class="notice-list">
 				<view class="list" v-for="(item,index) in noticeList" :key="index">
 					<view class="list-img">
-						<image src="/static/index/login.png" mode=""></image>
+						<image :src="item.icon" mode=""></image>
 					</view>
 					<view class="list-main">
 						<view class="list-main-name">
@@ -112,7 +112,7 @@
 							{{item.mmessage}}
 						</view>
 						<view class="list-main-date">
-							{{item.mtitle}}
+							{{item.createtime}}
 						</view>
 					</view>
 				</view>
@@ -137,8 +137,12 @@
 			}
 		},
 		onLoad() {
+			
+           
+		},
+		onShow() {
 			this.storeid = uni.getStorageSync('storeid')
-            this.getInter()//获取积分现金
+			this.getInter()//获取积分现金
 			this.getInformation()//获取门店信息
 			this.getNotice()//获取门店消息
 		},
@@ -146,6 +150,24 @@
 			
 		},
 		methods: {
+			//点击跳转现金明细
+			toCash(){
+				uni.navigateTo({
+					url:'../user/cash/cash'
+				})
+			},
+			//点击跳转套餐明细
+			toSetMeal(){
+				uni.navigateTo({
+					url:'../user/set.meal/set.meal'
+				})
+			},
+			//点击跳转积分明细
+			toIntegral(){
+				uni.navigateTo({
+					url:'../user/integral/integral'
+				})
+			},
 			//getGude
 			getGude(){
 				let value = uni.getStorageSync('launchFlag');
@@ -207,7 +229,7 @@
 			//跳转店铺信息
 			toEdit(){
 				uni.navigateTo({
-					url:'./edit.index?info=' + JSON.stringify(this.information)
+					url:'./edit.index?info=' + encodeURIComponent(JSON.stringify(this.information))
 				})
 			},
              //跳转二维码页面
@@ -443,10 +465,10 @@
 							font-weight:500;
 							color:rgba(49,48,48,1);
 							line-height:48upx;
-							display: -webkit-box;
-							-webkit-box-orient: vertical;
-							-webkit-line-clamp: 2;
-							overflow: hidden;
+							// display: -webkit-box;
+							// -webkit-box-orient: vertical;
+							// -webkit-line-clamp: 2;
+							// overflow: hidden;
 						}
 						.list-main-date{
 							width: 100%;

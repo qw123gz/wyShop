@@ -25,7 +25,12 @@
 				wk:'',//搜索内容
 			}
 		},
-		onLoad() {
+		onLoad(options) {
+			let  item = JSON.parse(options.type)
+			console.log(item)
+			uni.setNavigationBarTitle({
+				title:item.mtitle
+			})
             this.getShopList()
 		},
 		onNavigationBarButtonTap(e) {

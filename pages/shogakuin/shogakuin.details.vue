@@ -56,6 +56,15 @@
 			this.getDetails()
 		},
 		methods:{
+			select(e) {
+				console.log(e.item.name)
+				this.info.type = 'details'
+				// this.info.name = uni.getStorageSync('uname')
+				// this.info.code = uni.getStorageSync('invitation_code')
+				// let url = encodeURI(this.$shareUrl + '?code=' + this.info.code + '&name=' + this.info.name)
+				// this.info.url = url
+				this.$Base.share(e, this.info)
+			},
 			getDetails(){
 				let data = {
 					cmd: 'getinfobyid',

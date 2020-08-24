@@ -22,7 +22,7 @@
 					总收益
 				</view>
 				<view class="say-title">
-			          等于已提现金额+可提现金额+提现审核中的金额  
+			          等于已提现金额+可提现金额
 				</view>
 			</view>
 			<view class="rule">
@@ -32,7 +32,7 @@
 				</view>
 				<view class="rule-type">
 					<view class="son"></view>
-					<view class="rule-type-title">当日提现金额最低1000元，最高不超过100000元 </view>
+					<view class="rule-type-title">当日提现金额最低50元，最高不超过100000元 </view>
 				</view>
 				<view class="rule-type"> 
 					<view class="son"></view>
@@ -85,7 +85,7 @@
 	}
 	.index{
 		width: 100%;
-		height: 100vh;
+		height: auto;
 		.main{
 			width: 80%;
 			position: fixed;

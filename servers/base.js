@@ -79,12 +79,168 @@ function getBase64(file) {
       }, gapTime);
     };
   }
+ //分享
+ function share(e, item) {
 
+ 	if (e.item.name == 'wx') {
+ 		// if (item.type == 'canvas') {
+ 		// 	uni.share({
+ 		// 		provider: "weixin",
+ 		// 		scene: "WXSceneSession",
+ 		// 		type: 2,
+ 		// 		imageUrl: item.img,
+ 		// 		success: function(res) {
+ 		// 			console.log("success:" + JSON.stringify(res));
+ 		// 		},
+ 		// 		fail: function(err) {
+ 		// 			console.log("fail:" + JSON.stringify(err));
+ 		// 		}
+ 		// 	})
+ 		// } else if (item.type == "login") {
+ 		// 	console.log(item)
+ 		// 	uni.share({
+ 		// 		provider: "weixin",
+ 		// 		scene: "WXSceneSession",
+ 		// 		type: 0,
+ 		// 		href: item.url,
+ 		// 		title: item.name + '邀请您加入无忧茶坊',
+ 		// 		summary: '无忧茶坊,人人都是茶老板。一个喝茶就能赚钱的平台',
+ 		// 		imageUrl: '/static/wylogo.png',
+ 		// 		success: function(res) {
+ 		// 			console.log("success:" + JSON.stringify(res));
+ 		// 		},
+ 		// 		fail: function(err) {
+ 		// 			console.log("fail:" + JSON.stringify(err));
+ 		// 		}
+ 		// 	})
+ 		// } else if (item.type == "buy") {
+ 		// 	console.log(item)
+ 		// 	uni.share({
+ 		// 		provider: "weixin",
+ 		// 		scene: "WXSceneSession",
+ 		// 		type: 0,
+ 		// 		href: item.url,
+ 		// 		title: item.name + '邀请您加入无忧茶坊',
+ 		// 		summary: '无忧茶坊,人人都是茶老板。一个喝茶就能赚钱的平台',
+ 		// 		imageUrl: '/static/wylogo.png',
+ 		// 		success: function(res) {
+ 		// 			console.log("success:" + JSON.stringify(res));
+ 		// 		},
+ 		// 		fail: function(err) {
+ 		// 			console.log("fail:" + JSON.stringify(err));
+ 		// 		}
+ 		// 	})
+ 		// } else {
+ 		// 	console.log(item)
+ 			
+ 		// }
+            uni.share({
+ 				provider: "weixin",
+ 				scene: "WXSceneSession",
+ 				type: 0,
+ 				href: 'https://api.51chafang.vip/h5Shop',
+ 				title: item.title.substring(0, 15),
+ 				summary: item.describe.substring(0, 15),
+ 				imageUrl: '/static/wysj.png',
+ 				success: function(res) {
+ 					console.log("success:" + JSON.stringify(res));
+ 				},
+ 				fail: function(err) {
+ 					console.log("fail:" + JSON.stringify(err));
+ 				}
+ 			})
+ 	}
+ 	if (e.item.name == 'pyq') {
+ 		// if (item.type == 'canvas') {
+ 		// 	uni.share({
+ 		// 		provider: "weixin",
+ 		// 		scene: "WXSenceTimeline",
+ 		// 		type: 2,
+ 		// 		imageUrl: item.img,
+ 		// 		success: function(res) {
+ 		// 			console.log("success:" + JSON.stringify(res));
+ 		// 		},
+ 		// 		fail: function(err) {
+ 		// 			console.log("fail:" + JSON.stringify(err));
+ 		// 		}
+ 		// 	})
+ 		// } else if (item.type == "login") {
+ 		// 	console.log(item)
+ 		// 	uni.share({
+ 		// 		provider: "weixin",
+ 		// 		scene: "WXSenceTimeline",
+ 		// 		type: 0,
+ 		// 		href: item.url,
+ 		// 		title: item.name + '邀请您加入无忧茶坊',
+ 		// 		summary: '无忧茶坊,人人都是茶老板。一个喝茶就能赚钱的平台',
+ 		// 		imageUrl: '/static/wylogo.png',
+ 		// 		success: function(res) {
+ 		// 			console.log("success:" + JSON.stringify(res));
+ 		// 		},
+ 		// 		fail: function(err) {
+ 		// 			console.log("fail:" + JSON.stringify(err));
+ 		// 		}
+ 		// 	})
+ 		// } else if (item.type == "buy") {
+ 		// 	console.log(item)
+ 		// 	uni.share({
+ 		// 		provider: "weixin",
+ 		// 		scene: "WXSenceTimeline",
+ 		// 		type: 0,
+ 		// 		href: item.url,
+ 		// 		title: item.name + '邀请您加入无忧茶坊',
+ 		// 		summary: '无忧茶坊,人人都是茶老板。一个喝茶就能赚钱的平台',
+ 		// 		imageUrl: '/static/wylogo.png',
+ 		// 		success: function(res) {
+ 		// 			console.log("success:" + JSON.stringify(res));
+ 		// 		},
+ 		// 		fail: function(err) {
+ 		// 			console.log("fail:" + JSON.stringify(err));
+ 		// 		}
+ 		// 	})
+ 		// } else {
+ 		// 	console.log(item)
+ 			
+ 		// }
+		uni.share({
+			provider: "weixin",
+			scene: "WXSenceTimeline",
+			type: 0,
+			href: 'https://api.51chafang.vip/h5Shop',
+			title: item.title.substring(0, 15),
+			summary: item.describe.substring(0, 15),
+			imageUrl: '/static/wysj.png',
+			success: function(res) {
+				console.log("success:" + JSON.stringify(res));
+			},
+			fail: function(err) {
+				console.log("fail:" + JSON.stringify(err));
+			}
+		})
+
+ 	}
+ 	if (e.item.name == 'qq') {
+ 		uni.showToast({
+ 			title: '正在开发中,请期待...',
+ 			icon: 'none',
+ 			duration: 1000
+ 		})
+ 	}
+ 	if (e.item.name == 'sina') {
+ 		uni.showToast({
+ 			title: '正在开发中,请期待...',
+ 			icon: 'none',
+ 			duration: 1000
+ 		})
+ 	}
+
+ }
 export default {
 	passReg,
 	setType,
 	copyText,
 	pasteText,
 	getBase64,
-	debounce
+	debounce,
+	share
 }

@@ -1,8 +1,9 @@
 <template>
 	<view class="tea-house">
 		<view class="video">
-			<video id="myVideo" :src="video" v-if="show"
-			 @error="videoErrorCallback" controls show-mute-btn=true></video>
+			<!-- <image v-show="isImg" :src="posterUrl" @click="videoPlay" mode=""></image> -->
+			<video id="myVideo" :src="video" v-if="show" :poster="posterUrl"
+			       @error="videoErrorCallback" :controls="true" show-mute-btn=true auto-pause-if-navigate=true auto-pause-if-open-native=true></video>
 		</view>
 		<!-- 导航栏，跳转不同页面路由 -->
 		<view class="nav-menu">
@@ -57,12 +58,14 @@
 		data() {
 			return {
 				show:true,
+				isImg:true,
 				dataList: [],
 				pagesize: 10,
 				page: 1,
 				isMore: false,
 				code: 'mhome21',
 				wk: '',
+				posterUrl:'https://files.51chafang.vip/upload/system/images/banner/vlogo.jpg',
 				navList: [],
 				navData: [{
 						name: "无忧茶坊",
@@ -85,7 +88,7 @@
 						img: '/static/teaHouse/kd.png'
 					}
 				],
-				video:''
+				video:'https://files.51chafang.vip//upload/public/banner/20200814/wycfxyp.mp4'
 			}
 		},
 		onReady: function(res) {
@@ -94,18 +97,33 @@
 			// #endif
 		},
 		onLoad() {
+			
+		},
+		onShow(){
+			this.dataList = []
+			this.pagesize = 10
+			this.page = 1
+			this.isMore = false
 			this.getNewData()
 			this.getNews()
 			this.getVideo()//获取视频
-		},
-		onShow() {
+			this.posterUrl = 'https://files.51chafang.vip/upload/system/images/banner/vlogo.jpg'
 			this.show = true
+			this.isImg = true
 		},
 		onHide() {
 			// #ifndef MP-ALIPAY
 			this.videoContext = uni.createVideoContext('myVideo')
 			this.show = false
 			// #endif
+		},
+		onPullDownRefresh() {
+			uni.startPullDownRefresh();
+			this.dataList = []
+			this.pagesize = 10
+			this.page = 1
+			this.isMore = false
+			this.getNews()
 		},
 		onReachBottom() {
 			console.log(this.isMore)
@@ -114,6 +132,12 @@
 			}
 		},
 		methods: {
+			//点击播放
+			videoPlay(){
+				this.isImg = false
+				this.videoContext = uni.createVideoContext('myVideo')
+				this.videoContext.play()
+			},
 			//获取新闻
 			getVideo(){
 				let data = {
@@ -153,6 +177,7 @@
 				this.$getNewsList(data).
 				then((res) => {
 						// console.log(res)
+						uni.stopPullDownRefresh();
 						if (res.status == 0) {
 							let data = res.response
 							this.dataList = this.dataList.concat(data)
@@ -233,7 +258,16 @@
 
 		.video {
 			width: 750upx;
-
+			height: 450upx;
+			position: relative;
+		    image{
+				width: 750upx;
+				height: 450upx;
+				position: absolute;
+				top:0;
+				left: 0;
+				z-index: 99999;
+			}
 			video {
 				width: 750upx;
 				object-fit: fill;

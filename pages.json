@@ -1,14 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor":"#FFFFFF"
-				
-			}
-		},
-		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "无忧茶坊",
@@ -16,6 +8,15 @@
 				
 			}
 		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor":"#FFFFFF"
+				
+			}
+		},
+
 
 		{
 			"path": "pages/index/swiper",
@@ -193,7 +194,8 @@
 		{
 			"path": "pages/teaHouse/teaHouse",
 			"style": {
-				
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -204,7 +206,7 @@
 		},{
 		    "path" : "pages/teaHouse/tea.house.two",
 		    "style" : {
-				"navigationBarTitleText": "媒体报道"
+				"navigationBarTitleText": ""
 			}
 		},{
 		    "path" : "pages/teaHouse/tea.house.three",
@@ -238,22 +240,8 @@
 		{
 		    "path" : "pages/teaHouse/tea.house.four",
 		    "style" : {
-				"navigationBarTitleText": "开店政策",
-				"app-plus": {
-				    "titleNView": {
-				        "buttons": [
-				           {
-				              "type":"share",
-				              "text": "\ue632",
-				              "fontSize": "24px",
-				              "fontSrc":"/static/newIcon/iconfont.ttf",
-				              "float":"right",
-				              "width":"50px"
-				              
-				           }
-				        ]
-				    }
-				}
+				"navigationBarTitleText": "开店政策"
+				
 			}
 		},
 		{
@@ -261,7 +249,8 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationBarBackgroundColor":"#0F624D",
-				"navigationStyle":"custom"
+				"navigationStyle":"custom",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -285,23 +274,8 @@
 		{
 		    "path" : "pages/shogakuin/shogakuin.details",
 		    "style" : {
-				"navigationBarTitleText": "查看文章",
-				"app-plus": {
-				    "titleNView": {
-				        "buttons": [
-				            {
-				               "type":"share",
-				               "text": "\ue632",
-				               "fontSize": "24px",
-				               "fontSrc":"/static/newIcon/iconfont.ttf",
-				               "float":"right",
-				               "right":"28px",
-				               "width":"60px"
-				               
-				            }
-				        ]
-				    }
-				}
+				"navigationBarTitleText": "查看文章"
+				
 			}
 		},
 		{

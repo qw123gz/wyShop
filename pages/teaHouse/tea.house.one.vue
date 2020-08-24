@@ -1,28 +1,7 @@
 <template>
 	<view class="tea-house-one">
-		<view class="title-name">
-			<text class="xbg"></text>
-			{{info[0].title}}
-		</view>
 		<view class="text-data">
-			
-			<rich-text :nodes="info[0].describe"></rich-text>
-		</view>
-		<view class="br20"></view>
-		<view class="title-name">
-			<text class="xbg"></text>
-			{{info[1].title}}
-		</view>
-		<view class="text-data">
-			<rich-text :nodes="info[1].describe"></rich-text>
-		</view>
-		<view class="br20"></view>
-		<view class="title-name">
-			<text class="xbg"></text>
-			{{info[2].title}}
-		</view>
-		<view class="text-data">
-			<rich-text :nodes="info[2].describe"></rich-text>
+			<rich-text :nodes="info.details"></rich-text>
 		</view>
 		<!-- 著作权 -->
 		<!-- <Copyright></Copyright> -->
@@ -40,7 +19,12 @@
 		components: {
 			Copyright
 		},
-		onLoad() {
+		onLoad(options) {
+			let  item = JSON.parse(options.type)
+			console.log(item)
+			uni.setNavigationBarTitle({
+				title:item.mtitle
+			})
 			this.getDetails()
 		},
 		methods:{
@@ -52,8 +36,9 @@
 				}
 				this.$post('',data).
 				  then((res)=>{
+					  // console.log(res)
 					  if(res.status == 0){
-						  this.info = res.response
+						  this.info = res.response[0]
 					  }else{
 						  uni.showToast({
 						  	title:res.msg,

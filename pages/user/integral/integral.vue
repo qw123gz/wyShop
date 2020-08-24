@@ -1,5 +1,5 @@
 <template>
-	<view class="index">
+	<view class="index mainBg">
 		<view class=""  v-if="dataList.length>0">
 			<view class="item" v-for="(item,index) in dataList" :key="index">
 				<view class="item-top">
@@ -29,19 +29,6 @@
 						</view>
 					</view>
 				</view>
-				<view class="item-bot">
-					<!-- <view class="item-bot-img">
-						<image src="/static/user/rw.png" mode=""></image>
-					</view>
-					<view class="item-bot-name">
-						{{item.username}} {{item.uphone}}
-					</view> -->
-					<!-- <view class="item-bot-date">
-						{{item.createtime}}
-					</view> -->
-					
-				</view>
-				<view class="br20"></view>
 			</view>
 		</view>
 		<!-- 弹窗提示是否退出积分 -->
@@ -184,13 +171,15 @@
 <style lang="less" scoped>
 	.index {
 		width: 100%;
+		min-height: 100vh;
 		overflow: hidden;
-
+       
 		.item {
 			width: 100%;
-
+            background: #fff;
 			.item-top {
-				width: 100%;
+				width: 92%;
+				margin: 0 auto;
 				padding: 30upx;
 				box-sizing: border-box;
 				display: flex;
@@ -200,8 +189,10 @@
 					flex-basis: 34upx;
 					height: 34upx;
 					image {
-						width: 34upx;
-						height: 34upx;
+						width: 100%;
+						height: 100%;
+						position: relative;
+						top:-5upx;
 					}
 				}
 
@@ -253,10 +244,11 @@
 						
 						.label {
 							flex-basis: 120upx;
+							text-align: right;
 							font-size: 30upx;
 							font-family: PingFang SC;
 							font-weight: 500;
-							color: rgba(49, 48, 48, 1);
+							color: #929298;
 						}
 						
 						.label2 {
@@ -333,13 +325,14 @@
 		}
 		.dilog{
 			width:80%;
-			height:379upx;
+			height:auto;
 			background:rgba(255,255,255,1);
 			border-radius:20upx;
 			position: fixed;
 			z-index: 100;
-			top:450upx;
+			top:350upx;
 			left: 10%;
+			padding-bottom: 50upx;
 			.dilog-name{
 				width: 100%;
 				text-align: center;
@@ -352,7 +345,8 @@
 			.dilog-title{
 				width: 100%;
 				text-align: center;
-				padding: 30upx 0;
+				padding: 30upx 30upx;
+				box-sizing: border-box;
 				font-size:32upx;
 				font-family:PingFang SC;
 				font-weight:500;
@@ -364,7 +358,7 @@
 				box-sizing: border-box;
 				display: flex;
 				justify-content: space-between;
-				margin-top: 50upx;
+				margin-top: 40upx;
 				.btn-no{
 					width:235upx;
 					text-align: center;
